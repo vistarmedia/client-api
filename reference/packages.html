@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+<title>
+
+  Package Index
+
+
+| VistarMediaClientApi
+
+</title>
+<link href="./../assets/android-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="./../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="./../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="./../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="./../assets/android-developer-docs.js" type="text/javascript"></script>
+<script src="./../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("./", "./../assets/");
+</script>
+<script src="./../assets/android-developer-reference.js" type="text/javascript"></script>
+<script src="./../assets/navtree_data.js" type="text/javascript"></script>
+<script src="./../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="gc-documentation">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">VistarMediaClientApi</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, './')"
+                      onkeyup="return search_changed(event, false, './')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links"><nobr>
+                <a href="./packages.html" class="selected" >Package Index</a> | 
+                <a href="./classes.html" >Class Index</a></nobr>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="./com/vistarmedia/api/package-summary.html">com.vistarmedia.api</a></li>
+    <li class="api apilevel-">
+  <a href="./com/vistarmedia/api/future/package-summary.html">com.vistarmedia.api.future</a></li>
+    <li class="api apilevel-">
+  <a href="./com/vistarmedia/api/message/package-summary.html">com.vistarmedia.api.message</a></li>
+    <li class="api apilevel-">
+  <a href="./com/vistarmedia/api/result/package-summary.html">com.vistarmedia.api.result</a></li>
+    <li class="api apilevel-">
+  <a href="./com/vistarmedia/api/transport/package-summary.html">com.vistarmedia.api.transport</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+              <script>
+                /*addLoadEvent(maxPackageHeight);*/
+              </script>
+              <p style="padding:10px">Select a package to view its members</p><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links"><nobr>
+            <a href="./packages.html" class="selected" >Package Index</a> | 
+            <a href="./classes.html" >Class Index</a></nobr>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("./");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="jd-header">
+<h1>Package Index</h1>
+</div>
+
+<div id="jd-content">
+
+<div class="jd-descr">
+<p><h1>Vistar Media Client API</h1>
+  
+  <p>
+    Provided is the Vistar Media client API. It's assumed from here on out that
+    you have an active account on Vistar Media's system which will provide you
+    with a network identifier and an API key.
+  </p>
+
+  <p>
+    For more information on obtaining an API key, email <a
+    href="mailto:api@vistarmedia.com">api@vistarmedia.com</a>
+  </p>
+ 
+  <h2>Overview</h2>
+
+  <p>
+    The provided API allowes a network to serve real time ads on their devices
+    and submit the necessary proofs of play after the fact. It is meant to
+    integrate into a Java CMS, Scheduler, or player.
+  </p>
+
+  <h2>Project Integration</h2>
+  
+  <p>
+    Depending on your project's layout, there are a number of ways to
+    integration Vistar Media's API. A few are outlined below.
+  </p>
+
+  <h4>Maven Integraiton</h4>
+
+  <p>
+    As there are quite the grab bag of HTTP clients available on the JVM, there
+    are a number of implementations provided, each scoped <code>provided</code>. You
+    must choose the HTTP client below you'd like to use and not only follow the
+    specified configuration, but ensure that it's available in your build (the
+    dependency will not be specified here).
+  </p>
+
+
+  <pre class="prettyprint">&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;com.vistarmedia&lt;/groupId&gt;
+    &lt;artifactId&gt;api&lt;/artifactId&gt;
+    &lt;version&gt;0.1-SNAPSHOT&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</pre>
+
+  <h5>Async HTTP Client</h5>
+
+  <p>
+    The Reccomended HTTP client to use is <a
+    href="https://github.com/sonatype/async-http-client">async-http-client</a>.
+    This will allow for bulk requests to be made in parallel. The downside is
+    that it pulls in potentially conflicting dependencies (such at Netty).
+  </p>
+
+  <p>
+    To use async-http-client, add the following to your project's <code>pom.xml</code>:
+  </p>
+
+  <pre class="prettyprint">&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;com.ning&lt;/groupId&gt;
+    &lt;artifactId&gt;async-http-client&lt;/artifactId&gt;
+    &lt;version&gt;1.6.5&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</pre></p>
+</div>
+
+
+<table class="jd-sumtable">
+
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol">
+  <a href="./com/vistarmedia/api/package-summary.html">com.vistarmedia.api</a></td>
+        <td class="jd-descrcol" width="100%"><p>
+      Basic client-facing <code>ApiClient</code> to use for interacting with the
+      Vistar Media API servers.&nbsp;</td>
+    </tr>
+
+
+    <tr class=" api apilevel-" >
+        <td class="jd-linkcol">
+  <a href="./com/vistarmedia/api/future/package-summary.html">com.vistarmedia.api.future</a></td>
+        <td class="jd-descrcol" width="100%"><b>INTERNAL</b>
+    <p>
+      Wrapper around a <code>Future</code> to provide internal convience methods.&nbsp;</td>
+    </tr>
+
+
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol">
+  <a href="./com/vistarmedia/api/message/package-summary.html">com.vistarmedia.api.message</a></td>
+        <td class="jd-descrcol" width="100%"><p>
+      Auto-generated protobuf objects used for wire communication to the API
+      servers.&nbsp;</td>
+    </tr>
+
+
+    <tr class=" api apilevel-" >
+        <td class="jd-linkcol">
+  <a href="./com/vistarmedia/api/result/package-summary.html">com.vistarmedia.api.result</a></td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+
+
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol">
+  <a href="./com/vistarmedia/api/transport/package-summary.html">com.vistarmedia.api.transport</a></td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+
+
+</table>
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div> <!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+</script>
+
+</body>
+</html>
