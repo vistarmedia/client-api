@@ -3,12 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.vistarmedia</groupId>
-  <artifactId>api</artifactId>
+  <artifactId>client-api</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>VistarMediaApi</name>
-  <url>http://maven.apache.org</url>
+  <name>VistarMediaClientApi</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
