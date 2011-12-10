@@ -1,0 +1,97 @@
+package com.vistarmedia.api.message;
+
+/* A "Display Area" is an arbitrarily sized piece of screen real estate.  A
+ * screen which does not have a custom layout will have one "Display Area" with
+ * the dimensions of the entire screen.  This message is only used as part of an
+ * "AdRequest" message, as specified below. */
+message DisplayArea {
+
+  // Internal unique ID for the Display Area. This may be any value as long as
+  // its unique for the life of the request. The AdResponse will reference this
+  // ID.
+  required string id = 1;
+
+  required int32 width = 2;
+  required int32 height = 3;
+  required bool allow_audio = 4;
+
+  // MIME types supported by this display area.
+  repeated string supported_media = 5;
+
+  optional int32 offset_x = 6;
+  optional int32 offset_Y = 7;
+}
+
+
+/* A single item in a bag of name -> value pairs associated with a Device . */
+message DeviceAttribute {
+  required string name = 1;
+  required string value = 2;
+}
+
+
+/* Message sent to Vistar requesting advertisements to be shown at a specified
+ * time. */
+message AdRequest {
+
+  // Network identifier obtained through Vistar's system. Each network operator
+  // will need to obtain their own network token, and provide it to Park Media's
+  // interface to send for each screen request. This allow Vistar to lazily
+  // register new screens as they start requesting ads.
+  required string network_id = 1;
+
+  // API Key obtained by the network operator through Vistar's UI. Similar to
+  // the network_id described above
+  required string api_key = 2;
+
+  // Internal unique ID identifying the device requesting the advertisements.
+  // This may be any identifier as long as it is unique and consistent across
+  // requests. Vistar will use this internally for frequency targeting.
+  required string device_id = 3;
+
+  // Estimated time the advertisements should show in epoch seconds, UTC.
+  required int64 display_time = 4;
+
+  // Number of screens attached to the display which will show the advertisement
+  // at the display_time specified above
+  required int32 number_of_screens = 5 [default=1];
+
+  // Grab bag of attributes attached to a device. Vistar may require network
+  // operators set certain attributes in order to receive ads, but there are no
+  // constraints at the protocol level.
+  repeated DeviceAttribute device_attribute = 6;
+
+  // An enumeration of the number of display areas which need ads displayed for
+  // this request. The specifics of each entry are specified above.
+  repeated DisplayArea display_area = 7;
+ 
+}
+
+message Advertisement {
+  required string lease_id          = 1;
+  required int64  lease_expiry      = 2;
+  required string display_area_id   = 3;
+  required string asset_id          = 4;
+  required string asset_url         = 5;
+  required int32  width             = 6;
+  required int32  height            = 7;
+  required string mimeType          = 8;
+  optional int32  length_in_seconds = 9;
+}
+
+message AdResponse {
+  repeated Advertisement advertisement = 1;
+}
+
+
+message RequestDialog {
+  required AdRequest  request   = 1;
+  required AdResponse response  = 2;
+}
+
+message ProofOfPlay {
+  required string lease_id = 1;
+  required int64  play_time = 2;
+  required int32  display_time_in_seconds = 3;
+  required int32  number_of_screens = 4 [default=1];
+}

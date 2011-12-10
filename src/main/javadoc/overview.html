@@ -1,0 +1,73 @@
+<body>
+  <h1>Vistar Media Client API</h1>
+  
+  <p>
+    Provided is the Vistar Media client API. It's assumed from here on out that
+    you have an active account on Vistar Media's system which will provide you
+    with a network identifier and an API key.
+  </p>
+
+  <p>
+    For more information on obtaining an API key, email <a
+    href="mailto:api@vistarmedia.com">api@vistarmedia.com</a>
+  </p>
+ 
+  <h2>Overview</h2>
+
+  <p>
+    The provided API allowes a network to serve real time ads on their devices
+    and submit the necessary proofs of play after the fact. It is meant to
+    integrate into a Java CMS, Scheduler, or player.
+  </p>
+
+  <h2>Project Integration</h2>
+  
+  <p>
+    Depending on your project's layout, there are a number of ways to
+    integration Vistar Media's API. A few are outlined below.
+  </p>
+
+  <h4>Maven Integraiton</h4>
+
+  <p>
+    As there are quite the grab bag of HTTP clients available on the JVM, there
+    are a number of implementations provided, each scoped {@code provided}. You
+    must choose the HTTP client below you'd like to use and not only follow the
+    specified configuration, but ensure that it's available in your build (the
+    dependency will not be specified here).
+  </p>
+
+
+  <pre class="prettyprint">&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;com.vistarmedia&lt;/groupId&gt;
+    &lt;artifactId&gt;api&lt;/artifactId&gt;
+    &lt;version&gt;0.1-SNAPSHOT&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</pre>
+
+  <h5>Async HTTP Client</h5>
+
+  <p>
+    The Reccomended HTTP client to use is <a
+    href="https://github.com/sonatype/async-http-client">async-http-client</a>.
+    This will allow for bulk requests to be made in parallel. The downside is
+    that it pulls in potentially conflicting dependencies (such at Netty).
+  </p>
+
+  <p>
+    To use async-http-client, add the following to your project's {@code
+    pom.xml}:
+  </p>
+
+  <pre class="prettyprint">&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;com.ning&lt;/groupId&gt;
+    &lt;artifactId&gt;async-http-client&lt;/artifactId&gt;
+    &lt;version&gt;1.6.5&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</pre>
+
+
+
+</body>
