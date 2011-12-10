@@ -1,10 +1,10 @@
 package com.vistarmedia.api.result;
 
 public class ErrorResult {
-  
-  private int code;
+
+  private int    code;
   private String message;
-  
+
   public ErrorResult(int code, String message) {
     this.code = code;
     this.message = message;
@@ -17,7 +17,7 @@ public class ErrorResult {
   public String getMessage() {
     return message;
   }
-  
+
   @Override
   public String toString() {
     return String.format("ErrorResult(%s): %s", code, message);

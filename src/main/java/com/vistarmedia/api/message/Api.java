@@ -4,84 +4,97 @@
 package com.vistarmedia.api.message;
 
 public final class Api {
-  private Api() {}
+  private Api() {
+  }
+
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface DisplayAreaOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
+
+  public interface DisplayAreaOrBuilder extends
+      com.google.protobuf.MessageOrBuilder {
+
     // required string id = 1;
     boolean hasId();
+
     String getId();
-    
+
     // required int32 width = 2;
     boolean hasWidth();
+
     int getWidth();
-    
+
     // required int32 height = 3;
     boolean hasHeight();
+
     int getHeight();
-    
+
     // required bool allow_audio = 4;
     boolean hasAllowAudio();
+
     boolean getAllowAudio();
-    
+
     // repeated string supported_media = 5;
     java.util.List<String> getSupportedMediaList();
+
     int getSupportedMediaCount();
+
     String getSupportedMedia(int index);
-    
+
     // optional int32 offset_x = 6;
     boolean hasOffsetX();
+
     int getOffsetX();
-    
+
     // optional int32 offset_Y = 7;
     boolean hasOffsetY();
+
     int getOffsetY();
   }
+
   public static final class DisplayArea extends
-      com.google.protobuf.GeneratedMessage
-      implements DisplayAreaOrBuilder {
+      com.google.protobuf.GeneratedMessage implements DisplayAreaOrBuilder {
     // Use DisplayArea.newBuilder() to construct.
     private DisplayArea(Builder builder) {
       super(builder);
     }
-    private DisplayArea(boolean noInit) {}
-    
+
+    private DisplayArea(boolean noInit) {
+    }
+
     private static final DisplayArea defaultInstance;
+
     public static DisplayArea getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public DisplayArea getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DisplayArea_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DisplayArea_fieldAccessorTable;
     }
-    
-    private int bitField0_;
+
+    private int              bitField0_;
     // required string id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
+    public static final int  ID_FIELD_NUMBER = 1;
     private java.lang.Object id_;
+
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+
     public String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           id_ = s;
@@ -89,82 +102,95 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required int32 width = 2;
     public static final int WIDTH_FIELD_NUMBER = 2;
-    private int width_;
+    private int             width_;
+
     public boolean hasWidth() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+
     public int getWidth() {
       return width_;
     }
-    
+
     // required int32 height = 3;
     public static final int HEIGHT_FIELD_NUMBER = 3;
-    private int height_;
+    private int             height_;
+
     public boolean hasHeight() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+
     public int getHeight() {
       return height_;
     }
-    
+
     // required bool allow_audio = 4;
     public static final int ALLOW_AUDIO_FIELD_NUMBER = 4;
-    private boolean allowAudio_;
+    private boolean         allowAudio_;
+
     public boolean hasAllowAudio() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
+
     public boolean getAllowAudio() {
       return allowAudio_;
     }
-    
+
     // repeated string supported_media = 5;
-    public static final int SUPPORTED_MEDIA_FIELD_NUMBER = 5;
+    public static final int                    SUPPORTED_MEDIA_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList supportedMedia_;
-    public java.util.List<String>
-        getSupportedMediaList() {
+
+    public java.util.List<String> getSupportedMediaList() {
       return supportedMedia_;
     }
+
     public int getSupportedMediaCount() {
       return supportedMedia_.size();
     }
+
     public String getSupportedMedia(int index) {
       return supportedMedia_.get(index);
     }
-    
+
     // optional int32 offset_x = 6;
     public static final int OFFSET_X_FIELD_NUMBER = 6;
-    private int offsetX_;
+    private int             offsetX_;
+
     public boolean hasOffsetX() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
+
     public int getOffsetX() {
       return offsetX_;
     }
-    
+
     // optional int32 offset_Y = 7;
     public static final int OFFSET_Y_FIELD_NUMBER = 7;
-    private int offsetY_;
+    private int             offsetY_;
+
     public boolean hasOffsetY() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
+
     public int getOffsetY() {
       return offsetY_;
     }
-    
+
     private void initFields() {
       id_ = "";
       width_ = 0;
@@ -174,11 +200,14 @@ public final class Api {
       offsetX_ = 0;
       offsetY_ = 0;
     }
+
     private byte memoizedIsInitialized = -1;
+
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized != -1)
+        return isInitialized == 1;
+
       if (!hasId()) {
         memoizedIsInitialized = 0;
         return false;
@@ -198,9 +227,9 @@ public final class Api {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getIdBytes());
@@ -225,94 +254,99 @@ public final class Api {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
+
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
+      if (size != -1)
+        return size;
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getIdBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1,
+            getIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, width_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2,
+            width_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, height_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3,
+            height_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, allowAudio_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4,
+            allowAudio_);
       }
       {
         int dataSize = 0;
         for (int i = 0; i < supportedMedia_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(supportedMedia_.getByteString(i));
+              .computeBytesSizeNoTag(supportedMedia_.getByteString(i));
         }
         size += dataSize;
         size += 1 * getSupportedMediaList().size();
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, offsetX_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(6,
+            offsetX_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, offsetY_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(7,
+            offsetY_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
+
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.DisplayArea parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.DisplayArea parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
         return builder.buildParsed();
@@ -320,6 +354,7 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.DisplayArea parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -331,62 +366,74 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DisplayArea parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.vistarmedia.api.message.Api.DisplayArea prototype) {
+
+    public static Builder newBuilder() {
+      return Builder.create();
+    }
+
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.vistarmedia.api.message.Api.DisplayArea prototype) {
       return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+
+    public Builder toBuilder() {
+      return newBuilder(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.vistarmedia.api.message.Api.DisplayAreaOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.vistarmedia.api.message.Api.DisplayAreaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DisplayArea_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DisplayArea_fieldAccessorTable;
       }
-      
-      // Construct using com.vistarmedia.api.message.Api.DisplayArea.newBuilder()
+
+      // Construct using
+      // com.vistarmedia.api.message.Api.DisplayArea.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
+
       private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
+
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -405,20 +452,19 @@ public final class Api {
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.vistarmedia.api.message.Api.DisplayArea.getDescriptor();
       }
-      
+
       public com.vistarmedia.api.message.Api.DisplayArea getDefaultInstanceForType() {
         return com.vistarmedia.api.message.Api.DisplayArea.getDefaultInstance();
       }
-      
+
       public com.vistarmedia.api.message.Api.DisplayArea build() {
         com.vistarmedia.api.message.Api.DisplayArea result = buildPartial();
         if (!result.isInitialized()) {
@@ -426,19 +472,20 @@ public final class Api {
         }
         return result;
       }
-      
+
       private com.vistarmedia.api.message.Api.DisplayArea buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         com.vistarmedia.api.message.Api.DisplayArea result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
+          throw newUninitializedMessageException(result)
+              .asInvalidProtocolBufferException();
         }
         return result;
       }
-      
+
       public com.vistarmedia.api.message.Api.DisplayArea buildPartial() {
-        com.vistarmedia.api.message.Api.DisplayArea result = new com.vistarmedia.api.message.Api.DisplayArea(this);
+        com.vistarmedia.api.message.Api.DisplayArea result = new com.vistarmedia.api.message.Api.DisplayArea(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -475,18 +522,20 @@ public final class Api {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vistarmedia.api.message.Api.DisplayArea) {
-          return mergeFrom((com.vistarmedia.api.message.Api.DisplayArea)other);
+          return mergeFrom((com.vistarmedia.api.message.Api.DisplayArea) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.vistarmedia.api.message.Api.DisplayArea other) {
-        if (other == com.vistarmedia.api.message.Api.DisplayArea.getDefaultInstance()) return this;
+        if (other == com.vistarmedia.api.message.Api.DisplayArea
+            .getDefaultInstance())
+          return this;
         if (other.hasId()) {
           setId(other.getId());
         }
@@ -518,96 +567,95 @@ public final class Api {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasId()) {
-          
+
           return false;
         }
         if (!hasWidth()) {
-          
+
           return false;
         }
         if (!hasHeight()) {
-          
+
           return false;
         }
         if (!hasAllowAudio()) {
-          
+
           return false;
         }
         return true;
       }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+            .newBuilder(this.getUnknownFields());
         while (true) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          case 0:
+            this.setUnknownFields(unknownFields.build());
+            onChanged();
+            return this;
+          default: {
+            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
               this.setUnknownFields(unknownFields.build());
               onChanged();
               return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
             }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readBytes();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              width_ = input.readInt32();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              height_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              allowAudio_ = input.readBool();
-              break;
-            }
-            case 42: {
-              ensureSupportedMediaIsMutable();
-              supportedMedia_.add(input.readBytes());
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              offsetX_ = input.readInt32();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              offsetY_ = input.readInt32();
-              break;
-            }
+            break;
+          }
+          case 10: {
+            bitField0_ |= 0x00000001;
+            id_ = input.readBytes();
+            break;
+          }
+          case 16: {
+            bitField0_ |= 0x00000002;
+            width_ = input.readInt32();
+            break;
+          }
+          case 24: {
+            bitField0_ |= 0x00000004;
+            height_ = input.readInt32();
+            break;
+          }
+          case 32: {
+            bitField0_ |= 0x00000008;
+            allowAudio_ = input.readBool();
+            break;
+          }
+          case 42: {
+            ensureSupportedMediaIsMutable();
+            supportedMedia_.add(input.readBytes());
+            break;
+          }
+          case 48: {
+            bitField0_ |= 0x00000020;
+            offsetX_ = input.readInt32();
+            break;
+          }
+          case 56: {
+            bitField0_ |= 0x00000040;
+            offsetY_ = input.readInt32();
+            break;
+          }
           }
         }
       }
-      
-      private int bitField0_;
-      
+
+      private int              bitField0_;
+
       // required string id = 1;
       private java.lang.Object id_ = "";
+
       public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+
       public String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof String)) {
@@ -618,252 +666,286 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setId(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
+
       void setId(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
       }
-      
+
       // required int32 width = 2;
-      private int width_ ;
+      private int width_;
+
       public boolean hasWidth() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+
       public int getWidth() {
         return width_;
       }
+
       public Builder setWidth(int value) {
         bitField0_ |= 0x00000002;
         width_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearWidth() {
         bitField0_ = (bitField0_ & ~0x00000002);
         width_ = 0;
         onChanged();
         return this;
       }
-      
+
       // required int32 height = 3;
-      private int height_ ;
+      private int height_;
+
       public boolean hasHeight() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+
       public int getHeight() {
         return height_;
       }
+
       public Builder setHeight(int value) {
         bitField0_ |= 0x00000004;
         height_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearHeight() {
         bitField0_ = (bitField0_ & ~0x00000004);
         height_ = 0;
         onChanged();
         return this;
       }
-      
+
       // required bool allow_audio = 4;
-      private boolean allowAudio_ ;
+      private boolean allowAudio_;
+
       public boolean hasAllowAudio() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+
       public boolean getAllowAudio() {
         return allowAudio_;
       }
+
       public Builder setAllowAudio(boolean value) {
         bitField0_ |= 0x00000008;
         allowAudio_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearAllowAudio() {
         bitField0_ = (bitField0_ & ~0x00000008);
         allowAudio_ = false;
         onChanged();
         return this;
       }
-      
+
       // repeated string supported_media = 5;
       private com.google.protobuf.LazyStringList supportedMedia_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+
       private void ensureSupportedMediaIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          supportedMedia_ = new com.google.protobuf.LazyStringArrayList(supportedMedia_);
+          supportedMedia_ = new com.google.protobuf.LazyStringArrayList(
+              supportedMedia_);
           bitField0_ |= 0x00000010;
-         }
+        }
       }
-      public java.util.List<String>
-          getSupportedMediaList() {
+
+      public java.util.List<String> getSupportedMediaList() {
         return java.util.Collections.unmodifiableList(supportedMedia_);
       }
+
       public int getSupportedMediaCount() {
         return supportedMedia_.size();
       }
+
       public String getSupportedMedia(int index) {
         return supportedMedia_.get(index);
       }
-      public Builder setSupportedMedia(
-          int index, String value) {
+
+      public Builder setSupportedMedia(int index, String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSupportedMediaIsMutable();
+          throw new NullPointerException();
+        }
+        ensureSupportedMediaIsMutable();
         supportedMedia_.set(index, value);
         onChanged();
         return this;
       }
+
       public Builder addSupportedMedia(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSupportedMediaIsMutable();
+          throw new NullPointerException();
+        }
+        ensureSupportedMediaIsMutable();
         supportedMedia_.add(value);
         onChanged();
         return this;
       }
-      public Builder addAllSupportedMedia(
-          java.lang.Iterable<String> values) {
+
+      public Builder addAllSupportedMedia(java.lang.Iterable<String> values) {
         ensureSupportedMediaIsMutable();
         super.addAll(values, supportedMedia_);
         onChanged();
         return this;
       }
+
       public Builder clearSupportedMedia() {
         supportedMedia_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
+
       void addSupportedMedia(com.google.protobuf.ByteString value) {
         ensureSupportedMediaIsMutable();
         supportedMedia_.add(value);
         onChanged();
       }
-      
+
       // optional int32 offset_x = 6;
-      private int offsetX_ ;
+      private int offsetX_;
+
       public boolean hasOffsetX() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
+
       public int getOffsetX() {
         return offsetX_;
       }
+
       public Builder setOffsetX(int value) {
         bitField0_ |= 0x00000020;
         offsetX_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearOffsetX() {
         bitField0_ = (bitField0_ & ~0x00000020);
         offsetX_ = 0;
         onChanged();
         return this;
       }
-      
+
       // optional int32 offset_Y = 7;
-      private int offsetY_ ;
+      private int offsetY_;
+
       public boolean hasOffsetY() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
+
       public int getOffsetY() {
         return offsetY_;
       }
+
       public Builder setOffsetY(int value) {
         bitField0_ |= 0x00000040;
         offsetY_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearOffsetY() {
         bitField0_ = (bitField0_ & ~0x00000040);
         offsetY_ = 0;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.vistarmedia.api.message.DisplayArea)
     }
-    
+
     static {
       defaultInstance = new DisplayArea(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.vistarmedia.api.message.DisplayArea)
   }
-  
-  public interface DeviceAttributeOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
+
+  public interface DeviceAttributeOrBuilder extends
+      com.google.protobuf.MessageOrBuilder {
+
     // required string name = 1;
     boolean hasName();
+
     String getName();
-    
+
     // required string value = 2;
     boolean hasValue();
+
     String getValue();
   }
+
   public static final class DeviceAttribute extends
-      com.google.protobuf.GeneratedMessage
-      implements DeviceAttributeOrBuilder {
+      com.google.protobuf.GeneratedMessage implements DeviceAttributeOrBuilder {
     // Use DeviceAttribute.newBuilder() to construct.
     private DeviceAttribute(Builder builder) {
       super(builder);
     }
-    private DeviceAttribute(boolean noInit) {}
-    
+
+    private DeviceAttribute(boolean noInit) {
+    }
+
     private static final DeviceAttribute defaultInstance;
+
     public static DeviceAttribute getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public DeviceAttribute getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DeviceAttribute_fieldAccessorTable;
     }
-    
-    private int bitField0_;
+
+    private int              bitField0_;
     // required string name = 1;
-    public static final int NAME_FIELD_NUMBER = 1;
+    public static final int  NAME_FIELD_NUMBER = 1;
     private java.lang.Object name_;
+
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+
     public String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           name_ = s;
@@ -871,31 +953,33 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required string value = 2;
-    public static final int VALUE_FIELD_NUMBER = 2;
+    public static final int  VALUE_FIELD_NUMBER = 2;
     private java.lang.Object value_;
+
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+
     public String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           value_ = s;
@@ -903,27 +987,31 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         value_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     private void initFields() {
       name_ = "";
       value_ = "";
     }
+
     private byte memoizedIsInitialized = -1;
+
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized != -1)
+        return isInitialized == 1;
+
       if (!hasName()) {
         memoizedIsInitialized = 0;
         return false;
@@ -935,9 +1023,9 @@ public final class Api {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getNameBytes());
@@ -947,69 +1035,74 @@ public final class Api {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
+
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
+      if (size != -1)
+        return size;
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getNameBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1,
+            getNameBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getValueBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(2,
+            getValueBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
+
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.DeviceAttribute parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.DeviceAttribute parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
         return builder.buildParsed();
@@ -1017,6 +1110,7 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.DeviceAttribute parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1028,62 +1122,74 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.DeviceAttribute parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.vistarmedia.api.message.Api.DeviceAttribute prototype) {
+
+    public static Builder newBuilder() {
+      return Builder.create();
+    }
+
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.vistarmedia.api.message.Api.DeviceAttribute prototype) {
       return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+
+    public Builder toBuilder() {
+      return newBuilder(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_DeviceAttribute_fieldAccessorTable;
       }
-      
-      // Construct using com.vistarmedia.api.message.Api.DeviceAttribute.newBuilder()
+
+      // Construct using
+      // com.vistarmedia.api.message.Api.DeviceAttribute.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
+
       private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
+
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -1092,20 +1198,20 @@ public final class Api {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.vistarmedia.api.message.Api.DeviceAttribute.getDescriptor();
       }
-      
+
       public com.vistarmedia.api.message.Api.DeviceAttribute getDefaultInstanceForType() {
-        return com.vistarmedia.api.message.Api.DeviceAttribute.getDefaultInstance();
+        return com.vistarmedia.api.message.Api.DeviceAttribute
+            .getDefaultInstance();
       }
-      
+
       public com.vistarmedia.api.message.Api.DeviceAttribute build() {
         com.vistarmedia.api.message.Api.DeviceAttribute result = buildPartial();
         if (!result.isInitialized()) {
@@ -1113,19 +1219,20 @@ public final class Api {
         }
         return result;
       }
-      
+
       private com.vistarmedia.api.message.Api.DeviceAttribute buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         com.vistarmedia.api.message.Api.DeviceAttribute result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
+          throw newUninitializedMessageException(result)
+              .asInvalidProtocolBufferException();
         }
         return result;
       }
-      
+
       public com.vistarmedia.api.message.Api.DeviceAttribute buildPartial() {
-        com.vistarmedia.api.message.Api.DeviceAttribute result = new com.vistarmedia.api.message.Api.DeviceAttribute(this);
+        com.vistarmedia.api.message.Api.DeviceAttribute result = new com.vistarmedia.api.message.Api.DeviceAttribute(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1140,18 +1247,21 @@ public final class Api {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vistarmedia.api.message.Api.DeviceAttribute) {
-          return mergeFrom((com.vistarmedia.api.message.Api.DeviceAttribute)other);
+          return mergeFrom((com.vistarmedia.api.message.Api.DeviceAttribute) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
-      public Builder mergeFrom(com.vistarmedia.api.message.Api.DeviceAttribute other) {
-        if (other == com.vistarmedia.api.message.Api.DeviceAttribute.getDefaultInstance()) return this;
+
+      public Builder mergeFrom(
+          com.vistarmedia.api.message.Api.DeviceAttribute other) {
+        if (other == com.vistarmedia.api.message.Api.DeviceAttribute
+            .getDefaultInstance())
+          return this;
         if (other.hasName()) {
           setName(other.getName());
         }
@@ -1161,63 +1271,62 @@ public final class Api {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasName()) {
-          
+
           return false;
         }
         if (!hasValue()) {
-          
+
           return false;
         }
         return true;
       }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+            .newBuilder(this.getUnknownFields());
         while (true) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          case 0:
+            this.setUnknownFields(unknownFields.build());
+            onChanged();
+            return this;
+          default: {
+            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
               this.setUnknownFields(unknownFields.build());
               onChanged();
               return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
             }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              name_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              value_ = input.readBytes();
-              break;
-            }
+            break;
+          }
+          case 10: {
+            bitField0_ |= 0x00000001;
+            name_ = input.readBytes();
+            break;
+          }
+          case 18: {
+            bitField0_ |= 0x00000002;
+            value_ = input.readBytes();
+            break;
+          }
           }
         }
       }
-      
-      private int bitField0_;
-      
+
+      private int              bitField0_;
+
       // required string name = 1;
       private java.lang.Object name_ = "";
+
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+
       public String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof String)) {
@@ -1228,32 +1337,37 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setName(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         name_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
+
       void setName(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000001;
         name_ = value;
         onChanged();
       }
-      
+
       // required string value = 2;
       private java.lang.Object value_ = "";
+
       public boolean hasValue() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+
       public String getValue() {
         java.lang.Object ref = value_;
         if (!(ref instanceof String)) {
@@ -1264,123 +1378,138 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setValue(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         value_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearValue() {
         bitField0_ = (bitField0_ & ~0x00000002);
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
       }
+
       void setValue(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000002;
         value_ = value;
         onChanged();
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.vistarmedia.api.message.DeviceAttribute)
     }
-    
+
     static {
       defaultInstance = new DeviceAttribute(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.vistarmedia.api.message.DeviceAttribute)
   }
-  
-  public interface AdRequestOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
+
+  public interface AdRequestOrBuilder extends
+      com.google.protobuf.MessageOrBuilder {
+
     // required string network_id = 1;
     boolean hasNetworkId();
+
     String getNetworkId();
-    
+
     // required string api_key = 2;
     boolean hasApiKey();
+
     String getApiKey();
-    
+
     // required string device_id = 3;
     boolean hasDeviceId();
+
     String getDeviceId();
-    
+
     // required int64 display_time = 4;
     boolean hasDisplayTime();
+
     long getDisplayTime();
-    
+
     // required int32 number_of_screens = 5 [default = 1];
     boolean hasNumberOfScreens();
+
     int getNumberOfScreens();
-    
-    // repeated .com.vistarmedia.api.message.DeviceAttribute device_attribute = 6;
-    java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute> 
-        getDeviceAttributeList();
+
+    // repeated .com.vistarmedia.api.message.DeviceAttribute device_attribute =
+    // 6;
+    java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute> getDeviceAttributeList();
+
     com.vistarmedia.api.message.Api.DeviceAttribute getDeviceAttribute(int index);
+
     int getDeviceAttributeCount();
-    java.util.List<? extends com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> 
-        getDeviceAttributeOrBuilderList();
+
+    java.util.List<? extends com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> getDeviceAttributeOrBuilderList();
+
     com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder getDeviceAttributeOrBuilder(
         int index);
-    
+
     // repeated .com.vistarmedia.api.message.DisplayArea display_area = 7;
-    java.util.List<com.vistarmedia.api.message.Api.DisplayArea> 
-        getDisplayAreaList();
+    java.util.List<com.vistarmedia.api.message.Api.DisplayArea> getDisplayAreaList();
+
     com.vistarmedia.api.message.Api.DisplayArea getDisplayArea(int index);
+
     int getDisplayAreaCount();
-    java.util.List<? extends com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> 
-        getDisplayAreaOrBuilderList();
+
+    java.util.List<? extends com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> getDisplayAreaOrBuilderList();
+
     com.vistarmedia.api.message.Api.DisplayAreaOrBuilder getDisplayAreaOrBuilder(
         int index);
   }
+
   public static final class AdRequest extends
-      com.google.protobuf.GeneratedMessage
-      implements AdRequestOrBuilder {
+      com.google.protobuf.GeneratedMessage implements AdRequestOrBuilder {
     // Use AdRequest.newBuilder() to construct.
     private AdRequest(Builder builder) {
       super(builder);
     }
-    private AdRequest(boolean noInit) {}
-    
+
+    private AdRequest(boolean noInit) {
+    }
+
     private static final AdRequest defaultInstance;
+
     public static AdRequest getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public AdRequest getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdRequest_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdRequest_fieldAccessorTable;
     }
-    
-    private int bitField0_;
+
+    private int              bitField0_;
     // required string network_id = 1;
-    public static final int NETWORK_ID_FIELD_NUMBER = 1;
+    public static final int  NETWORK_ID_FIELD_NUMBER = 1;
     private java.lang.Object networkId_;
+
     public boolean hasNetworkId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+
     public String getNetworkId() {
       java.lang.Object ref = networkId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           networkId_ = s;
@@ -1388,31 +1517,33 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getNetworkIdBytes() {
       java.lang.Object ref = networkId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         networkId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required string api_key = 2;
-    public static final int API_KEY_FIELD_NUMBER = 2;
+    public static final int  API_KEY_FIELD_NUMBER = 2;
     private java.lang.Object apiKey_;
+
     public boolean hasApiKey() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+
     public String getApiKey() {
       java.lang.Object ref = apiKey_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           apiKey_ = s;
@@ -1420,31 +1551,33 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getApiKeyBytes() {
       java.lang.Object ref = apiKey_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         apiKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required string device_id = 3;
-    public static final int DEVICE_ID_FIELD_NUMBER = 3;
+    public static final int  DEVICE_ID_FIELD_NUMBER = 3;
     private java.lang.Object deviceId_;
+
     public boolean hasDeviceId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+
     public String getDeviceId() {
       java.lang.Object ref = deviceId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           deviceId_ = s;
@@ -1452,80 +1585,95 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getDeviceIdBytes() {
       java.lang.Object ref = deviceId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         deviceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required int64 display_time = 4;
     public static final int DISPLAY_TIME_FIELD_NUMBER = 4;
-    private long displayTime_;
+    private long            displayTime_;
+
     public boolean hasDisplayTime() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
+
     public long getDisplayTime() {
       return displayTime_;
     }
-    
+
     // required int32 number_of_screens = 5 [default = 1];
     public static final int NUMBER_OF_SCREENS_FIELD_NUMBER = 5;
-    private int numberOfScreens_;
+    private int             numberOfScreens_;
+
     public boolean hasNumberOfScreens() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
+
     public int getNumberOfScreens() {
       return numberOfScreens_;
     }
-    
-    // repeated .com.vistarmedia.api.message.DeviceAttribute device_attribute = 6;
-    public static final int DEVICE_ATTRIBUTE_FIELD_NUMBER = 6;
+
+    // repeated .com.vistarmedia.api.message.DeviceAttribute device_attribute =
+    // 6;
+    public static final int                                                 DEVICE_ATTRIBUTE_FIELD_NUMBER = 6;
     private java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute> deviceAttribute_;
+
     public java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute> getDeviceAttributeList() {
       return deviceAttribute_;
     }
-    public java.util.List<? extends com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> 
-        getDeviceAttributeOrBuilderList() {
+
+    public java.util.List<? extends com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> getDeviceAttributeOrBuilderList() {
       return deviceAttribute_;
     }
+
     public int getDeviceAttributeCount() {
       return deviceAttribute_.size();
     }
-    public com.vistarmedia.api.message.Api.DeviceAttribute getDeviceAttribute(int index) {
+
+    public com.vistarmedia.api.message.Api.DeviceAttribute getDeviceAttribute(
+        int index) {
       return deviceAttribute_.get(index);
     }
+
     public com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder getDeviceAttributeOrBuilder(
         int index) {
       return deviceAttribute_.get(index);
     }
-    
+
     // repeated .com.vistarmedia.api.message.DisplayArea display_area = 7;
-    public static final int DISPLAY_AREA_FIELD_NUMBER = 7;
+    public static final int                                             DISPLAY_AREA_FIELD_NUMBER = 7;
     private java.util.List<com.vistarmedia.api.message.Api.DisplayArea> displayArea_;
+
     public java.util.List<com.vistarmedia.api.message.Api.DisplayArea> getDisplayAreaList() {
       return displayArea_;
     }
-    public java.util.List<? extends com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> 
-        getDisplayAreaOrBuilderList() {
+
+    public java.util.List<? extends com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> getDisplayAreaOrBuilderList() {
       return displayArea_;
     }
+
     public int getDisplayAreaCount() {
       return displayArea_.size();
     }
+
     public com.vistarmedia.api.message.Api.DisplayArea getDisplayArea(int index) {
       return displayArea_.get(index);
     }
+
     public com.vistarmedia.api.message.Api.DisplayAreaOrBuilder getDisplayAreaOrBuilder(
         int index) {
       return displayArea_.get(index);
     }
-    
+
     private void initFields() {
       networkId_ = "";
       apiKey_ = "";
@@ -1535,11 +1683,14 @@ public final class Api {
       deviceAttribute_ = java.util.Collections.emptyList();
       displayArea_ = java.util.Collections.emptyList();
     }
+
     private byte memoizedIsInitialized = -1;
+
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized != -1)
+        return isInitialized == 1;
+
       if (!hasNetworkId()) {
         memoizedIsInitialized = 0;
         return false;
@@ -1575,9 +1726,9 @@ public final class Api {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getNetworkIdBytes());
@@ -1602,89 +1753,94 @@ public final class Api {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
+
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
+      if (size != -1)
+        return size;
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getNetworkIdBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1,
+            getNetworkIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getApiKeyBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(2,
+            getApiKeyBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getDeviceIdBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(3,
+            getDeviceIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, displayTime_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(4,
+            displayTime_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, numberOfScreens_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5,
+            numberOfScreens_);
       }
       for (int i = 0; i < deviceAttribute_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, deviceAttribute_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6,
+            deviceAttribute_.get(i));
       }
       for (int i = 0; i < displayArea_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, displayArea_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7,
+            displayArea_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
+
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.AdRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.AdRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.AdRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.AdRequest parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
         return builder.buildParsed();
@@ -1692,6 +1848,7 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.AdRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1703,64 +1860,75 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.vistarmedia.api.message.Api.AdRequest prototype) {
+
+    public static Builder newBuilder() {
+      return Builder.create();
+    }
+
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.vistarmedia.api.message.Api.AdRequest prototype) {
       return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+
+    public Builder toBuilder() {
+      return newBuilder(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.vistarmedia.api.message.Api.AdRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.vistarmedia.api.message.Api.AdRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdRequest_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdRequest_fieldAccessorTable;
       }
-      
+
       // Construct using com.vistarmedia.api.message.Api.AdRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
+
       private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getDeviceAttributeFieldBuilder();
           getDisplayAreaFieldBuilder();
         }
       }
+
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         networkId_ = "";
@@ -1787,20 +1955,19 @@ public final class Api {
         }
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.vistarmedia.api.message.Api.AdRequest.getDescriptor();
       }
-      
+
       public com.vistarmedia.api.message.Api.AdRequest getDefaultInstanceForType() {
         return com.vistarmedia.api.message.Api.AdRequest.getDefaultInstance();
       }
-      
+
       public com.vistarmedia.api.message.Api.AdRequest build() {
         com.vistarmedia.api.message.Api.AdRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1808,19 +1975,20 @@ public final class Api {
         }
         return result;
       }
-      
+
       private com.vistarmedia.api.message.Api.AdRequest buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         com.vistarmedia.api.message.Api.AdRequest result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
+          throw newUninitializedMessageException(result)
+              .asInvalidProtocolBufferException();
         }
         return result;
       }
-      
+
       public com.vistarmedia.api.message.Api.AdRequest buildPartial() {
-        com.vistarmedia.api.message.Api.AdRequest result = new com.vistarmedia.api.message.Api.AdRequest(this);
+        com.vistarmedia.api.message.Api.AdRequest result = new com.vistarmedia.api.message.Api.AdRequest(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1845,7 +2013,8 @@ public final class Api {
         result.numberOfScreens_ = numberOfScreens_;
         if (deviceAttributeBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020)) {
-            deviceAttribute_ = java.util.Collections.unmodifiableList(deviceAttribute_);
+            deviceAttribute_ = java.util.Collections
+                .unmodifiableList(deviceAttribute_);
             bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.deviceAttribute_ = deviceAttribute_;
@@ -1865,18 +2034,20 @@ public final class Api {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vistarmedia.api.message.Api.AdRequest) {
-          return mergeFrom((com.vistarmedia.api.message.Api.AdRequest)other);
+          return mergeFrom((com.vistarmedia.api.message.Api.AdRequest) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.vistarmedia.api.message.Api.AdRequest other) {
-        if (other == com.vistarmedia.api.message.Api.AdRequest.getDefaultInstance()) return this;
+        if (other == com.vistarmedia.api.message.Api.AdRequest
+            .getDefaultInstance())
+          return this;
         if (other.hasNetworkId()) {
           setNetworkId(other.getNetworkId());
         }
@@ -1910,9 +2081,8 @@ public final class Api {
               deviceAttributeBuilder_ = null;
               deviceAttribute_ = other.deviceAttribute_;
               bitField0_ = (bitField0_ & ~0x00000020);
-              deviceAttributeBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getDeviceAttributeFieldBuilder() : null;
+              deviceAttributeBuilder_ = com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ? getDeviceAttributeFieldBuilder()
+                  : null;
             } else {
               deviceAttributeBuilder_.addAllMessages(other.deviceAttribute_);
             }
@@ -1936,9 +2106,8 @@ public final class Api {
               displayAreaBuilder_ = null;
               displayArea_ = other.displayArea_;
               bitField0_ = (bitField0_ & ~0x00000040);
-              displayAreaBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getDisplayAreaFieldBuilder() : null;
+              displayAreaBuilder_ = com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ? getDisplayAreaFieldBuilder()
+                  : null;
             } else {
               displayAreaBuilder_.addAllMessages(other.displayArea_);
             }
@@ -1947,114 +2116,115 @@ public final class Api {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasNetworkId()) {
-          
+
           return false;
         }
         if (!hasApiKey()) {
-          
+
           return false;
         }
         if (!hasDeviceId()) {
-          
+
           return false;
         }
         if (!hasDisplayTime()) {
-          
+
           return false;
         }
         if (!hasNumberOfScreens()) {
-          
+
           return false;
         }
         for (int i = 0; i < getDeviceAttributeCount(); i++) {
           if (!getDeviceAttribute(i).isInitialized()) {
-            
+
             return false;
           }
         }
         for (int i = 0; i < getDisplayAreaCount(); i++) {
           if (!getDisplayArea(i).isInitialized()) {
-            
+
             return false;
           }
         }
         return true;
       }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+            .newBuilder(this.getUnknownFields());
         while (true) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          case 0:
+            this.setUnknownFields(unknownFields.build());
+            onChanged();
+            return this;
+          default: {
+            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
               this.setUnknownFields(unknownFields.build());
               onChanged();
               return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
             }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              networkId_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              apiKey_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              deviceId_ = input.readBytes();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              displayTime_ = input.readInt64();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              numberOfScreens_ = input.readInt32();
-              break;
-            }
-            case 50: {
-              com.vistarmedia.api.message.Api.DeviceAttribute.Builder subBuilder = com.vistarmedia.api.message.Api.DeviceAttribute.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addDeviceAttribute(subBuilder.buildPartial());
-              break;
-            }
-            case 58: {
-              com.vistarmedia.api.message.Api.DisplayArea.Builder subBuilder = com.vistarmedia.api.message.Api.DisplayArea.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addDisplayArea(subBuilder.buildPartial());
-              break;
-            }
+            break;
+          }
+          case 10: {
+            bitField0_ |= 0x00000001;
+            networkId_ = input.readBytes();
+            break;
+          }
+          case 18: {
+            bitField0_ |= 0x00000002;
+            apiKey_ = input.readBytes();
+            break;
+          }
+          case 26: {
+            bitField0_ |= 0x00000004;
+            deviceId_ = input.readBytes();
+            break;
+          }
+          case 32: {
+            bitField0_ |= 0x00000008;
+            displayTime_ = input.readInt64();
+            break;
+          }
+          case 40: {
+            bitField0_ |= 0x00000010;
+            numberOfScreens_ = input.readInt32();
+            break;
+          }
+          case 50: {
+            com.vistarmedia.api.message.Api.DeviceAttribute.Builder subBuilder = com.vistarmedia.api.message.Api.DeviceAttribute
+                .newBuilder();
+            input.readMessage(subBuilder, extensionRegistry);
+            addDeviceAttribute(subBuilder.buildPartial());
+            break;
+          }
+          case 58: {
+            com.vistarmedia.api.message.Api.DisplayArea.Builder subBuilder = com.vistarmedia.api.message.Api.DisplayArea
+                .newBuilder();
+            input.readMessage(subBuilder, extensionRegistry);
+            addDisplayArea(subBuilder.buildPartial());
+            break;
+          }
           }
         }
       }
-      
-      private int bitField0_;
-      
+
+      private int              bitField0_;
+
       // required string network_id = 1;
       private java.lang.Object networkId_ = "";
+
       public boolean hasNetworkId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+
       public String getNetworkId() {
         java.lang.Object ref = networkId_;
         if (!(ref instanceof String)) {
@@ -2065,32 +2235,37 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setNetworkId(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         networkId_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearNetworkId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         networkId_ = getDefaultInstance().getNetworkId();
         onChanged();
         return this;
       }
+
       void setNetworkId(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000001;
         networkId_ = value;
         onChanged();
       }
-      
+
       // required string api_key = 2;
       private java.lang.Object apiKey_ = "";
+
       public boolean hasApiKey() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+
       public String getApiKey() {
         java.lang.Object ref = apiKey_;
         if (!(ref instanceof String)) {
@@ -2101,32 +2276,37 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setApiKey(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
         apiKey_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearApiKey() {
         bitField0_ = (bitField0_ & ~0x00000002);
         apiKey_ = getDefaultInstance().getApiKey();
         onChanged();
         return this;
       }
+
       void setApiKey(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000002;
         apiKey_ = value;
         onChanged();
       }
-      
+
       // required string device_id = 3;
       private java.lang.Object deviceId_ = "";
+
       public boolean hasDeviceId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+
       public String getDeviceId() {
         java.lang.Object ref = deviceId_;
         if (!(ref instanceof String)) {
@@ -2137,82 +2317,95 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setDeviceId(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         deviceId_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearDeviceId() {
         bitField0_ = (bitField0_ & ~0x00000004);
         deviceId_ = getDefaultInstance().getDeviceId();
         onChanged();
         return this;
       }
+
       void setDeviceId(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000004;
         deviceId_ = value;
         onChanged();
       }
-      
+
       // required int64 display_time = 4;
-      private long displayTime_ ;
+      private long displayTime_;
+
       public boolean hasDisplayTime() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+
       public long getDisplayTime() {
         return displayTime_;
       }
+
       public Builder setDisplayTime(long value) {
         bitField0_ |= 0x00000008;
         displayTime_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearDisplayTime() {
         bitField0_ = (bitField0_ & ~0x00000008);
         displayTime_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // required int32 number_of_screens = 5 [default = 1];
       private int numberOfScreens_ = 1;
+
       public boolean hasNumberOfScreens() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
+
       public int getNumberOfScreens() {
         return numberOfScreens_;
       }
+
       public Builder setNumberOfScreens(int value) {
         bitField0_ |= 0x00000010;
         numberOfScreens_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearNumberOfScreens() {
         bitField0_ = (bitField0_ & ~0x00000010);
         numberOfScreens_ = 1;
         onChanged();
         return this;
       }
-      
-      // repeated .com.vistarmedia.api.message.DeviceAttribute device_attribute = 6;
-      private java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute> deviceAttribute_ =
-        java.util.Collections.emptyList();
+
+      // repeated .com.vistarmedia.api.message.DeviceAttribute device_attribute
+      // = 6;
+      private java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute> deviceAttribute_ = java.util.Collections
+                                                                                                   .emptyList();
+
       private void ensureDeviceAttributeIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          deviceAttribute_ = new java.util.ArrayList<com.vistarmedia.api.message.Api.DeviceAttribute>(deviceAttribute_);
+          deviceAttribute_ = new java.util.ArrayList<com.vistarmedia.api.message.Api.DeviceAttribute>(
+              deviceAttribute_);
           bitField0_ |= 0x00000020;
-         }
+        }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.vistarmedia.api.message.Api.DeviceAttribute, com.vistarmedia.api.message.Api.DeviceAttribute.Builder, com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> deviceAttributeBuilder_;
-      
+
+      private com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.DeviceAttribute, com.vistarmedia.api.message.Api.DeviceAttribute.Builder, com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> deviceAttributeBuilder_;
+
       public java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute> getDeviceAttributeList() {
         if (deviceAttributeBuilder_ == null) {
           return java.util.Collections.unmodifiableList(deviceAttribute_);
@@ -2220,6 +2413,7 @@ public final class Api {
           return deviceAttributeBuilder_.getMessageList();
         }
       }
+
       public int getDeviceAttributeCount() {
         if (deviceAttributeBuilder_ == null) {
           return deviceAttribute_.size();
@@ -2227,15 +2421,18 @@ public final class Api {
           return deviceAttributeBuilder_.getCount();
         }
       }
-      public com.vistarmedia.api.message.Api.DeviceAttribute getDeviceAttribute(int index) {
+
+      public com.vistarmedia.api.message.Api.DeviceAttribute getDeviceAttribute(
+          int index) {
         if (deviceAttributeBuilder_ == null) {
           return deviceAttribute_.get(index);
         } else {
           return deviceAttributeBuilder_.getMessage(index);
         }
       }
-      public Builder setDeviceAttribute(
-          int index, com.vistarmedia.api.message.Api.DeviceAttribute value) {
+
+      public Builder setDeviceAttribute(int index,
+          com.vistarmedia.api.message.Api.DeviceAttribute value) {
         if (deviceAttributeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2248,8 +2445,10 @@ public final class Api {
         }
         return this;
       }
+
       public Builder setDeviceAttribute(
-          int index, com.vistarmedia.api.message.Api.DeviceAttribute.Builder builderForValue) {
+          int index,
+          com.vistarmedia.api.message.Api.DeviceAttribute.Builder builderForValue) {
         if (deviceAttributeBuilder_ == null) {
           ensureDeviceAttributeIsMutable();
           deviceAttribute_.set(index, builderForValue.build());
@@ -2259,7 +2458,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addDeviceAttribute(com.vistarmedia.api.message.Api.DeviceAttribute value) {
+
+      public Builder addDeviceAttribute(
+          com.vistarmedia.api.message.Api.DeviceAttribute value) {
         if (deviceAttributeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2272,8 +2473,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addDeviceAttribute(
-          int index, com.vistarmedia.api.message.Api.DeviceAttribute value) {
+
+      public Builder addDeviceAttribute(int index,
+          com.vistarmedia.api.message.Api.DeviceAttribute value) {
         if (deviceAttributeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2286,6 +2488,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder addDeviceAttribute(
           com.vistarmedia.api.message.Api.DeviceAttribute.Builder builderForValue) {
         if (deviceAttributeBuilder_ == null) {
@@ -2297,8 +2500,10 @@ public final class Api {
         }
         return this;
       }
+
       public Builder addDeviceAttribute(
-          int index, com.vistarmedia.api.message.Api.DeviceAttribute.Builder builderForValue) {
+          int index,
+          com.vistarmedia.api.message.Api.DeviceAttribute.Builder builderForValue) {
         if (deviceAttributeBuilder_ == null) {
           ensureDeviceAttributeIsMutable();
           deviceAttribute_.add(index, builderForValue.build());
@@ -2308,6 +2513,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder addAllDeviceAttribute(
           java.lang.Iterable<? extends com.vistarmedia.api.message.Api.DeviceAttribute> values) {
         if (deviceAttributeBuilder_ == null) {
@@ -2319,6 +2525,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder clearDeviceAttribute() {
         if (deviceAttributeBuilder_ == null) {
           deviceAttribute_ = java.util.Collections.emptyList();
@@ -2329,6 +2536,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder removeDeviceAttribute(int index) {
         if (deviceAttributeBuilder_ == null) {
           ensureDeviceAttributeIsMutable();
@@ -2339,66 +2547,71 @@ public final class Api {
         }
         return this;
       }
+
       public com.vistarmedia.api.message.Api.DeviceAttribute.Builder getDeviceAttributeBuilder(
           int index) {
         return getDeviceAttributeFieldBuilder().getBuilder(index);
       }
+
       public com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder getDeviceAttributeOrBuilder(
           int index) {
         if (deviceAttributeBuilder_ == null) {
-          return deviceAttribute_.get(index);  } else {
+          return deviceAttribute_.get(index);
+        } else {
           return deviceAttributeBuilder_.getMessageOrBuilder(index);
         }
       }
-      public java.util.List<? extends com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> 
-           getDeviceAttributeOrBuilderList() {
+
+      public java.util.List<? extends com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> getDeviceAttributeOrBuilderList() {
         if (deviceAttributeBuilder_ != null) {
           return deviceAttributeBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(deviceAttribute_);
         }
       }
+
       public com.vistarmedia.api.message.Api.DeviceAttribute.Builder addDeviceAttributeBuilder() {
         return getDeviceAttributeFieldBuilder().addBuilder(
-            com.vistarmedia.api.message.Api.DeviceAttribute.getDefaultInstance());
+            com.vistarmedia.api.message.Api.DeviceAttribute
+                .getDefaultInstance());
       }
+
       public com.vistarmedia.api.message.Api.DeviceAttribute.Builder addDeviceAttributeBuilder(
           int index) {
         return getDeviceAttributeFieldBuilder().addBuilder(
-            index, com.vistarmedia.api.message.Api.DeviceAttribute.getDefaultInstance());
+            index,
+            com.vistarmedia.api.message.Api.DeviceAttribute
+                .getDefaultInstance());
       }
-      public java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute.Builder> 
-           getDeviceAttributeBuilderList() {
+
+      public java.util.List<com.vistarmedia.api.message.Api.DeviceAttribute.Builder> getDeviceAttributeBuilderList() {
         return getDeviceAttributeFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.vistarmedia.api.message.Api.DeviceAttribute, com.vistarmedia.api.message.Api.DeviceAttribute.Builder, com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> 
-          getDeviceAttributeFieldBuilder() {
+
+      private com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.DeviceAttribute, com.vistarmedia.api.message.Api.DeviceAttribute.Builder, com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder> getDeviceAttributeFieldBuilder() {
         if (deviceAttributeBuilder_ == null) {
-          deviceAttributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.vistarmedia.api.message.Api.DeviceAttribute, com.vistarmedia.api.message.Api.DeviceAttribute.Builder, com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder>(
-                  deviceAttribute_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
-                  getParentForChildren(),
-                  isClean());
+          deviceAttributeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.DeviceAttribute, com.vistarmedia.api.message.Api.DeviceAttribute.Builder, com.vistarmedia.api.message.Api.DeviceAttributeOrBuilder>(
+              deviceAttribute_, ((bitField0_ & 0x00000020) == 0x00000020),
+              getParentForChildren(), isClean());
           deviceAttribute_ = null;
         }
         return deviceAttributeBuilder_;
       }
-      
+
       // repeated .com.vistarmedia.api.message.DisplayArea display_area = 7;
-      private java.util.List<com.vistarmedia.api.message.Api.DisplayArea> displayArea_ =
-        java.util.Collections.emptyList();
+      private java.util.List<com.vistarmedia.api.message.Api.DisplayArea> displayArea_ = java.util.Collections
+                                                                                           .emptyList();
+
       private void ensureDisplayAreaIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          displayArea_ = new java.util.ArrayList<com.vistarmedia.api.message.Api.DisplayArea>(displayArea_);
+          displayArea_ = new java.util.ArrayList<com.vistarmedia.api.message.Api.DisplayArea>(
+              displayArea_);
           bitField0_ |= 0x00000040;
-         }
+        }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.vistarmedia.api.message.Api.DisplayArea, com.vistarmedia.api.message.Api.DisplayArea.Builder, com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> displayAreaBuilder_;
-      
+
+      private com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.DisplayArea, com.vistarmedia.api.message.Api.DisplayArea.Builder, com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> displayAreaBuilder_;
+
       public java.util.List<com.vistarmedia.api.message.Api.DisplayArea> getDisplayAreaList() {
         if (displayAreaBuilder_ == null) {
           return java.util.Collections.unmodifiableList(displayArea_);
@@ -2406,6 +2619,7 @@ public final class Api {
           return displayAreaBuilder_.getMessageList();
         }
       }
+
       public int getDisplayAreaCount() {
         if (displayAreaBuilder_ == null) {
           return displayArea_.size();
@@ -2413,15 +2627,18 @@ public final class Api {
           return displayAreaBuilder_.getCount();
         }
       }
-      public com.vistarmedia.api.message.Api.DisplayArea getDisplayArea(int index) {
+
+      public com.vistarmedia.api.message.Api.DisplayArea getDisplayArea(
+          int index) {
         if (displayAreaBuilder_ == null) {
           return displayArea_.get(index);
         } else {
           return displayAreaBuilder_.getMessage(index);
         }
       }
-      public Builder setDisplayArea(
-          int index, com.vistarmedia.api.message.Api.DisplayArea value) {
+
+      public Builder setDisplayArea(int index,
+          com.vistarmedia.api.message.Api.DisplayArea value) {
         if (displayAreaBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2434,8 +2651,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder setDisplayArea(
-          int index, com.vistarmedia.api.message.Api.DisplayArea.Builder builderForValue) {
+
+      public Builder setDisplayArea(int index,
+          com.vistarmedia.api.message.Api.DisplayArea.Builder builderForValue) {
         if (displayAreaBuilder_ == null) {
           ensureDisplayAreaIsMutable();
           displayArea_.set(index, builderForValue.build());
@@ -2445,7 +2663,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addDisplayArea(com.vistarmedia.api.message.Api.DisplayArea value) {
+
+      public Builder addDisplayArea(
+          com.vistarmedia.api.message.Api.DisplayArea value) {
         if (displayAreaBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2458,8 +2678,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addDisplayArea(
-          int index, com.vistarmedia.api.message.Api.DisplayArea value) {
+
+      public Builder addDisplayArea(int index,
+          com.vistarmedia.api.message.Api.DisplayArea value) {
         if (displayAreaBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2472,6 +2693,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder addDisplayArea(
           com.vistarmedia.api.message.Api.DisplayArea.Builder builderForValue) {
         if (displayAreaBuilder_ == null) {
@@ -2483,8 +2705,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addDisplayArea(
-          int index, com.vistarmedia.api.message.Api.DisplayArea.Builder builderForValue) {
+
+      public Builder addDisplayArea(int index,
+          com.vistarmedia.api.message.Api.DisplayArea.Builder builderForValue) {
         if (displayAreaBuilder_ == null) {
           ensureDisplayAreaIsMutable();
           displayArea_.add(index, builderForValue.build());
@@ -2494,6 +2717,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder addAllDisplayArea(
           java.lang.Iterable<? extends com.vistarmedia.api.message.Api.DisplayArea> values) {
         if (displayAreaBuilder_ == null) {
@@ -2505,6 +2729,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder clearDisplayArea() {
         if (displayAreaBuilder_ == null) {
           displayArea_ = java.util.Collections.emptyList();
@@ -2515,6 +2740,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder removeDisplayArea(int index) {
         if (displayAreaBuilder_ == null) {
           ensureDisplayAreaIsMutable();
@@ -2525,145 +2751,157 @@ public final class Api {
         }
         return this;
       }
+
       public com.vistarmedia.api.message.Api.DisplayArea.Builder getDisplayAreaBuilder(
           int index) {
         return getDisplayAreaFieldBuilder().getBuilder(index);
       }
+
       public com.vistarmedia.api.message.Api.DisplayAreaOrBuilder getDisplayAreaOrBuilder(
           int index) {
         if (displayAreaBuilder_ == null) {
-          return displayArea_.get(index);  } else {
+          return displayArea_.get(index);
+        } else {
           return displayAreaBuilder_.getMessageOrBuilder(index);
         }
       }
-      public java.util.List<? extends com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> 
-           getDisplayAreaOrBuilderList() {
+
+      public java.util.List<? extends com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> getDisplayAreaOrBuilderList() {
         if (displayAreaBuilder_ != null) {
           return displayAreaBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(displayArea_);
         }
       }
+
       public com.vistarmedia.api.message.Api.DisplayArea.Builder addDisplayAreaBuilder() {
         return getDisplayAreaFieldBuilder().addBuilder(
             com.vistarmedia.api.message.Api.DisplayArea.getDefaultInstance());
       }
+
       public com.vistarmedia.api.message.Api.DisplayArea.Builder addDisplayAreaBuilder(
           int index) {
-        return getDisplayAreaFieldBuilder().addBuilder(
-            index, com.vistarmedia.api.message.Api.DisplayArea.getDefaultInstance());
+        return getDisplayAreaFieldBuilder().addBuilder(index,
+            com.vistarmedia.api.message.Api.DisplayArea.getDefaultInstance());
       }
-      public java.util.List<com.vistarmedia.api.message.Api.DisplayArea.Builder> 
-           getDisplayAreaBuilderList() {
+
+      public java.util.List<com.vistarmedia.api.message.Api.DisplayArea.Builder> getDisplayAreaBuilderList() {
         return getDisplayAreaFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.vistarmedia.api.message.Api.DisplayArea, com.vistarmedia.api.message.Api.DisplayArea.Builder, com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> 
-          getDisplayAreaFieldBuilder() {
+
+      private com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.DisplayArea, com.vistarmedia.api.message.Api.DisplayArea.Builder, com.vistarmedia.api.message.Api.DisplayAreaOrBuilder> getDisplayAreaFieldBuilder() {
         if (displayAreaBuilder_ == null) {
-          displayAreaBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.vistarmedia.api.message.Api.DisplayArea, com.vistarmedia.api.message.Api.DisplayArea.Builder, com.vistarmedia.api.message.Api.DisplayAreaOrBuilder>(
-                  displayArea_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
-                  getParentForChildren(),
-                  isClean());
+          displayAreaBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.DisplayArea, com.vistarmedia.api.message.Api.DisplayArea.Builder, com.vistarmedia.api.message.Api.DisplayAreaOrBuilder>(
+              displayArea_, ((bitField0_ & 0x00000040) == 0x00000040),
+              getParentForChildren(), isClean());
           displayArea_ = null;
         }
         return displayAreaBuilder_;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.vistarmedia.api.message.AdRequest)
     }
-    
+
     static {
       defaultInstance = new AdRequest(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.vistarmedia.api.message.AdRequest)
   }
-  
-  public interface AdvertisementOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
+
+  public interface AdvertisementOrBuilder extends
+      com.google.protobuf.MessageOrBuilder {
+
     // required string lease_id = 1;
     boolean hasLeaseId();
+
     String getLeaseId();
-    
+
     // required int64 lease_expiry = 2;
     boolean hasLeaseExpiry();
+
     long getLeaseExpiry();
-    
+
     // required string display_area_id = 3;
     boolean hasDisplayAreaId();
+
     String getDisplayAreaId();
-    
+
     // required string asset_id = 4;
     boolean hasAssetId();
+
     String getAssetId();
-    
+
     // required string asset_url = 5;
     boolean hasAssetUrl();
+
     String getAssetUrl();
-    
+
     // required int32 width = 6;
     boolean hasWidth();
+
     int getWidth();
-    
+
     // required int32 height = 7;
     boolean hasHeight();
+
     int getHeight();
-    
+
     // required string mimeType = 8;
     boolean hasMimeType();
+
     String getMimeType();
-    
+
     // optional int32 length_in_seconds = 9;
     boolean hasLengthInSeconds();
+
     int getLengthInSeconds();
   }
+
   public static final class Advertisement extends
-      com.google.protobuf.GeneratedMessage
-      implements AdvertisementOrBuilder {
+      com.google.protobuf.GeneratedMessage implements AdvertisementOrBuilder {
     // Use Advertisement.newBuilder() to construct.
     private Advertisement(Builder builder) {
       super(builder);
     }
-    private Advertisement(boolean noInit) {}
-    
+
+    private Advertisement(boolean noInit) {
+    }
+
     private static final Advertisement defaultInstance;
+
     public static Advertisement getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Advertisement getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_Advertisement_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_Advertisement_fieldAccessorTable;
     }
-    
-    private int bitField0_;
+
+    private int              bitField0_;
     // required string lease_id = 1;
-    public static final int LEASE_ID_FIELD_NUMBER = 1;
+    public static final int  LEASE_ID_FIELD_NUMBER = 1;
     private java.lang.Object leaseId_;
+
     public boolean hasLeaseId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+
     public String getLeaseId() {
       java.lang.Object ref = leaseId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           leaseId_ = s;
@@ -2671,41 +2909,45 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getLeaseIdBytes() {
       java.lang.Object ref = leaseId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         leaseId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required int64 lease_expiry = 2;
     public static final int LEASE_EXPIRY_FIELD_NUMBER = 2;
-    private long leaseExpiry_;
+    private long            leaseExpiry_;
+
     public boolean hasLeaseExpiry() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+
     public long getLeaseExpiry() {
       return leaseExpiry_;
     }
-    
+
     // required string display_area_id = 3;
-    public static final int DISPLAY_AREA_ID_FIELD_NUMBER = 3;
+    public static final int  DISPLAY_AREA_ID_FIELD_NUMBER = 3;
     private java.lang.Object displayAreaId_;
+
     public boolean hasDisplayAreaId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+
     public String getDisplayAreaId() {
       java.lang.Object ref = displayAreaId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           displayAreaId_ = s;
@@ -2713,31 +2955,33 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getDisplayAreaIdBytes() {
       java.lang.Object ref = displayAreaId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         displayAreaId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required string asset_id = 4;
-    public static final int ASSET_ID_FIELD_NUMBER = 4;
+    public static final int  ASSET_ID_FIELD_NUMBER = 4;
     private java.lang.Object assetId_;
+
     public boolean hasAssetId() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
+
     public String getAssetId() {
       java.lang.Object ref = assetId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           assetId_ = s;
@@ -2745,31 +2989,33 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getAssetIdBytes() {
       java.lang.Object ref = assetId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         assetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required string asset_url = 5;
-    public static final int ASSET_URL_FIELD_NUMBER = 5;
+    public static final int  ASSET_URL_FIELD_NUMBER = 5;
     private java.lang.Object assetUrl_;
+
     public boolean hasAssetUrl() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
+
     public String getAssetUrl() {
       java.lang.Object ref = assetUrl_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           assetUrl_ = s;
@@ -2777,51 +3023,57 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getAssetUrlBytes() {
       java.lang.Object ref = assetUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         assetUrl_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required int32 width = 6;
     public static final int WIDTH_FIELD_NUMBER = 6;
-    private int width_;
+    private int             width_;
+
     public boolean hasWidth() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
+
     public int getWidth() {
       return width_;
     }
-    
+
     // required int32 height = 7;
     public static final int HEIGHT_FIELD_NUMBER = 7;
-    private int height_;
+    private int             height_;
+
     public boolean hasHeight() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
+
     public int getHeight() {
       return height_;
     }
-    
+
     // required string mimeType = 8;
-    public static final int MIMETYPE_FIELD_NUMBER = 8;
+    public static final int  MIMETYPE_FIELD_NUMBER = 8;
     private java.lang.Object mimeType_;
+
     public boolean hasMimeType() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
+
     public String getMimeType() {
       java.lang.Object ref = mimeType_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           mimeType_ = s;
@@ -2829,28 +3081,31 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         mimeType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // optional int32 length_in_seconds = 9;
     public static final int LENGTH_IN_SECONDS_FIELD_NUMBER = 9;
-    private int lengthInSeconds_;
+    private int             lengthInSeconds_;
+
     public boolean hasLengthInSeconds() {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
+
     public int getLengthInSeconds() {
       return lengthInSeconds_;
     }
-    
+
     private void initFields() {
       leaseId_ = "";
       leaseExpiry_ = 0L;
@@ -2862,11 +3117,14 @@ public final class Api {
       mimeType_ = "";
       lengthInSeconds_ = 0;
     }
+
     private byte memoizedIsInitialized = -1;
+
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized != -1)
+        return isInitialized == 1;
+
       if (!hasLeaseId()) {
         memoizedIsInitialized = 0;
         return false;
@@ -2902,9 +3160,9 @@ public final class Api {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getLeaseIdBytes());
@@ -2935,97 +3193,102 @@ public final class Api {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
+
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
+      if (size != -1)
+        return size;
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getLeaseIdBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1,
+            getLeaseIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, leaseExpiry_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2,
+            leaseExpiry_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getDisplayAreaIdBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(3,
+            getDisplayAreaIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getAssetIdBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(4,
+            getAssetIdBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getAssetUrlBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(5,
+            getAssetUrlBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, width_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(6,
+            width_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, height_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(7,
+            height_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, getMimeTypeBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(8,
+            getMimeTypeBytes());
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, lengthInSeconds_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(9,
+            lengthInSeconds_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
+
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.Advertisement parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.Advertisement parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.Advertisement parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.Advertisement parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
         return builder.buildParsed();
@@ -3033,6 +3296,7 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.Advertisement parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3044,62 +3308,74 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.Advertisement parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.vistarmedia.api.message.Api.Advertisement prototype) {
+
+    public static Builder newBuilder() {
+      return Builder.create();
+    }
+
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.vistarmedia.api.message.Api.Advertisement prototype) {
       return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+
+    public Builder toBuilder() {
+      return newBuilder(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.vistarmedia.api.message.Api.AdvertisementOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.vistarmedia.api.message.Api.AdvertisementOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_Advertisement_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_Advertisement_fieldAccessorTable;
       }
-      
-      // Construct using com.vistarmedia.api.message.Api.Advertisement.newBuilder()
+
+      // Construct using
+      // com.vistarmedia.api.message.Api.Advertisement.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
+
       private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
+
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         leaseId_ = "";
@@ -3122,20 +3398,20 @@ public final class Api {
         bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.vistarmedia.api.message.Api.Advertisement.getDescriptor();
       }
-      
+
       public com.vistarmedia.api.message.Api.Advertisement getDefaultInstanceForType() {
-        return com.vistarmedia.api.message.Api.Advertisement.getDefaultInstance();
+        return com.vistarmedia.api.message.Api.Advertisement
+            .getDefaultInstance();
       }
-      
+
       public com.vistarmedia.api.message.Api.Advertisement build() {
         com.vistarmedia.api.message.Api.Advertisement result = buildPartial();
         if (!result.isInitialized()) {
@@ -3143,19 +3419,20 @@ public final class Api {
         }
         return result;
       }
-      
+
       private com.vistarmedia.api.message.Api.Advertisement buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         com.vistarmedia.api.message.Api.Advertisement result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
+          throw newUninitializedMessageException(result)
+              .asInvalidProtocolBufferException();
         }
         return result;
       }
-      
+
       public com.vistarmedia.api.message.Api.Advertisement buildPartial() {
-        com.vistarmedia.api.message.Api.Advertisement result = new com.vistarmedia.api.message.Api.Advertisement(this);
+        com.vistarmedia.api.message.Api.Advertisement result = new com.vistarmedia.api.message.Api.Advertisement(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3198,18 +3475,21 @@ public final class Api {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vistarmedia.api.message.Api.Advertisement) {
-          return mergeFrom((com.vistarmedia.api.message.Api.Advertisement)other);
+          return mergeFrom((com.vistarmedia.api.message.Api.Advertisement) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
-      public Builder mergeFrom(com.vistarmedia.api.message.Api.Advertisement other) {
-        if (other == com.vistarmedia.api.message.Api.Advertisement.getDefaultInstance()) return this;
+
+      public Builder mergeFrom(
+          com.vistarmedia.api.message.Api.Advertisement other) {
+        if (other == com.vistarmedia.api.message.Api.Advertisement
+            .getDefaultInstance())
+          return this;
         if (other.hasLeaseId()) {
           setLeaseId(other.getLeaseId());
         }
@@ -3240,122 +3520,121 @@ public final class Api {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasLeaseId()) {
-          
+
           return false;
         }
         if (!hasLeaseExpiry()) {
-          
+
           return false;
         }
         if (!hasDisplayAreaId()) {
-          
+
           return false;
         }
         if (!hasAssetId()) {
-          
+
           return false;
         }
         if (!hasAssetUrl()) {
-          
+
           return false;
         }
         if (!hasWidth()) {
-          
+
           return false;
         }
         if (!hasHeight()) {
-          
+
           return false;
         }
         if (!hasMimeType()) {
-          
+
           return false;
         }
         return true;
       }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+            .newBuilder(this.getUnknownFields());
         while (true) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          case 0:
+            this.setUnknownFields(unknownFields.build());
+            onChanged();
+            return this;
+          default: {
+            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
               this.setUnknownFields(unknownFields.build());
               onChanged();
               return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
             }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              leaseId_ = input.readBytes();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              leaseExpiry_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              displayAreaId_ = input.readBytes();
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              assetId_ = input.readBytes();
-              break;
-            }
-            case 42: {
-              bitField0_ |= 0x00000010;
-              assetUrl_ = input.readBytes();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              width_ = input.readInt32();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              height_ = input.readInt32();
-              break;
-            }
-            case 66: {
-              bitField0_ |= 0x00000080;
-              mimeType_ = input.readBytes();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000100;
-              lengthInSeconds_ = input.readInt32();
-              break;
-            }
+            break;
+          }
+          case 10: {
+            bitField0_ |= 0x00000001;
+            leaseId_ = input.readBytes();
+            break;
+          }
+          case 16: {
+            bitField0_ |= 0x00000002;
+            leaseExpiry_ = input.readInt64();
+            break;
+          }
+          case 26: {
+            bitField0_ |= 0x00000004;
+            displayAreaId_ = input.readBytes();
+            break;
+          }
+          case 34: {
+            bitField0_ |= 0x00000008;
+            assetId_ = input.readBytes();
+            break;
+          }
+          case 42: {
+            bitField0_ |= 0x00000010;
+            assetUrl_ = input.readBytes();
+            break;
+          }
+          case 48: {
+            bitField0_ |= 0x00000020;
+            width_ = input.readInt32();
+            break;
+          }
+          case 56: {
+            bitField0_ |= 0x00000040;
+            height_ = input.readInt32();
+            break;
+          }
+          case 66: {
+            bitField0_ |= 0x00000080;
+            mimeType_ = input.readBytes();
+            break;
+          }
+          case 72: {
+            bitField0_ |= 0x00000100;
+            lengthInSeconds_ = input.readInt32();
+            break;
+          }
           }
         }
       }
-      
-      private int bitField0_;
-      
+
+      private int              bitField0_;
+
       // required string lease_id = 1;
       private java.lang.Object leaseId_ = "";
+
       public boolean hasLeaseId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+
       public String getLeaseId() {
         java.lang.Object ref = leaseId_;
         if (!(ref instanceof String)) {
@@ -3366,53 +3645,62 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setLeaseId(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         leaseId_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearLeaseId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         leaseId_ = getDefaultInstance().getLeaseId();
         onChanged();
         return this;
       }
+
       void setLeaseId(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000001;
         leaseId_ = value;
         onChanged();
       }
-      
+
       // required int64 lease_expiry = 2;
-      private long leaseExpiry_ ;
+      private long leaseExpiry_;
+
       public boolean hasLeaseExpiry() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+
       public long getLeaseExpiry() {
         return leaseExpiry_;
       }
+
       public Builder setLeaseExpiry(long value) {
         bitField0_ |= 0x00000002;
         leaseExpiry_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearLeaseExpiry() {
         bitField0_ = (bitField0_ & ~0x00000002);
         leaseExpiry_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // required string display_area_id = 3;
       private java.lang.Object displayAreaId_ = "";
+
       public boolean hasDisplayAreaId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+
       public String getDisplayAreaId() {
         java.lang.Object ref = displayAreaId_;
         if (!(ref instanceof String)) {
@@ -3423,32 +3711,37 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setDisplayAreaId(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
         displayAreaId_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearDisplayAreaId() {
         bitField0_ = (bitField0_ & ~0x00000004);
         displayAreaId_ = getDefaultInstance().getDisplayAreaId();
         onChanged();
         return this;
       }
+
       void setDisplayAreaId(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000004;
         displayAreaId_ = value;
         onChanged();
       }
-      
+
       // required string asset_id = 4;
       private java.lang.Object assetId_ = "";
+
       public boolean hasAssetId() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+
       public String getAssetId() {
         java.lang.Object ref = assetId_;
         if (!(ref instanceof String)) {
@@ -3459,32 +3752,37 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setAssetId(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
         assetId_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearAssetId() {
         bitField0_ = (bitField0_ & ~0x00000008);
         assetId_ = getDefaultInstance().getAssetId();
         onChanged();
         return this;
       }
+
       void setAssetId(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000008;
         assetId_ = value;
         onChanged();
       }
-      
+
       // required string asset_url = 5;
       private java.lang.Object assetUrl_ = "";
+
       public boolean hasAssetUrl() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
+
       public String getAssetUrl() {
         java.lang.Object ref = assetUrl_;
         if (!(ref instanceof String)) {
@@ -3495,74 +3793,87 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setAssetUrl(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
         assetUrl_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearAssetUrl() {
         bitField0_ = (bitField0_ & ~0x00000010);
         assetUrl_ = getDefaultInstance().getAssetUrl();
         onChanged();
         return this;
       }
+
       void setAssetUrl(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000010;
         assetUrl_ = value;
         onChanged();
       }
-      
+
       // required int32 width = 6;
-      private int width_ ;
+      private int width_;
+
       public boolean hasWidth() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
+
       public int getWidth() {
         return width_;
       }
+
       public Builder setWidth(int value) {
         bitField0_ |= 0x00000020;
         width_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearWidth() {
         bitField0_ = (bitField0_ & ~0x00000020);
         width_ = 0;
         onChanged();
         return this;
       }
-      
+
       // required int32 height = 7;
-      private int height_ ;
+      private int height_;
+
       public boolean hasHeight() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
+
       public int getHeight() {
         return height_;
       }
+
       public Builder setHeight(int value) {
         bitField0_ |= 0x00000040;
         height_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearHeight() {
         bitField0_ = (bitField0_ & ~0x00000040);
         height_ = 0;
         onChanged();
         return this;
       }
-      
+
       // required string mimeType = 8;
       private java.lang.Object mimeType_ = "";
+
       public boolean hasMimeType() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
+
       public String getMimeType() {
         java.lang.Object ref = mimeType_;
         if (!(ref instanceof String)) {
@@ -3573,129 +3884,147 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setMimeType(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
         mimeType_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearMimeType() {
         bitField0_ = (bitField0_ & ~0x00000080);
         mimeType_ = getDefaultInstance().getMimeType();
         onChanged();
         return this;
       }
+
       void setMimeType(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000080;
         mimeType_ = value;
         onChanged();
       }
-      
+
       // optional int32 length_in_seconds = 9;
-      private int lengthInSeconds_ ;
+      private int lengthInSeconds_;
+
       public boolean hasLengthInSeconds() {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
+
       public int getLengthInSeconds() {
         return lengthInSeconds_;
       }
+
       public Builder setLengthInSeconds(int value) {
         bitField0_ |= 0x00000100;
         lengthInSeconds_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearLengthInSeconds() {
         bitField0_ = (bitField0_ & ~0x00000100);
         lengthInSeconds_ = 0;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.vistarmedia.api.message.Advertisement)
     }
-    
+
     static {
       defaultInstance = new Advertisement(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.vistarmedia.api.message.Advertisement)
   }
-  
-  public interface AdResponseOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
+
+  public interface AdResponseOrBuilder extends
+      com.google.protobuf.MessageOrBuilder {
+
     // repeated .com.vistarmedia.api.message.Advertisement advertisement = 1;
-    java.util.List<com.vistarmedia.api.message.Api.Advertisement> 
-        getAdvertisementList();
+    java.util.List<com.vistarmedia.api.message.Api.Advertisement> getAdvertisementList();
+
     com.vistarmedia.api.message.Api.Advertisement getAdvertisement(int index);
+
     int getAdvertisementCount();
-    java.util.List<? extends com.vistarmedia.api.message.Api.AdvertisementOrBuilder> 
-        getAdvertisementOrBuilderList();
+
+    java.util.List<? extends com.vistarmedia.api.message.Api.AdvertisementOrBuilder> getAdvertisementOrBuilderList();
+
     com.vistarmedia.api.message.Api.AdvertisementOrBuilder getAdvertisementOrBuilder(
         int index);
   }
+
   public static final class AdResponse extends
-      com.google.protobuf.GeneratedMessage
-      implements AdResponseOrBuilder {
+      com.google.protobuf.GeneratedMessage implements AdResponseOrBuilder {
     // Use AdResponse.newBuilder() to construct.
     private AdResponse(Builder builder) {
       super(builder);
     }
-    private AdResponse(boolean noInit) {}
-    
+
+    private AdResponse(boolean noInit) {
+    }
+
     private static final AdResponse defaultInstance;
+
     public static AdResponse getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public AdResponse getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdResponse_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdResponse_fieldAccessorTable;
     }
-    
+
     // repeated .com.vistarmedia.api.message.Advertisement advertisement = 1;
-    public static final int ADVERTISEMENT_FIELD_NUMBER = 1;
+    public static final int                                               ADVERTISEMENT_FIELD_NUMBER = 1;
     private java.util.List<com.vistarmedia.api.message.Api.Advertisement> advertisement_;
+
     public java.util.List<com.vistarmedia.api.message.Api.Advertisement> getAdvertisementList() {
       return advertisement_;
     }
-    public java.util.List<? extends com.vistarmedia.api.message.Api.AdvertisementOrBuilder> 
-        getAdvertisementOrBuilderList() {
+
+    public java.util.List<? extends com.vistarmedia.api.message.Api.AdvertisementOrBuilder> getAdvertisementOrBuilderList() {
       return advertisement_;
     }
+
     public int getAdvertisementCount() {
       return advertisement_.size();
     }
-    public com.vistarmedia.api.message.Api.Advertisement getAdvertisement(int index) {
+
+    public com.vistarmedia.api.message.Api.Advertisement getAdvertisement(
+        int index) {
       return advertisement_.get(index);
     }
+
     public com.vistarmedia.api.message.Api.AdvertisementOrBuilder getAdvertisementOrBuilder(
         int index) {
       return advertisement_.get(index);
     }
-    
+
     private void initFields() {
       advertisement_ = java.util.Collections.emptyList();
     }
+
     private byte memoizedIsInitialized = -1;
+
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized != -1)
+        return isInitialized == 1;
+
       for (int i = 0; i < getAdvertisementCount(); i++) {
         if (!getAdvertisement(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -3705,74 +4034,79 @@ public final class Api {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       getSerializedSize();
       for (int i = 0; i < advertisement_.size(); i++) {
         output.writeMessage(1, advertisement_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
+
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
+      if (size != -1)
+        return size;
+
       size = 0;
       for (int i = 0; i < advertisement_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, advertisement_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1,
+            advertisement_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
+
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.AdResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.AdResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.AdResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.AdResponse parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
         return builder.buildParsed();
@@ -3780,6 +4114,7 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.AdResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3791,63 +4126,74 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.AdResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.vistarmedia.api.message.Api.AdResponse prototype) {
+
+    public static Builder newBuilder() {
+      return Builder.create();
+    }
+
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.vistarmedia.api.message.Api.AdResponse prototype) {
       return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+
+    public Builder toBuilder() {
+      return newBuilder(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.vistarmedia.api.message.Api.AdResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.vistarmedia.api.message.Api.AdResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdResponse_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_AdResponse_fieldAccessorTable;
       }
-      
+
       // Construct using com.vistarmedia.api.message.Api.AdResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
+
       private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getAdvertisementFieldBuilder();
         }
       }
+
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         if (advertisementBuilder_ == null) {
@@ -3858,20 +4204,19 @@ public final class Api {
         }
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.vistarmedia.api.message.Api.AdResponse.getDescriptor();
       }
-      
+
       public com.vistarmedia.api.message.Api.AdResponse getDefaultInstanceForType() {
         return com.vistarmedia.api.message.Api.AdResponse.getDefaultInstance();
       }
-      
+
       public com.vistarmedia.api.message.Api.AdResponse build() {
         com.vistarmedia.api.message.Api.AdResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -3879,23 +4224,25 @@ public final class Api {
         }
         return result;
       }
-      
+
       private com.vistarmedia.api.message.Api.AdResponse buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         com.vistarmedia.api.message.Api.AdResponse result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
+          throw newUninitializedMessageException(result)
+              .asInvalidProtocolBufferException();
         }
         return result;
       }
-      
+
       public com.vistarmedia.api.message.Api.AdResponse buildPartial() {
-        com.vistarmedia.api.message.Api.AdResponse result = new com.vistarmedia.api.message.Api.AdResponse(this);
+        com.vistarmedia.api.message.Api.AdResponse result = new com.vistarmedia.api.message.Api.AdResponse(
+            this);
         // int from_bitField0_ = bitField0_;
         if (advertisementBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            advertisement_ = java.util.Collections.unmodifiableList(advertisement_);
+            advertisement_ = java.util.Collections
+                .unmodifiableList(advertisement_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.advertisement_ = advertisement_;
@@ -3905,18 +4252,20 @@ public final class Api {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vistarmedia.api.message.Api.AdResponse) {
-          return mergeFrom((com.vistarmedia.api.message.Api.AdResponse)other);
+          return mergeFrom((com.vistarmedia.api.message.Api.AdResponse) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.vistarmedia.api.message.Api.AdResponse other) {
-        if (other == com.vistarmedia.api.message.Api.AdResponse.getDefaultInstance()) return this;
+        if (other == com.vistarmedia.api.message.Api.AdResponse
+            .getDefaultInstance())
+          return this;
         if (advertisementBuilder_ == null) {
           if (!other.advertisement_.isEmpty()) {
             if (advertisement_.isEmpty()) {
@@ -3935,9 +4284,8 @@ public final class Api {
               advertisementBuilder_ = null;
               advertisement_ = other.advertisement_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              advertisementBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getAdvertisementFieldBuilder() : null;
+              advertisementBuilder_ = com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ? getAdvertisementFieldBuilder()
+                  : null;
             } else {
               advertisementBuilder_.addAllMessages(other.advertisement_);
             }
@@ -3946,65 +4294,64 @@ public final class Api {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         for (int i = 0; i < getAdvertisementCount(); i++) {
           if (!getAdvertisement(i).isInitialized()) {
-            
+
             return false;
           }
         }
         return true;
       }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+            .newBuilder(this.getUnknownFields());
         while (true) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          case 0:
+            this.setUnknownFields(unknownFields.build());
+            onChanged();
+            return this;
+          default: {
+            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
               this.setUnknownFields(unknownFields.build());
               onChanged();
               return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
             }
-            case 10: {
-              com.vistarmedia.api.message.Api.Advertisement.Builder subBuilder = com.vistarmedia.api.message.Api.Advertisement.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addAdvertisement(subBuilder.buildPartial());
-              break;
-            }
+            break;
+          }
+          case 10: {
+            com.vistarmedia.api.message.Api.Advertisement.Builder subBuilder = com.vistarmedia.api.message.Api.Advertisement
+                .newBuilder();
+            input.readMessage(subBuilder, extensionRegistry);
+            addAdvertisement(subBuilder.buildPartial());
+            break;
+          }
           }
         }
       }
-      
-      private int bitField0_;
-      
+
+      private int                                                           bitField0_;
+
       // repeated .com.vistarmedia.api.message.Advertisement advertisement = 1;
-      private java.util.List<com.vistarmedia.api.message.Api.Advertisement> advertisement_ =
-        java.util.Collections.emptyList();
+      private java.util.List<com.vistarmedia.api.message.Api.Advertisement> advertisement_ = java.util.Collections
+                                                                                               .emptyList();
+
       private void ensureAdvertisementIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          advertisement_ = new java.util.ArrayList<com.vistarmedia.api.message.Api.Advertisement>(advertisement_);
+          advertisement_ = new java.util.ArrayList<com.vistarmedia.api.message.Api.Advertisement>(
+              advertisement_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.vistarmedia.api.message.Api.Advertisement, com.vistarmedia.api.message.Api.Advertisement.Builder, com.vistarmedia.api.message.Api.AdvertisementOrBuilder> advertisementBuilder_;
-      
+
+      private com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.Advertisement, com.vistarmedia.api.message.Api.Advertisement.Builder, com.vistarmedia.api.message.Api.AdvertisementOrBuilder> advertisementBuilder_;
+
       public java.util.List<com.vistarmedia.api.message.Api.Advertisement> getAdvertisementList() {
         if (advertisementBuilder_ == null) {
           return java.util.Collections.unmodifiableList(advertisement_);
@@ -4012,6 +4359,7 @@ public final class Api {
           return advertisementBuilder_.getMessageList();
         }
       }
+
       public int getAdvertisementCount() {
         if (advertisementBuilder_ == null) {
           return advertisement_.size();
@@ -4019,15 +4367,18 @@ public final class Api {
           return advertisementBuilder_.getCount();
         }
       }
-      public com.vistarmedia.api.message.Api.Advertisement getAdvertisement(int index) {
+
+      public com.vistarmedia.api.message.Api.Advertisement getAdvertisement(
+          int index) {
         if (advertisementBuilder_ == null) {
           return advertisement_.get(index);
         } else {
           return advertisementBuilder_.getMessage(index);
         }
       }
-      public Builder setAdvertisement(
-          int index, com.vistarmedia.api.message.Api.Advertisement value) {
+
+      public Builder setAdvertisement(int index,
+          com.vistarmedia.api.message.Api.Advertisement value) {
         if (advertisementBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4040,8 +4391,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder setAdvertisement(
-          int index, com.vistarmedia.api.message.Api.Advertisement.Builder builderForValue) {
+
+      public Builder setAdvertisement(int index,
+          com.vistarmedia.api.message.Api.Advertisement.Builder builderForValue) {
         if (advertisementBuilder_ == null) {
           ensureAdvertisementIsMutable();
           advertisement_.set(index, builderForValue.build());
@@ -4051,7 +4403,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addAdvertisement(com.vistarmedia.api.message.Api.Advertisement value) {
+
+      public Builder addAdvertisement(
+          com.vistarmedia.api.message.Api.Advertisement value) {
         if (advertisementBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4064,8 +4418,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addAdvertisement(
-          int index, com.vistarmedia.api.message.Api.Advertisement value) {
+
+      public Builder addAdvertisement(int index,
+          com.vistarmedia.api.message.Api.Advertisement value) {
         if (advertisementBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4078,6 +4433,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder addAdvertisement(
           com.vistarmedia.api.message.Api.Advertisement.Builder builderForValue) {
         if (advertisementBuilder_ == null) {
@@ -4089,8 +4445,9 @@ public final class Api {
         }
         return this;
       }
-      public Builder addAdvertisement(
-          int index, com.vistarmedia.api.message.Api.Advertisement.Builder builderForValue) {
+
+      public Builder addAdvertisement(int index,
+          com.vistarmedia.api.message.Api.Advertisement.Builder builderForValue) {
         if (advertisementBuilder_ == null) {
           ensureAdvertisementIsMutable();
           advertisement_.add(index, builderForValue.build());
@@ -4100,6 +4457,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder addAllAdvertisement(
           java.lang.Iterable<? extends com.vistarmedia.api.message.Api.Advertisement> values) {
         if (advertisementBuilder_ == null) {
@@ -4111,6 +4469,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder clearAdvertisement() {
         if (advertisementBuilder_ == null) {
           advertisement_ = java.util.Collections.emptyList();
@@ -4121,6 +4480,7 @@ public final class Api {
         }
         return this;
       }
+
       public Builder removeAdvertisement(int index) {
         if (advertisementBuilder_ == null) {
           ensureAdvertisementIsMutable();
@@ -4131,141 +4491,157 @@ public final class Api {
         }
         return this;
       }
+
       public com.vistarmedia.api.message.Api.Advertisement.Builder getAdvertisementBuilder(
           int index) {
         return getAdvertisementFieldBuilder().getBuilder(index);
       }
+
       public com.vistarmedia.api.message.Api.AdvertisementOrBuilder getAdvertisementOrBuilder(
           int index) {
         if (advertisementBuilder_ == null) {
-          return advertisement_.get(index);  } else {
+          return advertisement_.get(index);
+        } else {
           return advertisementBuilder_.getMessageOrBuilder(index);
         }
       }
-      public java.util.List<? extends com.vistarmedia.api.message.Api.AdvertisementOrBuilder> 
-           getAdvertisementOrBuilderList() {
+
+      public java.util.List<? extends com.vistarmedia.api.message.Api.AdvertisementOrBuilder> getAdvertisementOrBuilderList() {
         if (advertisementBuilder_ != null) {
           return advertisementBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(advertisement_);
         }
       }
+
       public com.vistarmedia.api.message.Api.Advertisement.Builder addAdvertisementBuilder() {
         return getAdvertisementFieldBuilder().addBuilder(
             com.vistarmedia.api.message.Api.Advertisement.getDefaultInstance());
       }
+
       public com.vistarmedia.api.message.Api.Advertisement.Builder addAdvertisementBuilder(
           int index) {
-        return getAdvertisementFieldBuilder().addBuilder(
-            index, com.vistarmedia.api.message.Api.Advertisement.getDefaultInstance());
+        return getAdvertisementFieldBuilder().addBuilder(index,
+            com.vistarmedia.api.message.Api.Advertisement.getDefaultInstance());
       }
-      public java.util.List<com.vistarmedia.api.message.Api.Advertisement.Builder> 
-           getAdvertisementBuilderList() {
+
+      public java.util.List<com.vistarmedia.api.message.Api.Advertisement.Builder> getAdvertisementBuilderList() {
         return getAdvertisementFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.vistarmedia.api.message.Api.Advertisement, com.vistarmedia.api.message.Api.Advertisement.Builder, com.vistarmedia.api.message.Api.AdvertisementOrBuilder> 
-          getAdvertisementFieldBuilder() {
+
+      private com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.Advertisement, com.vistarmedia.api.message.Api.Advertisement.Builder, com.vistarmedia.api.message.Api.AdvertisementOrBuilder> getAdvertisementFieldBuilder() {
         if (advertisementBuilder_ == null) {
-          advertisementBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.vistarmedia.api.message.Api.Advertisement, com.vistarmedia.api.message.Api.Advertisement.Builder, com.vistarmedia.api.message.Api.AdvertisementOrBuilder>(
-                  advertisement_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+          advertisementBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<com.vistarmedia.api.message.Api.Advertisement, com.vistarmedia.api.message.Api.Advertisement.Builder, com.vistarmedia.api.message.Api.AdvertisementOrBuilder>(
+              advertisement_, ((bitField0_ & 0x00000001) == 0x00000001),
+              getParentForChildren(), isClean());
           advertisement_ = null;
         }
         return advertisementBuilder_;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.vistarmedia.api.message.AdResponse)
     }
-    
+
     static {
       defaultInstance = new AdResponse(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.vistarmedia.api.message.AdResponse)
   }
-  
-  public interface RequestDialogOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
+
+  public interface RequestDialogOrBuilder extends
+      com.google.protobuf.MessageOrBuilder {
+
     // required .com.vistarmedia.api.message.AdRequest request = 1;
     boolean hasRequest();
+
     com.vistarmedia.api.message.Api.AdRequest getRequest();
+
     com.vistarmedia.api.message.Api.AdRequestOrBuilder getRequestOrBuilder();
-    
+
     // required .com.vistarmedia.api.message.AdResponse response = 2;
     boolean hasResponse();
+
     com.vistarmedia.api.message.Api.AdResponse getResponse();
+
     com.vistarmedia.api.message.Api.AdResponseOrBuilder getResponseOrBuilder();
   }
+
   public static final class RequestDialog extends
-      com.google.protobuf.GeneratedMessage
-      implements RequestDialogOrBuilder {
+      com.google.protobuf.GeneratedMessage implements RequestDialogOrBuilder {
     // Use RequestDialog.newBuilder() to construct.
     private RequestDialog(Builder builder) {
       super(builder);
     }
-    private RequestDialog(boolean noInit) {}
-    
+
+    private RequestDialog(boolean noInit) {
+    }
+
     private static final RequestDialog defaultInstance;
+
     public static RequestDialog getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public RequestDialog getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_RequestDialog_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_RequestDialog_fieldAccessorTable;
     }
-    
-    private int bitField0_;
+
+    private int                                       bitField0_;
     // required .com.vistarmedia.api.message.AdRequest request = 1;
-    public static final int REQUEST_FIELD_NUMBER = 1;
+    public static final int                           REQUEST_FIELD_NUMBER = 1;
     private com.vistarmedia.api.message.Api.AdRequest request_;
+
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+
     public com.vistarmedia.api.message.Api.AdRequest getRequest() {
       return request_;
     }
+
     public com.vistarmedia.api.message.Api.AdRequestOrBuilder getRequestOrBuilder() {
       return request_;
     }
-    
+
     // required .com.vistarmedia.api.message.AdResponse response = 2;
-    public static final int RESPONSE_FIELD_NUMBER = 2;
+    public static final int                            RESPONSE_FIELD_NUMBER = 2;
     private com.vistarmedia.api.message.Api.AdResponse response_;
+
     public boolean hasResponse() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+
     public com.vistarmedia.api.message.Api.AdResponse getResponse() {
       return response_;
     }
+
     public com.vistarmedia.api.message.Api.AdResponseOrBuilder getResponseOrBuilder() {
       return response_;
     }
-    
+
     private void initFields() {
       request_ = com.vistarmedia.api.message.Api.AdRequest.getDefaultInstance();
-      response_ = com.vistarmedia.api.message.Api.AdResponse.getDefaultInstance();
+      response_ = com.vistarmedia.api.message.Api.AdResponse
+          .getDefaultInstance();
     }
+
     private byte memoizedIsInitialized = -1;
+
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized != -1)
+        return isInitialized == 1;
+
       if (!hasRequest()) {
         memoizedIsInitialized = 0;
         return false;
@@ -4285,9 +4661,9 @@ public final class Api {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, request_);
@@ -4297,69 +4673,74 @@ public final class Api {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
+
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
+      if (size != -1)
+        return size;
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, request_);
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1,
+            request_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, response_);
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2,
+            response_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
+
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.RequestDialog parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.RequestDialog parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
         return builder.buildParsed();
@@ -4367,6 +4748,7 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.RequestDialog parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4378,94 +4760,108 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.RequestDialog parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.vistarmedia.api.message.Api.RequestDialog prototype) {
+
+    public static Builder newBuilder() {
+      return Builder.create();
+    }
+
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.vistarmedia.api.message.Api.RequestDialog prototype) {
       return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+
+    public Builder toBuilder() {
+      return newBuilder(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.vistarmedia.api.message.Api.RequestDialogOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.vistarmedia.api.message.Api.RequestDialogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_RequestDialog_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_RequestDialog_fieldAccessorTable;
       }
-      
-      // Construct using com.vistarmedia.api.message.Api.RequestDialog.newBuilder()
+
+      // Construct using
+      // com.vistarmedia.api.message.Api.RequestDialog.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
+
       private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getRequestFieldBuilder();
           getResponseFieldBuilder();
         }
       }
+
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         if (requestBuilder_ == null) {
-          request_ = com.vistarmedia.api.message.Api.AdRequest.getDefaultInstance();
+          request_ = com.vistarmedia.api.message.Api.AdRequest
+              .getDefaultInstance();
         } else {
           requestBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         if (responseBuilder_ == null) {
-          response_ = com.vistarmedia.api.message.Api.AdResponse.getDefaultInstance();
+          response_ = com.vistarmedia.api.message.Api.AdResponse
+              .getDefaultInstance();
         } else {
           responseBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.vistarmedia.api.message.Api.RequestDialog.getDescriptor();
       }
-      
+
       public com.vistarmedia.api.message.Api.RequestDialog getDefaultInstanceForType() {
-        return com.vistarmedia.api.message.Api.RequestDialog.getDefaultInstance();
+        return com.vistarmedia.api.message.Api.RequestDialog
+            .getDefaultInstance();
       }
-      
+
       public com.vistarmedia.api.message.Api.RequestDialog build() {
         com.vistarmedia.api.message.Api.RequestDialog result = buildPartial();
         if (!result.isInitialized()) {
@@ -4473,19 +4869,20 @@ public final class Api {
         }
         return result;
       }
-      
+
       private com.vistarmedia.api.message.Api.RequestDialog buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         com.vistarmedia.api.message.Api.RequestDialog result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
+          throw newUninitializedMessageException(result)
+              .asInvalidProtocolBufferException();
         }
         return result;
       }
-      
+
       public com.vistarmedia.api.message.Api.RequestDialog buildPartial() {
-        com.vistarmedia.api.message.Api.RequestDialog result = new com.vistarmedia.api.message.Api.RequestDialog(this);
+        com.vistarmedia.api.message.Api.RequestDialog result = new com.vistarmedia.api.message.Api.RequestDialog(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4508,18 +4905,21 @@ public final class Api {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vistarmedia.api.message.Api.RequestDialog) {
-          return mergeFrom((com.vistarmedia.api.message.Api.RequestDialog)other);
+          return mergeFrom((com.vistarmedia.api.message.Api.RequestDialog) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
-      public Builder mergeFrom(com.vistarmedia.api.message.Api.RequestDialog other) {
-        if (other == com.vistarmedia.api.message.Api.RequestDialog.getDefaultInstance()) return this;
+
+      public Builder mergeFrom(
+          com.vistarmedia.api.message.Api.RequestDialog other) {
+        if (other == com.vistarmedia.api.message.Api.RequestDialog
+            .getDefaultInstance())
+          return this;
         if (other.hasRequest()) {
           mergeRequest(other.getRequest());
         }
@@ -4529,81 +4929,82 @@ public final class Api {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasRequest()) {
-          
+
           return false;
         }
         if (!hasResponse()) {
-          
+
           return false;
         }
         if (!getRequest().isInitialized()) {
-          
+
           return false;
         }
         if (!getResponse().isInitialized()) {
-          
+
           return false;
         }
         return true;
       }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+            .newBuilder(this.getUnknownFields());
         while (true) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          case 0:
+            this.setUnknownFields(unknownFields.build());
+            onChanged();
+            return this;
+          default: {
+            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
               this.setUnknownFields(unknownFields.build());
               onChanged();
               return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
             }
-            case 10: {
-              com.vistarmedia.api.message.Api.AdRequest.Builder subBuilder = com.vistarmedia.api.message.Api.AdRequest.newBuilder();
-              if (hasRequest()) {
-                subBuilder.mergeFrom(getRequest());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setRequest(subBuilder.buildPartial());
-              break;
+            break;
+          }
+          case 10: {
+            com.vistarmedia.api.message.Api.AdRequest.Builder subBuilder = com.vistarmedia.api.message.Api.AdRequest
+                .newBuilder();
+            if (hasRequest()) {
+              subBuilder.mergeFrom(getRequest());
             }
-            case 18: {
-              com.vistarmedia.api.message.Api.AdResponse.Builder subBuilder = com.vistarmedia.api.message.Api.AdResponse.newBuilder();
-              if (hasResponse()) {
-                subBuilder.mergeFrom(getResponse());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setResponse(subBuilder.buildPartial());
-              break;
+            input.readMessage(subBuilder, extensionRegistry);
+            setRequest(subBuilder.buildPartial());
+            break;
+          }
+          case 18: {
+            com.vistarmedia.api.message.Api.AdResponse.Builder subBuilder = com.vistarmedia.api.message.Api.AdResponse
+                .newBuilder();
+            if (hasResponse()) {
+              subBuilder.mergeFrom(getResponse());
             }
+            input.readMessage(subBuilder, extensionRegistry);
+            setResponse(subBuilder.buildPartial());
+            break;
+          }
           }
         }
       }
-      
-      private int bitField0_;
-      
+
+      private int                                                                                                                                                                                      bitField0_;
+
       // required .com.vistarmedia.api.message.AdRequest request = 1;
-      private com.vistarmedia.api.message.Api.AdRequest request_ = com.vistarmedia.api.message.Api.AdRequest.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.vistarmedia.api.message.Api.AdRequest, com.vistarmedia.api.message.Api.AdRequest.Builder, com.vistarmedia.api.message.Api.AdRequestOrBuilder> requestBuilder_;
+      private com.vistarmedia.api.message.Api.AdRequest                                                                                                                                                request_ = com.vistarmedia.api.message.Api.AdRequest
+                                                                                                                                                                                                                    .getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<com.vistarmedia.api.message.Api.AdRequest, com.vistarmedia.api.message.Api.AdRequest.Builder, com.vistarmedia.api.message.Api.AdRequestOrBuilder> requestBuilder_;
+
       public boolean hasRequest() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+
       public com.vistarmedia.api.message.Api.AdRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_;
@@ -4611,6 +5012,7 @@ public final class Api {
           return requestBuilder_.getMessage();
         }
       }
+
       public Builder setRequest(com.vistarmedia.api.message.Api.AdRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
@@ -4624,6 +5026,7 @@ public final class Api {
         bitField0_ |= 0x00000001;
         return this;
       }
+
       public Builder setRequest(
           com.vistarmedia.api.message.Api.AdRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
@@ -4635,12 +5038,15 @@ public final class Api {
         bitField0_ |= 0x00000001;
         return this;
       }
-      public Builder mergeRequest(com.vistarmedia.api.message.Api.AdRequest value) {
+
+      public Builder mergeRequest(
+          com.vistarmedia.api.message.Api.AdRequest value) {
         if (requestBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              request_ != com.vistarmedia.api.message.Api.AdRequest.getDefaultInstance()) {
-            request_ =
-              com.vistarmedia.api.message.Api.AdRequest.newBuilder(request_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) == 0x00000001)
+              && request_ != com.vistarmedia.api.message.Api.AdRequest
+                  .getDefaultInstance()) {
+            request_ = com.vistarmedia.api.message.Api.AdRequest
+                .newBuilder(request_).mergeFrom(value).buildPartial();
           } else {
             request_ = value;
           }
@@ -4651,9 +5057,11 @@ public final class Api {
         bitField0_ |= 0x00000001;
         return this;
       }
+
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
-          request_ = com.vistarmedia.api.message.Api.AdRequest.getDefaultInstance();
+          request_ = com.vistarmedia.api.message.Api.AdRequest
+              .getDefaultInstance();
           onChanged();
         } else {
           requestBuilder_.clear();
@@ -4661,11 +5069,13 @@ public final class Api {
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
+
       public com.vistarmedia.api.message.Api.AdRequest.Builder getRequestBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getRequestFieldBuilder().getBuilder();
       }
+
       public com.vistarmedia.api.message.Api.AdRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
@@ -4673,27 +5083,25 @@ public final class Api {
           return request_;
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.vistarmedia.api.message.Api.AdRequest, com.vistarmedia.api.message.Api.AdRequest.Builder, com.vistarmedia.api.message.Api.AdRequestOrBuilder> 
-          getRequestFieldBuilder() {
+
+      private com.google.protobuf.SingleFieldBuilder<com.vistarmedia.api.message.Api.AdRequest, com.vistarmedia.api.message.Api.AdRequest.Builder, com.vistarmedia.api.message.Api.AdRequestOrBuilder> getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
-          requestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.vistarmedia.api.message.Api.AdRequest, com.vistarmedia.api.message.Api.AdRequest.Builder, com.vistarmedia.api.message.Api.AdRequestOrBuilder>(
-                  request_,
-                  getParentForChildren(),
-                  isClean());
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilder<com.vistarmedia.api.message.Api.AdRequest, com.vistarmedia.api.message.Api.AdRequest.Builder, com.vistarmedia.api.message.Api.AdRequestOrBuilder>(
+              request_, getParentForChildren(), isClean());
           request_ = null;
         }
         return requestBuilder_;
       }
-      
+
       // required .com.vistarmedia.api.message.AdResponse response = 2;
-      private com.vistarmedia.api.message.Api.AdResponse response_ = com.vistarmedia.api.message.Api.AdResponse.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.vistarmedia.api.message.Api.AdResponse, com.vistarmedia.api.message.Api.AdResponse.Builder, com.vistarmedia.api.message.Api.AdResponseOrBuilder> responseBuilder_;
+      private com.vistarmedia.api.message.Api.AdResponse                                                                                                                                                  response_ = com.vistarmedia.api.message.Api.AdResponse
+                                                                                                                                                                                                                        .getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<com.vistarmedia.api.message.Api.AdResponse, com.vistarmedia.api.message.Api.AdResponse.Builder, com.vistarmedia.api.message.Api.AdResponseOrBuilder> responseBuilder_;
+
       public boolean hasResponse() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+
       public com.vistarmedia.api.message.Api.AdResponse getResponse() {
         if (responseBuilder_ == null) {
           return response_;
@@ -4701,7 +5109,9 @@ public final class Api {
           return responseBuilder_.getMessage();
         }
       }
-      public Builder setResponse(com.vistarmedia.api.message.Api.AdResponse value) {
+
+      public Builder setResponse(
+          com.vistarmedia.api.message.Api.AdResponse value) {
         if (responseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4714,6 +5124,7 @@ public final class Api {
         bitField0_ |= 0x00000002;
         return this;
       }
+
       public Builder setResponse(
           com.vistarmedia.api.message.Api.AdResponse.Builder builderForValue) {
         if (responseBuilder_ == null) {
@@ -4725,12 +5136,15 @@ public final class Api {
         bitField0_ |= 0x00000002;
         return this;
       }
-      public Builder mergeResponse(com.vistarmedia.api.message.Api.AdResponse value) {
+
+      public Builder mergeResponse(
+          com.vistarmedia.api.message.Api.AdResponse value) {
         if (responseBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              response_ != com.vistarmedia.api.message.Api.AdResponse.getDefaultInstance()) {
-            response_ =
-              com.vistarmedia.api.message.Api.AdResponse.newBuilder(response_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) == 0x00000002)
+              && response_ != com.vistarmedia.api.message.Api.AdResponse
+                  .getDefaultInstance()) {
+            response_ = com.vistarmedia.api.message.Api.AdResponse
+                .newBuilder(response_).mergeFrom(value).buildPartial();
           } else {
             response_ = value;
           }
@@ -4741,9 +5155,11 @@ public final class Api {
         bitField0_ |= 0x00000002;
         return this;
       }
+
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
-          response_ = com.vistarmedia.api.message.Api.AdResponse.getDefaultInstance();
+          response_ = com.vistarmedia.api.message.Api.AdResponse
+              .getDefaultInstance();
           onChanged();
         } else {
           responseBuilder_.clear();
@@ -4751,11 +5167,13 @@ public final class Api {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
+
       public com.vistarmedia.api.message.Api.AdResponse.Builder getResponseBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getResponseFieldBuilder().getBuilder();
       }
+
       public com.vistarmedia.api.message.Api.AdResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
           return responseBuilder_.getMessageOrBuilder();
@@ -4763,92 +5181,94 @@ public final class Api {
           return response_;
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.vistarmedia.api.message.Api.AdResponse, com.vistarmedia.api.message.Api.AdResponse.Builder, com.vistarmedia.api.message.Api.AdResponseOrBuilder> 
-          getResponseFieldBuilder() {
+
+      private com.google.protobuf.SingleFieldBuilder<com.vistarmedia.api.message.Api.AdResponse, com.vistarmedia.api.message.Api.AdResponse.Builder, com.vistarmedia.api.message.Api.AdResponseOrBuilder> getResponseFieldBuilder() {
         if (responseBuilder_ == null) {
-          responseBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.vistarmedia.api.message.Api.AdResponse, com.vistarmedia.api.message.Api.AdResponse.Builder, com.vistarmedia.api.message.Api.AdResponseOrBuilder>(
-                  response_,
-                  getParentForChildren(),
-                  isClean());
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilder<com.vistarmedia.api.message.Api.AdResponse, com.vistarmedia.api.message.Api.AdResponse.Builder, com.vistarmedia.api.message.Api.AdResponseOrBuilder>(
+              response_, getParentForChildren(), isClean());
           response_ = null;
         }
         return responseBuilder_;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.vistarmedia.api.message.RequestDialog)
     }
-    
+
     static {
       defaultInstance = new RequestDialog(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.vistarmedia.api.message.RequestDialog)
   }
-  
-  public interface ProofOfPlayOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
+
+  public interface ProofOfPlayOrBuilder extends
+      com.google.protobuf.MessageOrBuilder {
+
     // required string lease_id = 1;
     boolean hasLeaseId();
+
     String getLeaseId();
-    
+
     // required int64 play_time = 2;
     boolean hasPlayTime();
+
     long getPlayTime();
-    
+
     // required int32 display_time_in_seconds = 3;
     boolean hasDisplayTimeInSeconds();
+
     int getDisplayTimeInSeconds();
-    
+
     // required int32 number_of_screens = 4 [default = 1];
     boolean hasNumberOfScreens();
+
     int getNumberOfScreens();
   }
+
   public static final class ProofOfPlay extends
-      com.google.protobuf.GeneratedMessage
-      implements ProofOfPlayOrBuilder {
+      com.google.protobuf.GeneratedMessage implements ProofOfPlayOrBuilder {
     // Use ProofOfPlay.newBuilder() to construct.
     private ProofOfPlay(Builder builder) {
       super(builder);
     }
-    private ProofOfPlay(boolean noInit) {}
-    
+
+    private ProofOfPlay(boolean noInit) {
+    }
+
     private static final ProofOfPlay defaultInstance;
+
     public static ProofOfPlay getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public ProofOfPlay getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
       return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_ProofOfPlay_fieldAccessorTable;
     }
-    
-    private int bitField0_;
+
+    private int              bitField0_;
     // required string lease_id = 1;
-    public static final int LEASE_ID_FIELD_NUMBER = 1;
+    public static final int  LEASE_ID_FIELD_NUMBER = 1;
     private java.lang.Object leaseId_;
+
     public boolean hasLeaseId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+
     public String getLeaseId() {
       java.lang.Object ref = leaseId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           leaseId_ = s;
@@ -4856,59 +5276,69 @@ public final class Api {
         return s;
       }
     }
+
     private com.google.protobuf.ByteString getLeaseIdBytes() {
       java.lang.Object ref = leaseId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+            .copyFromUtf8((String) ref);
         leaseId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required int64 play_time = 2;
     public static final int PLAY_TIME_FIELD_NUMBER = 2;
-    private long playTime_;
+    private long            playTime_;
+
     public boolean hasPlayTime() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+
     public long getPlayTime() {
       return playTime_;
     }
-    
+
     // required int32 display_time_in_seconds = 3;
     public static final int DISPLAY_TIME_IN_SECONDS_FIELD_NUMBER = 3;
-    private int displayTimeInSeconds_;
+    private int             displayTimeInSeconds_;
+
     public boolean hasDisplayTimeInSeconds() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+
     public int getDisplayTimeInSeconds() {
       return displayTimeInSeconds_;
     }
-    
+
     // required int32 number_of_screens = 4 [default = 1];
     public static final int NUMBER_OF_SCREENS_FIELD_NUMBER = 4;
-    private int numberOfScreens_;
+    private int             numberOfScreens_;
+
     public boolean hasNumberOfScreens() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
+
     public int getNumberOfScreens() {
       return numberOfScreens_;
     }
-    
+
     private void initFields() {
       leaseId_ = "";
       playTime_ = 0L;
       displayTimeInSeconds_ = 0;
       numberOfScreens_ = 1;
     }
+
     private byte memoizedIsInitialized = -1;
+
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized != -1)
+        return isInitialized == 1;
+
       if (!hasLeaseId()) {
         memoizedIsInitialized = 0;
         return false;
@@ -4928,9 +5358,9 @@ public final class Api {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getLeaseIdBytes());
@@ -4946,77 +5376,82 @@ public final class Api {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
+
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
+      if (size != -1)
+        return size;
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getLeaseIdBytes());
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1,
+            getLeaseIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, playTime_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2,
+            playTime_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, displayTimeInSeconds_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3,
+            displayTimeInSeconds_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, numberOfScreens_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4,
+            numberOfScreens_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
+
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(data, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    public static com.vistarmedia.api.message.Api.ProofOfPlay parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+
+    public static com.vistarmedia.api.message.Api.ProofOfPlay parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
         return builder.buildParsed();
@@ -5024,6 +5459,7 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.ProofOfPlay parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5035,62 +5471,74 @@ public final class Api {
         return null;
       }
     }
+
     public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
+
     public static com.vistarmedia.api.message.Api.ProofOfPlay parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.vistarmedia.api.message.Api.ProofOfPlay prototype) {
+
+    public static Builder newBuilder() {
+      return Builder.create();
+    }
+
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.vistarmedia.api.message.Api.ProofOfPlay prototype) {
       return newBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+
+    public Builder toBuilder() {
+      return newBuilder(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.vistarmedia.api.message.Api.ProofOfPlayOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        com.vistarmedia.api.message.Api.ProofOfPlayOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
         return com.vistarmedia.api.message.Api.internal_static_com_vistarmedia_api_message_ProofOfPlay_fieldAccessorTable;
       }
-      
-      // Construct using com.vistarmedia.api.message.Api.ProofOfPlay.newBuilder()
+
+      // Construct using
+      // com.vistarmedia.api.message.Api.ProofOfPlay.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
+
       private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
+
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         leaseId_ = "";
@@ -5103,20 +5551,19 @@ public final class Api {
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.vistarmedia.api.message.Api.ProofOfPlay.getDescriptor();
       }
-      
+
       public com.vistarmedia.api.message.Api.ProofOfPlay getDefaultInstanceForType() {
         return com.vistarmedia.api.message.Api.ProofOfPlay.getDefaultInstance();
       }
-      
+
       public com.vistarmedia.api.message.Api.ProofOfPlay build() {
         com.vistarmedia.api.message.Api.ProofOfPlay result = buildPartial();
         if (!result.isInitialized()) {
@@ -5124,19 +5571,20 @@ public final class Api {
         }
         return result;
       }
-      
+
       private com.vistarmedia.api.message.Api.ProofOfPlay buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
         com.vistarmedia.api.message.Api.ProofOfPlay result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
+          throw newUninitializedMessageException(result)
+              .asInvalidProtocolBufferException();
         }
         return result;
       }
-      
+
       public com.vistarmedia.api.message.Api.ProofOfPlay buildPartial() {
-        com.vistarmedia.api.message.Api.ProofOfPlay result = new com.vistarmedia.api.message.Api.ProofOfPlay(this);
+        com.vistarmedia.api.message.Api.ProofOfPlay result = new com.vistarmedia.api.message.Api.ProofOfPlay(
+            this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5159,18 +5607,20 @@ public final class Api {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vistarmedia.api.message.Api.ProofOfPlay) {
-          return mergeFrom((com.vistarmedia.api.message.Api.ProofOfPlay)other);
+          return mergeFrom((com.vistarmedia.api.message.Api.ProofOfPlay) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.vistarmedia.api.message.Api.ProofOfPlay other) {
-        if (other == com.vistarmedia.api.message.Api.ProofOfPlay.getDefaultInstance()) return this;
+        if (other == com.vistarmedia.api.message.Api.ProofOfPlay
+            .getDefaultInstance())
+          return this;
         if (other.hasLeaseId()) {
           setLeaseId(other.getLeaseId());
         }
@@ -5186,81 +5636,80 @@ public final class Api {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasLeaseId()) {
-          
+
           return false;
         }
         if (!hasPlayTime()) {
-          
+
           return false;
         }
         if (!hasDisplayTimeInSeconds()) {
-          
+
           return false;
         }
         if (!hasNumberOfScreens()) {
-          
+
           return false;
         }
         return true;
       }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+
+      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+            .newBuilder(this.getUnknownFields());
         while (true) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          case 0:
+            this.setUnknownFields(unknownFields.build());
+            onChanged();
+            return this;
+          default: {
+            if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
               this.setUnknownFields(unknownFields.build());
               onChanged();
               return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
             }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              leaseId_ = input.readBytes();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              playTime_ = input.readInt64();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              displayTimeInSeconds_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              numberOfScreens_ = input.readInt32();
-              break;
-            }
+            break;
+          }
+          case 10: {
+            bitField0_ |= 0x00000001;
+            leaseId_ = input.readBytes();
+            break;
+          }
+          case 16: {
+            bitField0_ |= 0x00000002;
+            playTime_ = input.readInt64();
+            break;
+          }
+          case 24: {
+            bitField0_ |= 0x00000004;
+            displayTimeInSeconds_ = input.readInt32();
+            break;
+          }
+          case 32: {
+            bitField0_ |= 0x00000008;
+            numberOfScreens_ = input.readInt32();
+            break;
+          }
           }
         }
       }
-      
-      private int bitField0_;
-      
+
+      private int              bitField0_;
+
       // required string lease_id = 1;
       private java.lang.Object leaseId_ = "";
+
       public boolean hasLeaseId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+
       public String getLeaseId() {
         java.lang.Object ref = leaseId_;
         if (!(ref instanceof String)) {
@@ -5271,241 +5720,228 @@ public final class Api {
           return (String) ref;
         }
       }
+
       public Builder setLeaseId(String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
         leaseId_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearLeaseId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         leaseId_ = getDefaultInstance().getLeaseId();
         onChanged();
         return this;
       }
+
       void setLeaseId(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000001;
         leaseId_ = value;
         onChanged();
       }
-      
+
       // required int64 play_time = 2;
-      private long playTime_ ;
+      private long playTime_;
+
       public boolean hasPlayTime() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+
       public long getPlayTime() {
         return playTime_;
       }
+
       public Builder setPlayTime(long value) {
         bitField0_ |= 0x00000002;
         playTime_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearPlayTime() {
         bitField0_ = (bitField0_ & ~0x00000002);
         playTime_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // required int32 display_time_in_seconds = 3;
-      private int displayTimeInSeconds_ ;
+      private int displayTimeInSeconds_;
+
       public boolean hasDisplayTimeInSeconds() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+
       public int getDisplayTimeInSeconds() {
         return displayTimeInSeconds_;
       }
+
       public Builder setDisplayTimeInSeconds(int value) {
         bitField0_ |= 0x00000004;
         displayTimeInSeconds_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearDisplayTimeInSeconds() {
         bitField0_ = (bitField0_ & ~0x00000004);
         displayTimeInSeconds_ = 0;
         onChanged();
         return this;
       }
-      
+
       // required int32 number_of_screens = 4 [default = 1];
       private int numberOfScreens_ = 1;
+
       public boolean hasNumberOfScreens() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+
       public int getNumberOfScreens() {
         return numberOfScreens_;
       }
+
       public Builder setNumberOfScreens(int value) {
         bitField0_ |= 0x00000008;
         numberOfScreens_ = value;
         onChanged();
         return this;
       }
+
       public Builder clearNumberOfScreens() {
         bitField0_ = (bitField0_ & ~0x00000008);
         numberOfScreens_ = 1;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.vistarmedia.api.message.ProofOfPlay)
     }
-    
+
     static {
       defaultInstance = new ProofOfPlay(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.vistarmedia.api.message.ProofOfPlay)
   }
-  
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vistarmedia_api_message_DisplayArea_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_vistarmedia_api_message_DisplayArea_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_vistarmedia_api_message_DeviceAttribute_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vistarmedia_api_message_AdRequest_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_vistarmedia_api_message_AdRequest_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vistarmedia_api_message_Advertisement_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_vistarmedia_api_message_Advertisement_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vistarmedia_api_message_AdResponse_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_vistarmedia_api_message_AdResponse_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vistarmedia_api_message_RequestDialog_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_vistarmedia_api_message_RequestDialog_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_vistarmedia_api_message_ProofOfPlay_fieldAccessorTable;
-  
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+
+  private static com.google.protobuf.Descriptors.Descriptor              internal_static_com_vistarmedia_api_message_DisplayArea_descriptor;
+  private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_com_vistarmedia_api_message_DisplayArea_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor              internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor;
+  private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_com_vistarmedia_api_message_DeviceAttribute_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor              internal_static_com_vistarmedia_api_message_AdRequest_descriptor;
+  private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_com_vistarmedia_api_message_AdRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor              internal_static_com_vistarmedia_api_message_Advertisement_descriptor;
+  private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_com_vistarmedia_api_message_Advertisement_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor              internal_static_com_vistarmedia_api_message_AdResponse_descriptor;
+  private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_com_vistarmedia_api_message_AdResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor              internal_static_com_vistarmedia_api_message_RequestDialog_descriptor;
+  private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_com_vistarmedia_api_message_RequestDialog_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor              internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor;
+  private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_com_vistarmedia_api_message_ProofOfPlay_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022protobuf/api.proto\022\033com.vistarmedia.ap" +
-      "i.message\"\212\001\n\013DisplayArea\022\n\n\002id\030\001 \002(\t\022\r\n" +
-      "\005width\030\002 \002(\005\022\016\n\006height\030\003 \002(\005\022\023\n\013allow_au" +
-      "dio\030\004 \002(\010\022\027\n\017supported_media\030\005 \003(\t\022\020\n\010of" +
-      "fset_x\030\006 \001(\005\022\020\n\010offset_Y\030\007 \001(\005\".\n\017Device" +
-      "Attribute\022\014\n\004name\030\001 \002(\t\022\r\n\005value\030\002 \002(\t\"\377" +
-      "\001\n\tAdRequest\022\022\n\nnetwork_id\030\001 \002(\t\022\017\n\007api_" +
-      "key\030\002 \002(\t\022\021\n\tdevice_id\030\003 \002(\t\022\024\n\014display_" +
-      "time\030\004 \002(\003\022\034\n\021number_of_screens\030\005 \002(\005:\0011" +
-      "\022F\n\020device_attribute\030\006 \003(\0132,.com.vistarm",
-      "edia.api.message.DeviceAttribute\022>\n\014disp" +
-      "lay_area\030\007 \003(\0132(.com.vistarmedia.api.mes" +
-      "sage.DisplayArea\"\301\001\n\rAdvertisement\022\020\n\010le" +
-      "ase_id\030\001 \002(\t\022\024\n\014lease_expiry\030\002 \002(\003\022\027\n\017di" +
-      "splay_area_id\030\003 \002(\t\022\020\n\010asset_id\030\004 \002(\t\022\021\n" +
-      "\tasset_url\030\005 \002(\t\022\r\n\005width\030\006 \002(\005\022\016\n\006heigh" +
-      "t\030\007 \002(\005\022\020\n\010mimeType\030\010 \002(\t\022\031\n\021length_in_s" +
-      "econds\030\t \001(\005\"O\n\nAdResponse\022A\n\radvertisem" +
-      "ent\030\001 \003(\0132*.com.vistarmedia.api.message." +
-      "Advertisement\"\203\001\n\rRequestDialog\0227\n\007reque",
-      "st\030\001 \002(\0132&.com.vistarmedia.api.message.A" +
-      "dRequest\0229\n\010response\030\002 \002(\0132\'.com.vistarm" +
-      "edia.api.message.AdResponse\"q\n\013ProofOfPl" +
-      "ay\022\020\n\010lease_id\030\001 \002(\t\022\021\n\tplay_time\030\002 \002(\003\022" +
-      "\037\n\027display_time_in_seconds\030\003 \002(\005\022\034\n\021numb" +
-      "er_of_screens\030\004 \002(\005:\0011"
+      "\n\022protobuf/api.proto\022\033com.vistarmedia.ap"
+          + "i.message\"\212\001\n\013DisplayArea\022\n\n\002id\030\001 \002(\t\022\r\n"
+          + "\005width\030\002 \002(\005\022\016\n\006height\030\003 \002(\005\022\023\n\013allow_au"
+          + "dio\030\004 \002(\010\022\027\n\017supported_media\030\005 \003(\t\022\020\n\010of"
+          + "fset_x\030\006 \001(\005\022\020\n\010offset_Y\030\007 \001(\005\".\n\017Device"
+          + "Attribute\022\014\n\004name\030\001 \002(\t\022\r\n\005value\030\002 \002(\t\"\377"
+          + "\001\n\tAdRequest\022\022\n\nnetwork_id\030\001 \002(\t\022\017\n\007api_"
+          + "key\030\002 \002(\t\022\021\n\tdevice_id\030\003 \002(\t\022\024\n\014display_"
+          + "time\030\004 \002(\003\022\034\n\021number_of_screens\030\005 \002(\005:\0011"
+          + "\022F\n\020device_attribute\030\006 \003(\0132,.com.vistarm",
+      "edia.api.message.DeviceAttribute\022>\n\014disp"
+          + "lay_area\030\007 \003(\0132(.com.vistarmedia.api.mes"
+          + "sage.DisplayArea\"\301\001\n\rAdvertisement\022\020\n\010le"
+          + "ase_id\030\001 \002(\t\022\024\n\014lease_expiry\030\002 \002(\003\022\027\n\017di"
+          + "splay_area_id\030\003 \002(\t\022\020\n\010asset_id\030\004 \002(\t\022\021\n"
+          + "\tasset_url\030\005 \002(\t\022\r\n\005width\030\006 \002(\005\022\016\n\006heigh"
+          + "t\030\007 \002(\005\022\020\n\010mimeType\030\010 \002(\t\022\031\n\021length_in_s"
+          + "econds\030\t \001(\005\"O\n\nAdResponse\022A\n\radvertisem"
+          + "ent\030\001 \003(\0132*.com.vistarmedia.api.message."
+          + "Advertisement\"\203\001\n\rRequestDialog\0227\n\007reque",
+      "st\030\001 \002(\0132&.com.vistarmedia.api.message.A"
+          + "dRequest\0229\n\010response\030\002 \002(\0132\'.com.vistarm"
+          + "edia.api.message.AdResponse\"q\n\013ProofOfPl"
+          + "ay\022\020\n\010lease_id\030\001 \002(\t\022\021\n\tplay_time\030\002 \002(\003\022"
+          + "\037\n\027display_time_in_seconds\030\003 \002(\005\022\034\n\021numb"
+          + "er_of_screens\030\004 \002(\005:\0011" };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner = new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+      public com.google.protobuf.ExtensionRegistry assignDescriptors(
+          com.google.protobuf.Descriptors.FileDescriptor root) {
+        descriptor = root;
+        internal_static_com_vistarmedia_api_message_DisplayArea_descriptor = getDescriptor()
+            .getMessageTypes().get(0);
+        internal_static_com_vistarmedia_api_message_DisplayArea_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_vistarmedia_api_message_DisplayArea_descriptor,
+            new java.lang.String[] { "Id", "Width", "Height", "AllowAudio",
+      "SupportedMedia", "OffsetX", "OffsetY", },
+            com.vistarmedia.api.message.Api.DisplayArea.class,
+            com.vistarmedia.api.message.Api.DisplayArea.Builder.class);
+        internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor = getDescriptor()
+            .getMessageTypes().get(1);
+        internal_static_com_vistarmedia_api_message_DeviceAttribute_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor,
+            new java.lang.String[] { "Name", "Value", },
+            com.vistarmedia.api.message.Api.DeviceAttribute.class,
+            com.vistarmedia.api.message.Api.DeviceAttribute.Builder.class);
+        internal_static_com_vistarmedia_api_message_AdRequest_descriptor = getDescriptor()
+            .getMessageTypes().get(2);
+        internal_static_com_vistarmedia_api_message_AdRequest_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_vistarmedia_api_message_AdRequest_descriptor,
+            new java.lang.String[] { "NetworkId", "ApiKey", "DeviceId",
+      "DisplayTime", "NumberOfScreens", "DeviceAttribute", "DisplayArea", },
+            com.vistarmedia.api.message.Api.AdRequest.class,
+            com.vistarmedia.api.message.Api.AdRequest.Builder.class);
+        internal_static_com_vistarmedia_api_message_Advertisement_descriptor = getDescriptor()
+            .getMessageTypes().get(3);
+        internal_static_com_vistarmedia_api_message_Advertisement_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_vistarmedia_api_message_Advertisement_descriptor,
+            new java.lang.String[] { "LeaseId", "LeaseExpiry", "DisplayAreaId",
+      "AssetId", "AssetUrl", "Width", "Height", "MimeType", "LengthInSeconds", },
+            com.vistarmedia.api.message.Api.Advertisement.class,
+            com.vistarmedia.api.message.Api.Advertisement.Builder.class);
+        internal_static_com_vistarmedia_api_message_AdResponse_descriptor = getDescriptor()
+            .getMessageTypes().get(4);
+        internal_static_com_vistarmedia_api_message_AdResponse_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_vistarmedia_api_message_AdResponse_descriptor,
+            new java.lang.String[] { "Advertisement", },
+            com.vistarmedia.api.message.Api.AdResponse.class,
+            com.vistarmedia.api.message.Api.AdResponse.Builder.class);
+        internal_static_com_vistarmedia_api_message_RequestDialog_descriptor = getDescriptor()
+            .getMessageTypes().get(5);
+        internal_static_com_vistarmedia_api_message_RequestDialog_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_vistarmedia_api_message_RequestDialog_descriptor,
+            new java.lang.String[] { "Request", "Response", },
+            com.vistarmedia.api.message.Api.RequestDialog.class,
+            com.vistarmedia.api.message.Api.RequestDialog.Builder.class);
+        internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor = getDescriptor()
+            .getMessageTypes().get(6);
+        internal_static_com_vistarmedia_api_message_ProofOfPlay_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor,
+            new java.lang.String[] { "LeaseId", "PlayTime",
+      "DisplayTimeInSeconds", "NumberOfScreens", },
+            com.vistarmedia.api.message.Api.ProofOfPlay.class,
+            com.vistarmedia.api.message.Api.ProofOfPlay.Builder.class);
+        return null;
+      }
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_com_vistarmedia_api_message_DisplayArea_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_com_vistarmedia_api_message_DisplayArea_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_vistarmedia_api_message_DisplayArea_descriptor,
-              new java.lang.String[] { "Id", "Width", "Height", "AllowAudio", "SupportedMedia", "OffsetX", "OffsetY", },
-              com.vistarmedia.api.message.Api.DisplayArea.class,
-              com.vistarmedia.api.message.Api.DisplayArea.Builder.class);
-          internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_com_vistarmedia_api_message_DeviceAttribute_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_vistarmedia_api_message_DeviceAttribute_descriptor,
-              new java.lang.String[] { "Name", "Value", },
-              com.vistarmedia.api.message.Api.DeviceAttribute.class,
-              com.vistarmedia.api.message.Api.DeviceAttribute.Builder.class);
-          internal_static_com_vistarmedia_api_message_AdRequest_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_com_vistarmedia_api_message_AdRequest_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_vistarmedia_api_message_AdRequest_descriptor,
-              new java.lang.String[] { "NetworkId", "ApiKey", "DeviceId", "DisplayTime", "NumberOfScreens", "DeviceAttribute", "DisplayArea", },
-              com.vistarmedia.api.message.Api.AdRequest.class,
-              com.vistarmedia.api.message.Api.AdRequest.Builder.class);
-          internal_static_com_vistarmedia_api_message_Advertisement_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_com_vistarmedia_api_message_Advertisement_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_vistarmedia_api_message_Advertisement_descriptor,
-              new java.lang.String[] { "LeaseId", "LeaseExpiry", "DisplayAreaId", "AssetId", "AssetUrl", "Width", "Height", "MimeType", "LengthInSeconds", },
-              com.vistarmedia.api.message.Api.Advertisement.class,
-              com.vistarmedia.api.message.Api.Advertisement.Builder.class);
-          internal_static_com_vistarmedia_api_message_AdResponse_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_com_vistarmedia_api_message_AdResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_vistarmedia_api_message_AdResponse_descriptor,
-              new java.lang.String[] { "Advertisement", },
-              com.vistarmedia.api.message.Api.AdResponse.class,
-              com.vistarmedia.api.message.Api.AdResponse.Builder.class);
-          internal_static_com_vistarmedia_api_message_RequestDialog_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_com_vistarmedia_api_message_RequestDialog_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_vistarmedia_api_message_RequestDialog_descriptor,
-              new java.lang.String[] { "Request", "Response", },
-              com.vistarmedia.api.message.Api.RequestDialog.class,
-              com.vistarmedia.api.message.Api.RequestDialog.Builder.class);
-          internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor =
-            getDescriptor().getMessageTypes().get(6);
-          internal_static_com_vistarmedia_api_message_ProofOfPlay_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_vistarmedia_api_message_ProofOfPlay_descriptor,
-              new java.lang.String[] { "LeaseId", "PlayTime", "DisplayTimeInSeconds", "NumberOfScreens", },
-              com.vistarmedia.api.message.Api.ProofOfPlay.class,
-              com.vistarmedia.api.message.Api.ProofOfPlay.Builder.class);
-          return null;
-        }
-      };
     com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        .internalBuildGeneratedFileFrom(descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
   }
-  
+
   // @@protoc_insertion_point(outer_class_scope)
 }

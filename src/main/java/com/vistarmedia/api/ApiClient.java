@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import com.vistarmedia.api.future.ApiResultFuture;
 import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.message.Api.AdResponse;
+import com.vistarmedia.api.message.Api.Advertisement;
 import com.vistarmedia.api.message.Api.ProofOfPlay;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
@@ -65,11 +66,152 @@ import com.vistarmedia.api.transport.TransportResponseHandler;
  * exceeding this window will be aborted and an exception will be raised.
  * </p>
  * 
+ * <pre style="prettyprint">
+ * import com.myco.AdRequestBuilder;
+ * 
+ * import com.vistarmedia.api.ApiClient;
+ * import com.vistarmedia.api.ApiRequestException;
+ * import com.vistarmedia.api.message.Api.AdRequest;
+ * import com.vistarmedia.api.message.Api.Advertisement;
+ * import com.vistarmedia.api.message.Api.AdResponse;
+ * import com.vistarmedia.api.transport.AsyncHttpClientTransport;
+ * 
+ * public class Main {
+ *   private ApiClient client;
+ * 
+ *   public Main(String host, int port) {
+ *     client = AsyncHttpClientTransport.connect(host, port);
+ *   }
+ * 
+ *   public void run() throws ApiRequestException {
+ *     for (int i = 0; i &lt; 10; i++) {
+ *       AdRequest request = AdRequestBuidler.newRequest();
+ *       AdResponse response = client.getAdResponse(request);
+ * 
+ *       for (Advertisement ad : response.getAdvertisementList) {
+ *         System.out.println(&quot;Serving &quot; + ad);
+ *       }
+ *     }
+ *   }
+ * 
+ *   public static void main(String[] args) {
+ *     Main main = new Main(args[0], args[1]);
+ *     try {
+ *       main.run();
+ *     } catch (ApiRequestException e) {
+ *       System.err.println(&quot;Error talking to Vistar Media API&quot;);
+ *       e.printStackTrace();
+ *     }
+ *   }
+ * }
+ * </pre>
+ * 
+ * 
  * <h4>Asynchronous Ad Requests</h4>
  * <p>
+ * You may use the asynchronous API for bulk operations or more precise timing
+ * control Below a sample asynchronous client will, as above, make ten requests
+ * print the resulting {@link Advertisement}s.
  * </p>
  * 
+ * <pre style="prettyprint">
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.concurrent.Future;
+ * import java.util.concurrent.TimeUnit;
+ * 
+ * import com.myco.AdRequestBuilder;
+ * 
+ * import com.vistarmedia.api.ApiClient;
+ * import com.vistarmedia.api.ApiRequestException;
+ * import com.vistarmedia.api.message.Api.AdRequest;
+ * import com.vistarmedia.api.message.Api.Advertisement;
+ * import com.vistarmedia.api.message.Api.AdResponse;
+ * import com.vistarmedia.api.transport.AsyncHttpClientTransport;
+ * 
+ * public class Main {
+ *   private ApiClient client;
+ * 
+ *   public Main(String host, int port) {
+ *     client = AsyncHttpClientTransport.connect(host, port);
+ *   }
+ * 
+ *   public void run() throws ApiRequestException {
+ *     List&lt;Future&lt;AdResponseResult&gt;&gt; resultFutures = new ArrayList&lt;Future&lt;AdResponseResult&gt;&gt;();
+ *     for (int i = 0; i &lt; 10; i++) {
+ *       AdRequest request = AdRequestBuidler.newRequest();
+ *       resultFutures.append(client.sendAdRequest(request));
+ *     }
+ *     
+ *     for(Future&lt;AdResponseResult&gt; resultFuture : resultFutures) {
+ *       AdResponseResult result = resultFuture.get(800, TimeUnit.MILLISECONDS);
+ *       
+ *       if(result.isSuccess()) {
+ *         for (Advertisement ad : response.getAdvertisementList) {
+ *           System.out.println(&quot;Serving &quot; + ad);
+ *         }
+ *       } else {
+ *         ErrorResponse error = result.getError();
+ *         System.err.println(&quot;Error talking to Vistar Media API&quot;)
+ *         System.err.println(String.format(&quot;(%s): %s&quot;, error.getCode(), error.getMessage()); 
+ *       }
+ *     }
+ *   }
+ * 
+ *   public static void main(String[] args) {
+ *     Main main = new Main(args[0], args[1]);
+ *     main.run();
+ *   }
+ * }
+ * </pre>
+ * 
  * <h4>Common HTTP Error Codes</h4>
+ * 
+ * <p>
+ * The API servers will use standard HTTP response codes when sending results
+ * back to the client. A few of the common ones are outlined below.
+ * </p>
+ * 
+ * <table>
+ * <thead>
+ * <tr>
+ * <th>Code</th>
+ * <th>Description</th>
+ * </tr>
+ * </thead> <tbody>
+ * <tr>
+ * <td>{@code 200}</td>
+ * <td><b>Response OK</b></td>
+ * </tr>
+ * <tr>
+ * <td>{@code 400}</td>
+ * <td>
+ * <b>Invalid Request</b> Something was wrong with the data that was sent to the
+ * server. Ensure all required fields are present and check the attached message
+ * of the error.</td>
+ * </tr>
+ * <tr>
+ * <td>{@code 408}</td>
+ * <td>
+ * <b>Request Timeout</b> The client may be having problems connecting to the
+ * internet, or Vistar's API servers may not be responding quickly enough. This
+ * request should be retried.</td>
+ * </tr>
+ * <tr>
+ * <td>{@code 500}</td>
+ * <td>
+ * <b>Server Error</b> The Vistar Media API servers received the requested, but
+ * encountered an error while processing it. This request may be retried.</td>
+ * </tr>
+ * <tr>
+ * <td>{@code 503}</td>
+ * <td>
+ * <b>Gateway Timeout</b> Vistar's load balancers will return 503's when talking
+ * to the development stack ({@code dev.api.vistarmedia.com}) if the cluster is
+ * in the middle of a roll. This request should be retried.</td>
+ * </tr>
+ * </tbody>
+ * </table>
  * 
  */
 public class ApiClient {

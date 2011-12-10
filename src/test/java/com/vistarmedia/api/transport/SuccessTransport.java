@@ -7,11 +7,11 @@ import java.net.URL;
 public class SuccessTransport implements Transport {
 
   private byte[] body;
-  
+
   public SuccessTransport(byte[] body) {
     this.body = body;
   }
-  
+
   @Override
   public void post(URL url, byte[] body, TransportResponseHandler handler)
       throws IOException {

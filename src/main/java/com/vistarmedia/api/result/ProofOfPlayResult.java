@@ -6,7 +6,7 @@ public class ProofOfPlayResult extends ApiResult<ProofOfPlay> {
   public ProofOfPlayResult(ProofOfPlay proofOfPlay) {
     super(proofOfPlay);
   }
-  
+
   public ProofOfPlayResult(ErrorResult error) {
     super(error);
   }

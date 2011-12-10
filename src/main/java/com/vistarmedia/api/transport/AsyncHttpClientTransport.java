@@ -8,15 +8,29 @@ import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.Response;
 import com.vistarmedia.api.ApiClient;
 
-
+/**
+ * Transport implementation using Ning's async-http-client. This is the
+ * preferred {@link Transport} to use, as we can rest assured its requests are
+ * indeed happening asynchronously.
+ */
 public class AsyncHttpClientTransport implements Transport {
 
   private static AsyncHttpClient client = new AsyncHttpClient();
 
+  /**
+   * Factory method to create a new {@link ApiClient} configured for this
+   * transport.
+   * 
+   * @param host
+   *          Vistar Media API endpoint host
+   * @param port
+   *          Vistar Media API endpoint port
+   * @return a properly configured {@link ApiClient} for this transport.
+   */
   public static ApiClient connect(String host, int port) {
     return new ApiClient(host, port, new AsyncHttpClientTransport());
   }
-  
+
   @Override
   public void post(final URL url, final byte[] body,
       final TransportResponseHandler handler) throws IOException {
