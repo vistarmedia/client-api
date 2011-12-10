@@ -325,6 +325,12 @@ Summary:
 <div class="jd-descr">
 
 
+<h2>Class Overview</h2>
+<p>Transport implementation using Ning's async-http-client. This is the
+ preferred <code><a href="../../../../com/vistarmedia/api/transport/Transport.html">Transport</a></code> to use, as we can rest assured its requests are
+ indeed happening asynchronously.
+</p>
+
 
 
 
@@ -420,6 +426,9 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../com/vistarmedia/api/transport/AsyncHttpClientTransport.html#connect(java.lang.String, int)">connect</a></span>(<a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a> host, int port)</nobr>
         
+        <div class="jd-descrdiv">Factory method to create a new <code><a href="../../../../com/vistarmedia/api/ApiClient.html">ApiClient</a></code> configured for this
+ transport.</div>
+  
   </td></tr>
 
 
@@ -802,7 +811,26 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Factory method to create a new <code><a href="../../../../com/vistarmedia/api/ApiClient.html">ApiClient</a></code> configured for this
+ transport.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>host</td>
+          <td>Vistar Media API endpoint host</td>
+        </tr>
+        <tr>
+          <th>port</td>
+          <td>Vistar Media API endpoint port</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a properly configured <code><a href="../../../../com/vistarmedia/api/ApiClient.html">ApiClient</a></code> for this transport.
+</li></ul>
+  </div>
 
     </div>
 </div>

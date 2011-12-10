@@ -307,7 +307,7 @@ Summary:
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
               <td class="jd-linkcol"><a href="../../../../com/vistarmedia/api/transport/AsyncHttpClientTransport.html">AsyncHttpClientTransport</a></td>
-              <td class="jd-descrcol" width="100%">&nbsp;</td>
+              <td class="jd-descrcol" width="100%">Transport implementation using Ning's async-http-client.&nbsp;</td>
           </tr>
   </table>
       </div>
@@ -317,6 +317,14 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p>Interface for objects which know how to move bytes over a wire. The
+ <code><a href="../../../../com/vistarmedia/api/ApiClient.html">ApiClient</a></code> assumes that the transport is async, but there are no
+ restrictions in place to ensure that is correct. For example -- an
+ implementation may make the request, block on the response, and immediately
+ invoke the <code><a href="../../../../com/vistarmedia/api/transport/TransportResponseHandler.html">TransportResponseHandler</a></code>.
+</p>
 
 
 
