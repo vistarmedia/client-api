@@ -1,0 +1,226 @@
+<h1>Vistar Media Client API</h1>
+
+<p>Below is the description of an API which allows clients to schedule real time
+ads from <a href="http://www.vistarmedia.com/">Vistar Media</a>&#39;s ad servers. This document
+will cover the core types and wire protocols, but implementation documentation
+exists elsewhere.</p>
+
+<h2>Overview</h2>
+
+<h2>Message Definitions</h2>
+
+<p>The API provides a number of serialization and deserialization formats. However,
+each format will use the same set of model definitions and verbiage.</p>
+
+<h3>AdRequest</h3>
+
+<p>An AdRequest announces to Vistar Media&#39;s system that you have free space and
+time to show an ad. The specified time need to be &quot;right now,&quot; but it should be</p>
+
+<table><thead>
+<tr>
+<th>Scope</th>
+<th>Type</th>
+<th>Field</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>required</td>
+<td>string</td>
+<td>network_id</td>
+<td></td>
+</tr>
+<tr>
+<td>required</td>
+<td>string</td>
+<td>api_key</td>
+<td></td>
+</tr>
+<tr>
+<td>required</td>
+<td>string</td>
+<td>device_id</td>
+<td></td>
+</tr>
+<tr>
+<td>required</td>
+<td>int64</td>
+<td>display_time</td>
+<td>UTC Epoch Seconds</td>
+</tr>
+<tr>
+<td>required</td>
+<td>int32</td>
+<td>number_of_screens</td>
+<td></td>
+</tr>
+<tr>
+<td>repeated</td>
+<td>DeviceAttribute</td>
+<td>device_attribute</td>
+<td></td>
+</tr>
+<tr>
+<td>repeated</td>
+<td>DisplayArea</td>
+<td>display_area</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>For an AdRequest, the <code>network_id</code> and <code>api_key</code> fields must be obtained through
+Vistar Media. If you do not have these, contact <a href="mailto:api@vistarmedia.com">api@vistarmedia.com</a>.</p>
+
+<h2>Java API</h2>
+
+<p>There is a complete Java Client API <a href="https://github.com/vistarmedia/client-api">available on Github</a>. This
+implementation has been tested in the field, and should be considered reliable.
+Its <a href="http://vistarmedia.github.com/client-api/reference/packages.html">Javadocs</a>
+provide a number of examples.</p>
+
+<pre><code class="java">import foo.bar.baz
+</code></pre>
+
+<h2>Wire Protocols</h2>
+
+<p>All protocols go over HTTP, etc</p>
+
+<h3>Json Protocol</h3>
+
+<pre><code>POST &#47;api&#47;v1&#47;get_ad&#47;json HTTP&#47;1.1
+Host: dev.api.vistarmedia.com
+
+
+{
+  &quot;network_id&quot;:       &quot;24ba0582-7648-48b2-a7f4-0af3783b55f0&quot;,
+  &quot;api_key&quot;:          &quot;eb7d6e26-5930-4fef-a3c7-aa023f31cefd&quot;,
+  &quot;device_id&quot;:        &quot;device-5122&quot;,
+  &quot;display_time&quot;:     1322455356,
+  &quot;number_of_screens&quot;:1,
+  &quot;device_attribute&quot;: [
+    {
+      &quot;name&quot;:  &quot;zipcode&quot;,
+      &quot;value&quot;: &quot;19122&quot;
+    },
+    {
+      &quot;name&quot;:  &quot;quality&quot;,
+      &quot;value&quot;: &quot;pretty good&quot;
+    }
+  ],
+  &quot;display_area&quot;:[
+    {
+      &quot;id&quot;:          &quot;Display-Area-1&quot;,
+      &quot;width&quot;:       800,
+      &quot;height&quot;:      600,
+      &quot;allow_audio&quot;: true,
+      &quot;supported_media&quot;: [
+        &quot;image&#47;jpeg&quot;,
+        &quot;image&#47;gif&quot;
+      ]
+    },
+    {
+      &quot;id&quot;:          &quot;Display-Area-2&quot;,
+      &quot;width&quot;:       600,
+      &quot;height&quot;:      800,
+      &quot;allow_audio&quot;: true,
+      &quot;supported_media&quot;: [
+        &quot;image&#47;jpeg&quot;,
+        &quot;image&#47;gif&quot;
+      ]
+    }
+  ]
+}
+
+
+{
+  &quot;advertisement&quot;:[
+    {
+      &quot;lease_id&quot;:          &quot;618d6b97-a6c6-49d3-aacb-85ff3b2c9136&quot;,
+      &quot;lease_expiry&quot;:      1322655356,
+      &quot;display_area_id&quot;:   &quot;Display-Area-1&quot;,
+      &quot;asset_id&quot;:          &quot;ba3f-2ea0&quot;,
+      &quot;asset_url&quot;:         &quot;http:&#47;&#47;assets.vistarmedia.com&#47;r&#47;g32&#47;4.gif&quot;,
+      &quot;width&quot;:             800,
+      &quot;height&quot;:            600,
+      &quot;mimeType&quot;:          &quot;image&#47;gif&quot;,
+      &quot;length_in_seconds&quot;: 0
+    },
+    {
+      &quot;lease_id&quot;:          &quot;97c99267-eee2-4de7-8bfc-5e2146784534&quot;,
+      &quot;lease_expiry&quot;:      1234582290,
+      &quot;display_area_id&quot;:   &quot;Display-Area-2&quot;,
+      &quot;asset_id&quot;:          &quot;24f0-83a3&quot;,
+      &quot;asset_url&quot;:         &quot;http:&#47;&#47;assets.vistarmedia.com&#47;g&#47;2jc&#47;3fa.jpeg&quot;,
+      &quot;width&quot;:             600,
+      &quot;height&quot;:            800,
+      &quot;mimeType&quot;:          &quot;image&#47;jpeg&quot;,
+      &quot;length_in_seconds&quot;: 0
+    }
+  ]
+}
+</code></pre>
+
+<h3>XML Protocol</h3>
+
+<pre><code class="xml">POST &#47;api&#47;v1&#47;get_ad&#47;xml HTTP&#47;1.1
+Host: dev.api.vistarmedia.com
+
+&lt;ad_request&gt;
+  &lt;network_id&gt;24ba0582-7648-48b2-a7f4-0af3783b55f0&lt;&#47;network_id&gt;
+  &lt;api_key&gt;eb7d6e26-5930-4fef-a3c7-aa023f31cefd&lt;&#47;api_key&gt;
+  &lt;device_id&gt;device-5122&lt;&#47;device_id&gt;
+  &lt;display_time&gt;1322455356&lt;&#47;display_time&gt;
+  &lt;number_of_screens&gt;1&lt;&#47;number_of_screens&gt;
+  &lt;device_attribute&gt;
+    &lt;name&gt;zipcode&lt;&#47;name&gt;
+    &lt;value&gt;19122&lt;&#47;value&gt;
+  &lt;&#47;device_attribute&gt;
+  &lt;device_attribute&gt;
+    &lt;name&gt;quality&lt;&#47;name&gt;
+    &lt;value&gt;pretty good&lt;&#47;value&gt;
+  &lt;&#47;device_attribute&gt;
+  &lt;display_area&gt;
+    &lt;id&gt;Display-Area-1&lt;&#47;id&gt;
+    &lt;width&gt;800&lt;&#47;width&gt;
+    &lt;height&gt;600&lt;&#47;height&gt;
+    &lt;allow_audio&gt;true&lt;&#47;allow_audio&gt;
+    &lt;supported_media&gt;image&#47;gif&lt;&#47;supported_media&gt;
+    &lt;supported_media&gt;image&#47;jpeg&lt;&#47;supported_media&gt;
+  &lt;&#47;display_area&gt;
+  &lt;display_area&gt;
+    &lt;id&gt;Display-Area-2&lt;&#47;id&gt;
+    &lt;width&gt;600&lt;&#47;width&gt;
+    &lt;height&gt;800&lt;&#47;height&gt;
+    &lt;allow_audio&gt;true&lt;&#47;allow_audio&gt;
+    &lt;supported_media&gt;image&#47;gif&lt;&#47;supported_media&gt;
+    &lt;supported_media&gt;image&#47;jpeg&lt;&#47;supported_media&gt;
+  &lt;&#47;display_area&gt;
+&lt;&#47;ad_request&gt;
+
+
+&lt;AdResponse&gt;
+  &lt;advertisement&gt;
+    &lt;lease_id&gt;8a7eb4f7-d63f-488f-bb02-a362c28d70a8&lt;&#47;lease_id&gt;
+    &lt;lease_expiry&gt;1234582290&lt;&#47;lease_expiry&gt;
+    &lt;display_area_id&gt;Display-Area-1&lt;&#47;display_area_id&gt;
+    &lt;asset_id&gt;4&lt;&#47;asset_id&gt;
+    &lt;asset_url&gt;http:&#47;&#47;assets.vistarmedia.com&#47;r&#47;g32&#47;4.gif&lt;&#47;asset_url&gt;
+    &lt;width&gt;800&lt;&#47;width&gt;
+    &lt;height&gt;600&lt;&#47;height&gt;
+    &lt;mimeType&gt;image&#47;gif&lt;&#47;mimeType&gt;
+    &lt;length_in_seconds&gt;0&lt;&#47;length_in_seconds&gt;
+  &lt;&#47;advertisement&gt;
+  &lt;advertisement&gt;
+    &lt;lease_id&gt;4915f4f8-4920-4571-b6a5-f8c1bd748e68&lt;&#47;lease_id&gt;
+    &lt;lease_expiry&gt;1234582290&lt;&#47;lease_expiry&gt;’
+    &lt;display_area_id&gt;Display-Area-2&lt;&#47;display_area_id&gt;
+    &lt;asset_id&gt;7&lt;&#47;asset_id&gt;
+    &lt;asset_url&gt;http:&#47;&#47;assets.vistarmedia.com&#47;g&#47;2jc&#47;3fa.jpeg&lt;&#47;asset_url&gt;
+    &lt;width&gt;600&lt;&#47;width&gt;
+    &lt;height&gt;800&lt;&#47;height&gt;
+    &lt;mimeType&gt;image&#47;jpeg&lt;&#47;mimeType&gt;
+    &lt;length_in_seconds&gt;0&lt;&#47;length_in_seconds&gt;
+  &lt;&#47;advertisement&gt;
+&lt;&#47;AdResponse&gt;
+</code></pre>

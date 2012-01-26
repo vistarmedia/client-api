@@ -56,14 +56,18 @@ message AdRequest {
   // at the display_time specified above
   required int32 number_of_screens = 5 [default=1];
 
+  // If the player is making a direct connection to the Vistar ad server, this
+  // flag should be true, otherwise false.
+  required bool direct_connection = 6;
+
   // Grab bag of attributes attached to a device. Vistar may require network
   // operators set certain attributes in order to receive ads, but there are no
   // constraints at the protocol level.
-  repeated DeviceAttribute device_attribute = 6;
+  repeated DeviceAttribute device_attribute = 7;
 
   // An enumeration of the number of display areas which need ads displayed for
   // this request. The specifics of each entry are specified above.
-  repeated DisplayArea display_area = 7;
+  repeated DisplayArea display_area = 8;
  
 }
 
@@ -75,7 +79,7 @@ message Advertisement {
   required string asset_url         = 5;
   required int32  width             = 6;
   required int32  height            = 7;
-  required string mimeType          = 8;
+  required string mime_type         = 8;
   optional int32  length_in_seconds = 9;
 }
 
@@ -83,15 +87,10 @@ message AdResponse {
   repeated Advertisement advertisement = 1;
 }
 
-
-message RequestDialog {
-  required AdRequest  request   = 1;
-  required AdResponse response  = 2;
-}
-
 message ProofOfPlay {
   required string lease_id = 1;
-  required int64  play_time = 2;
-  required int32  display_time_in_seconds = 3;
+  required int64  display_time = 2;
+  required int32  display_duration_seconds = 3;
   required int32  number_of_screens = 4 [default=1];
+  required bool   direct_connection = 5;
 }

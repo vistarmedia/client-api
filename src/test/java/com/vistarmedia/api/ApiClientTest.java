@@ -1,5 +1,13 @@
 package com.vistarmedia.api;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.junit.matchers.JUnitMatchers.containsString;
+
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -8,8 +16,6 @@ import java.util.concurrent.TimeoutException;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import static org.junit.matchers.JUnitMatchers.*;
 
 import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.message.Api.AdResponse;
@@ -32,11 +38,12 @@ public class ApiClientTest {
     long nowInSeconds = new Date().getTime() / 1000;
     sampleAdRequest = AdRequest.newBuilder().setNetworkId("network-id")
         .setApiKey("api-key").setDeviceId("internal-device-id")
-        .setNumberOfScreens(1).setDisplayTime(nowInSeconds).build();
+        .setNumberOfScreens(1).setDisplayTime(nowInSeconds)
+        .setDirectConnection(true).build();
 
-    sampleProofOfPlay = ProofOfPlay.newBuilder().setDisplayTimeInSeconds(10)
-        .setPlayTime(nowInSeconds).setNumberOfScreens(1)
-        .setLeaseId("sample-lease-id").build();
+    sampleProofOfPlay = ProofOfPlay.newBuilder().setDisplayDurationSeconds(10)
+        .setDisplayTime(nowInSeconds).setNumberOfScreens(1)
+        .setDirectConnection(true).setLeaseId("sample-lease-id").build();
   }
 
   @Test
@@ -86,7 +93,7 @@ public class ApiClientTest {
         containsString("the input ended unexpectedly"));
   }
 
-  @Test
+  @Test(expected = TimeoutException.class)
   public void testResponseTimeout() throws InterruptedException,
       ExecutionException, TimeoutException {
     Transport transport = new NoResponseTransport();
@@ -96,8 +103,7 @@ public class ApiClientTest {
         .sendAdRequest(sampleAdRequest);
     assertFalse(resultFuture.isDone());
 
-    AdResponseResult result = resultFuture.get(100, TimeUnit.MILLISECONDS);
-    assertNull(result);
+    resultFuture.get(100, TimeUnit.MILLISECONDS);
   }
 
   @Test
@@ -148,7 +154,7 @@ public class ApiClientTest {
       client.getAdResponse(sampleAdRequest);
     } catch (ApiRequestException e) {
       assertEquals(408, e.getCode());
-      assertEquals(e.getMessage(), "Request Timeout");
+      assertEquals(e.getMessage(), "Response timed out");
       return;
     }
     fail("Exception should have been thrown");

@@ -9,27 +9,22 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import com.vistarmedia.api.ApiClient;
 import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 
-public class AsyncHttpClientTransportTest {
+public class AsyncHttpClientTransportSpec {
 
   private ApiClient client;
   private long      nowInSeconds;
 
-  @Before
   public void setUp() {
     Transport transport = new AsyncHttpClientTransport();
     client = new ApiClient("localhost", 8123, transport);
     nowInSeconds = new Date().getTime() / 1000;
   }
 
-  @Test
   public void testInvalidApiKey() throws InterruptedException,
       ExecutionException, TimeoutException {
     AdRequest adRequest = AdRequest.newBuilder().setNetworkId("bad-network-id")

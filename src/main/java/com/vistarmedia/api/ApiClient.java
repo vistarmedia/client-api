@@ -83,6 +83,7 @@ import com.vistarmedia.api.transport.TransportResponseHandler;
  *     client = AsyncHttpClientTransport.connect(host, port);
  *   }
  * 
+ *   // Make 10 synchronous requests.
  *   public void run() throws ApiRequestException {
  *     for (int i = 0; i &lt; 10; i++) {
  *       AdRequest request = AdRequestBuidler.newRequest();
@@ -140,7 +141,7 @@ import com.vistarmedia.api.transport.TransportResponseHandler;
  *     List&lt;Future&lt;AdResponseResult&gt;&gt; resultFutures = new ArrayList&lt;Future&lt;AdResponseResult&gt;&gt;();
  *     for (int i = 0; i &lt; 10; i++) {
  *       AdRequest request = AdRequestBuidler.newRequest();
- *       resultFutures.append(client.sendAdRequest(request));
+ *       resultFutures.add(client.sendAdRequest(request));
  *     }
  *     
  *     for(Future&lt;AdResponseResult&gt; resultFuture : resultFutures) {
@@ -221,6 +222,7 @@ public class ApiClient {
   private Transport           transport;
   private int                 syncTimeoutSeconds;
 
+  public static final String  VERSION            = "0.1";
   private static final String GET_AD_PATH        = "/api/v1/get_ad/protobuf";
   private static final String PROOF_OF_PLAY_PATH = "/api/v1/proof_of_play/protobuf";
 

@@ -61,7 +61,9 @@ public class ApiResultFuture<T extends ApiResult<?>> implements Future<T> {
   @Override
   public T get(long timeout, TimeUnit unit) throws InterruptedException,
       ExecutionException, TimeoutException {
-    latch.await(timeout, unit);
+    if (!latch.await(timeout, unit)) {
+      throw new TimeoutException("Response timed out");
+    }
     return apiResult;
   }
 

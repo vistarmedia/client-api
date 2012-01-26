@@ -41,7 +41,7 @@ public class SimpleAdRequestExample {
         .setValue("Chick-fil-A").build());
 
     displayArea = DisplayArea.newBuilder().setId("default-area")
-        .setAllowAudio(true).setWidth(170).setHeight(170)
+        .setAllowAudio(true).setWidth(1280).setHeight(760)
         .addSupportedMedia("image/gif").addSupportedMedia("image/jpeg")
         .addSupportedMedia("image/png")
         .addSupportedMedia("application/x-shockwave-flash")
@@ -65,11 +65,11 @@ public class SimpleAdRequestExample {
           .setDisplayTime(current.getTimeInMillis() / 1000).build();
 
       resultFutures.add(vistarApiClient.sendAdRequest(request));
-      current.add(Calendar.MINUTE, 30);
+      current.add(Calendar.MINUTE, 20);
     }
 
     for (Future<AdResponseResult> resultFuture : resultFutures) {
-      AdResponseResult result = resultFuture.get(1, TimeUnit.SECONDS);
+      AdResponseResult result = resultFuture.get(500, TimeUnit.MILLISECONDS);
       if (result == null) {
         System.err.print("Response Timeout");
       } else {
@@ -95,9 +95,9 @@ public class SimpleAdRequestExample {
     for (Advertisement ad : response.getAdvertisementList()) {
       System.out.println("Pretending to show: " + ad.getAssetUrl());
       ProofOfPlay proofOfPlay = ProofOfPlay.newBuilder()
-          .setDisplayTimeInSeconds(ad.getLengthInSeconds())
+          .setDisplayDurationSeconds(ad.getLengthInSeconds())
           .setNumberOfScreens(1).setLeaseId(ad.getLeaseId())
-          .setPlayTime(ad.getLeaseExpiry()).build();
+          .setDisplayTime(ad.getLeaseExpiry()).build();
       resultFutures.add(vistarApiClient.sendProofOfPlay(proofOfPlay));
     }
     return resultFutures;
@@ -116,7 +116,7 @@ public class SimpleAdRequestExample {
 
     Calendar start = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     Calendar end = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    end.add(Calendar.DATE, 3);
+    end.add(Calendar.DATE, 1000);
 
     example.requestRange(start, end);
     System.out.println("Done!");

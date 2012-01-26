@@ -36,6 +36,15 @@
     </dependency>
   </dependencies>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>filesystem</id>
+      <name>File System</name>
+      <url>file:///tmp/maven2</url>
+      <layout>legacy</layout>
+    </snapshotRepository>
+  </distributionManagement>
+
   <build>
     <plugins>
       <plugin>
