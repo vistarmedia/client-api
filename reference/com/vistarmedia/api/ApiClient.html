@@ -226,11 +226,14 @@ Summary:
 
 
 
+  <a href="#constants">Constants</a>
+  
 
 
 
 
-  <a href="#pubctors">Ctors</a>
+
+  &#124; <a href="#pubctors">Ctors</a>
   
 
 
@@ -376,6 +379,7 @@ Summary:
      client = AsyncHttpClientTransport.connect(host, port);
    }
  
+   // Make 10 synchronous requests.
    public void run() throws ApiRequestException {
      for (int i = 0; i &lt; 10; i++) {
        AdRequest request = AdRequestBuidler.newRequest();
@@ -433,7 +437,7 @@ Summary:
      List&lt;Future&lt;AdResponseResult&gt;&gt; resultFutures = new ArrayList&lt;Future&lt;AdResponseResult&gt;&gt;();
      for (int i = 0; i &lt; 10; i++) {
        AdRequest request = AdRequestBuidler.newRequest();
-       resultFutures.append(client.sendAdRequest(request));
+       resultFutures.add(client.sendAdRequest(request));
      }
      
      for(Future&lt;AdResponseResult&gt; resultFuture : resultFutures) {
@@ -544,6 +548,22 @@ Summary:
 
 
 
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/vistarmedia/api/ApiClient.html#VERSION">VERSION</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+
+</table>
 
 
 
@@ -923,6 +943,52 @@ From class
 
 
 <!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="VERSION"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://download.oracle.com/javase/6/docs/api/index.html?java/lang/String.html">String</a>
+      </span>
+        VERSION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "0.1"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
 
 
 <!-- Fields -->

@@ -95,6 +95,17 @@
 <parameter name="request" type="com.vistarmedia.api.message.Api.ProofOfPlay">
 </parameter>
 </method>
+<field name="VERSION"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;0.1&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 </class>
 <class name="ApiRequestException"
  extends="java.lang.Exception"
@@ -394,6 +405,17 @@
  visibility="public"
 >
 </method>
+<method name="getDirectConnection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="getDisplayArea"
  return="com.vistarmedia.api.message.Api.DisplayArea"
  abstract="false"
@@ -498,6 +520,17 @@
 >
 </method>
 <method name="hasDeviceId"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasDirectConnection"
  return="boolean"
  abstract="false"
  native="false"
@@ -797,7 +830,7 @@
  type="int"
  transient="false"
  volatile="false"
- value="6"
+ value="7"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -815,11 +848,22 @@
  visibility="public"
 >
 </field>
+<field name="DIRECT_CONNECTION_FIELD_NUMBER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="6"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="DISPLAY_AREA_FIELD_NUMBER"
  type="int"
  transient="false"
  volatile="false"
- value="7"
+ value="8"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -1111,6 +1155,17 @@
  visibility="public"
 >
 </method>
+<method name="clearDirectConnection"
+ return="com.vistarmedia.api.message.Api.AdRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="clearDisplayArea"
  return="com.vistarmedia.api.message.Api.AdRequest.Builder"
  abstract="false"
@@ -1282,6 +1337,17 @@
  visibility="public"
 >
 </method>
+<method name="getDirectConnection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="getDisplayArea"
  return="com.vistarmedia.api.message.Api.DisplayArea"
  abstract="false"
@@ -1410,6 +1476,17 @@
 >
 </method>
 <method name="hasDeviceId"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasDirectConnection"
  return="boolean"
  abstract="false"
  native="false"
@@ -1568,6 +1645,19 @@
  visibility="public"
 >
 <parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+<method name="setDirectConnection"
+ return="com.vistarmedia.api.message.Api.AdRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="boolean">
 </parameter>
 </method>
 <method name="setDisplayArea"
@@ -1730,6 +1820,17 @@
  visibility="public"
 >
 </method>
+<method name="getDirectConnection"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="getDisplayArea"
  return="com.vistarmedia.api.message.Api.DisplayArea"
  abstract="true"
@@ -1834,6 +1935,17 @@
 >
 </method>
 <method name="hasDeviceId"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasDirectConnection"
  return="boolean"
  abstract="true"
  native="false"
@@ -3181,7 +3293,7 @@
  visibility="public"
 >
 </field>
-<field name="MIMETYPE_FIELD_NUMBER"
+<field name="MIME_TYPE_FIELD_NUMBER"
  type="int"
  transient="false"
  volatile="false"
@@ -5705,8 +5817,30 @@
  visibility="public"
 >
 </method>
-<method name="getDisplayTimeInSeconds"
+<method name="getDirectConnection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDisplayDurationSeconds"
  return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDisplayTime"
+ return="long"
  abstract="false"
  native="false"
  synchronized="false"
@@ -5738,8 +5872,8 @@
  visibility="public"
 >
 </method>
-<method name="getPlayTime"
- return="long"
+<method name="hasDirectConnection"
+ return="boolean"
  abstract="false"
  native="false"
  synchronized="false"
@@ -5749,7 +5883,18 @@
  visibility="public"
 >
 </method>
-<method name="hasDisplayTimeInSeconds"
+<method name="hasDisplayDurationSeconds"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasDisplayTime"
  return="boolean"
  abstract="false"
  native="false"
@@ -5772,17 +5917,6 @@
 >
 </method>
 <method name="hasNumberOfScreens"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasPlayTime"
  return="boolean"
  abstract="false"
  native="false"
@@ -6034,11 +6168,33 @@
  visibility="public"
 >
 </method>
-<field name="DISPLAY_TIME_IN_SECONDS_FIELD_NUMBER"
+<field name="DIRECT_CONNECTION_FIELD_NUMBER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="5"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DISPLAY_DURATION_SECONDS_FIELD_NUMBER"
  type="int"
  transient="false"
  volatile="false"
  value="3"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DISPLAY_TIME_FIELD_NUMBER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="2"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -6061,17 +6217,6 @@
  transient="false"
  volatile="false"
  value="4"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="PLAY_TIME_FIELD_NUMBER"
- type="int"
- transient="false"
- volatile="false"
- value="2"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -6111,7 +6256,29 @@
  visibility="public"
 >
 </method>
-<method name="clearDisplayTimeInSeconds"
+<method name="clearDirectConnection"
+ return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="clearDisplayDurationSeconds"
+ return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="clearDisplayTime"
  return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
  abstract="false"
  native="false"
@@ -6144,17 +6311,6 @@
  visibility="public"
 >
 </method>
-<method name="clearPlayTime"
- return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
 <method name="getDefaultInstanceForType"
  return="com.vistarmedia.api.message.Api.ProofOfPlay"
  abstract="false"
@@ -6177,8 +6333,30 @@
  visibility="public"
 >
 </method>
-<method name="getDisplayTimeInSeconds"
+<method name="getDirectConnection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDisplayDurationSeconds"
  return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDisplayTime"
+ return="long"
  abstract="false"
  native="false"
  synchronized="false"
@@ -6210,8 +6388,8 @@
  visibility="public"
 >
 </method>
-<method name="getPlayTime"
- return="long"
+<method name="hasDirectConnection"
+ return="boolean"
  abstract="false"
  native="false"
  synchronized="false"
@@ -6221,7 +6399,18 @@
  visibility="public"
 >
 </method>
-<method name="hasDisplayTimeInSeconds"
+<method name="hasDisplayDurationSeconds"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasDisplayTime"
  return="boolean"
  abstract="false"
  native="false"
@@ -6244,17 +6433,6 @@
 >
 </method>
 <method name="hasNumberOfScreens"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasPlayTime"
  return="boolean"
  abstract="false"
  native="false"
@@ -6300,7 +6478,20 @@
 <parameter name="other" type="com.vistarmedia.api.message.Api.ProofOfPlay">
 </parameter>
 </method>
-<method name="setDisplayTimeInSeconds"
+<method name="setDirectConnection"
+ return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="boolean">
+</parameter>
+</method>
+<method name="setDisplayDurationSeconds"
  return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
  abstract="false"
  native="false"
@@ -6311,6 +6502,19 @@
  visibility="public"
 >
 <parameter name="value" type="int">
+</parameter>
+</method>
+<method name="setDisplayTime"
+ return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="long">
 </parameter>
 </method>
 <method name="setLeaseId"
@@ -6339,19 +6543,6 @@
 <parameter name="value" type="int">
 </parameter>
 </method>
-<method name="setPlayTime"
- return="com.vistarmedia.api.message.Api.ProofOfPlay.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="value" type="long">
-</parameter>
-</method>
 </class>
 <interface name="Api.ProofOfPlayOrBuilder"
  abstract="true"
@@ -6362,8 +6553,30 @@
 >
 <implements name="com.google.protobuf.MessageOrBuilder">
 </implements>
-<method name="getDisplayTimeInSeconds"
+<method name="getDirectConnection"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDisplayDurationSeconds"
  return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDisplayTime"
+ return="long"
  abstract="true"
  native="false"
  synchronized="false"
@@ -6395,8 +6608,8 @@
  visibility="public"
 >
 </method>
-<method name="getPlayTime"
- return="long"
+<method name="hasDirectConnection"
+ return="boolean"
  abstract="true"
  native="false"
  synchronized="false"
@@ -6406,7 +6619,18 @@
  visibility="public"
 >
 </method>
-<method name="hasDisplayTimeInSeconds"
+<method name="hasDisplayDurationSeconds"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasDisplayTime"
  return="boolean"
  abstract="true"
  native="false"
@@ -6429,744 +6653,6 @@
 >
 </method>
 <method name="hasNumberOfScreens"
- return="boolean"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasPlayTime"
- return="boolean"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-</interface>
-<class name="Api.RequestDialog"
- extends="com.google.protobuf.GeneratedMessage"
- abstract="false"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-<implements name="com.vistarmedia.api.message.Api.RequestDialogOrBuilder">
-</implements>
-<method name="getDefaultInstance"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getDefaultInstanceForType"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getDescriptor"
- return="com.google.protobuf.Descriptors.Descriptor"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getRequest"
- return="com.vistarmedia.api.message.Api.AdRequest"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getRequestOrBuilder"
- return="com.vistarmedia.api.message.Api.AdRequestOrBuilder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getResponse"
- return="com.vistarmedia.api.message.Api.AdResponse"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getResponseOrBuilder"
- return="com.vistarmedia.api.message.Api.AdResponseOrBuilder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasRequest"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasResponse"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="internalGetFieldAccessorTable"
- return="com.google.protobuf.GeneratedMessage.FieldAccessorTable"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="protected"
->
-</method>
-<method name="isInitialized"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="newBuilder"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="newBuilder"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="prototype" type="com.vistarmedia.api.message.Api.RequestDialog">
-</parameter>
-</method>
-<method name="newBuilderForType"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="newBuilderForType"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="protected"
->
-<parameter name="parent" type="com.google.protobuf.GeneratedMessage.BuilderParent">
-</parameter>
-</method>
-<method name="parseDelimitedFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="input" type="java.io.InputStream">
-</parameter>
-<exception name="IOException" type="java.io.IOException">
-</exception>
-</method>
-<method name="parseDelimitedFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="input" type="java.io.InputStream">
-</parameter>
-<parameter name="extensionRegistry" type="com.google.protobuf.ExtensionRegistryLite">
-</parameter>
-<exception name="IOException" type="java.io.IOException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="data" type="byte[]">
-</parameter>
-<exception name="InvalidProtocolBufferException" type="com.google.protobuf.InvalidProtocolBufferException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="data" type="byte[]">
-</parameter>
-<parameter name="extensionRegistry" type="com.google.protobuf.ExtensionRegistryLite">
-</parameter>
-<exception name="InvalidProtocolBufferException" type="com.google.protobuf.InvalidProtocolBufferException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="data" type="com.google.protobuf.ByteString">
-</parameter>
-<exception name="InvalidProtocolBufferException" type="com.google.protobuf.InvalidProtocolBufferException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="data" type="com.google.protobuf.ByteString">
-</parameter>
-<parameter name="extensionRegistry" type="com.google.protobuf.ExtensionRegistryLite">
-</parameter>
-<exception name="InvalidProtocolBufferException" type="com.google.protobuf.InvalidProtocolBufferException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="input" type="com.google.protobuf.CodedInputStream">
-</parameter>
-<exception name="IOException" type="java.io.IOException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="input" type="com.google.protobuf.CodedInputStream">
-</parameter>
-<parameter name="extensionRegistry" type="com.google.protobuf.ExtensionRegistryLite">
-</parameter>
-<exception name="IOException" type="java.io.IOException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="input" type="java.io.InputStream">
-</parameter>
-<exception name="IOException" type="java.io.IOException">
-</exception>
-</method>
-<method name="parseFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="input" type="java.io.InputStream">
-</parameter>
-<parameter name="extensionRegistry" type="com.google.protobuf.ExtensionRegistryLite">
-</parameter>
-<exception name="IOException" type="java.io.IOException">
-</exception>
-</method>
-<method name="toBuilder"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<field name="REQUEST_FIELD_NUMBER"
- type="int"
- transient="false"
- volatile="false"
- value="1"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="RESPONSE_FIELD_NUMBER"
- type="int"
- transient="false"
- volatile="false"
- value="2"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-</class>
-<class name="Api.RequestDialog.Builder"
- extends="com.google.protobuf.GeneratedMessage.Builder"
- abstract="false"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-<implements name="com.vistarmedia.api.message.Api.RequestDialogOrBuilder">
-</implements>
-<method name="build"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="buildPartial"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="clearRequest"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="clearResponse"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getDefaultInstanceForType"
- return="com.vistarmedia.api.message.Api.RequestDialog"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getDescriptor"
- return="com.google.protobuf.Descriptors.Descriptor"
- abstract="false"
- native="false"
- synchronized="false"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getRequest"
- return="com.vistarmedia.api.message.Api.AdRequest"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getRequestBuilder"
- return="com.vistarmedia.api.message.Api.AdRequest.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getRequestOrBuilder"
- return="com.vistarmedia.api.message.Api.AdRequestOrBuilder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getResponse"
- return="com.vistarmedia.api.message.Api.AdResponse"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getResponseBuilder"
- return="com.vistarmedia.api.message.Api.AdResponse.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getResponseOrBuilder"
- return="com.vistarmedia.api.message.Api.AdResponseOrBuilder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasRequest"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasResponse"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="internalGetFieldAccessorTable"
- return="com.google.protobuf.GeneratedMessage.FieldAccessorTable"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="protected"
->
-</method>
-<method name="isInitialized"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="mergeFrom"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="other" type="com.vistarmedia.api.message.Api.RequestDialog">
-</parameter>
-</method>
-<method name="mergeRequest"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="value" type="com.vistarmedia.api.message.Api.AdRequest">
-</parameter>
-</method>
-<method name="mergeResponse"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="value" type="com.vistarmedia.api.message.Api.AdResponse">
-</parameter>
-</method>
-<method name="setRequest"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="value" type="com.vistarmedia.api.message.Api.AdRequest">
-</parameter>
-</method>
-<method name="setRequest"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="builderForValue" type="com.vistarmedia.api.message.Api.AdRequest.Builder">
-</parameter>
-</method>
-<method name="setResponse"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="value" type="com.vistarmedia.api.message.Api.AdResponse">
-</parameter>
-</method>
-<method name="setResponse"
- return="com.vistarmedia.api.message.Api.RequestDialog.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="builderForValue" type="com.vistarmedia.api.message.Api.AdResponse.Builder">
-</parameter>
-</method>
-</class>
-<interface name="Api.RequestDialogOrBuilder"
- abstract="true"
- static="true"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<implements name="com.google.protobuf.MessageOrBuilder">
-</implements>
-<method name="getRequest"
- return="com.vistarmedia.api.message.Api.AdRequest"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getRequestOrBuilder"
- return="com.vistarmedia.api.message.Api.AdRequestOrBuilder"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getResponse"
- return="com.vistarmedia.api.message.Api.AdResponse"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getResponseOrBuilder"
- return="com.vistarmedia.api.message.Api.AdResponseOrBuilder"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasRequest"
- return="boolean"
- abstract="true"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="hasResponse"
  return="boolean"
  abstract="true"
  native="false"

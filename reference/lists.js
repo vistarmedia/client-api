@@ -24,17 +24,14 @@ var DATA = [
       { id:22, label:"com.vistarmedia.api.message.Api.ProofOfPlay", link:"com/vistarmedia/api/message/Api.ProofOfPlay.html", type:"class" },
       { id:23, label:"com.vistarmedia.api.message.Api.ProofOfPlay.Builder", link:"com/vistarmedia/api/message/Api.ProofOfPlay.Builder.html", type:"class" },
       { id:24, label:"com.vistarmedia.api.message.Api.ProofOfPlayOrBuilder", link:"com/vistarmedia/api/message/Api.ProofOfPlayOrBuilder.html", type:"class" },
-      { id:25, label:"com.vistarmedia.api.message.Api.RequestDialog", link:"com/vistarmedia/api/message/Api.RequestDialog.html", type:"class" },
-      { id:26, label:"com.vistarmedia.api.message.Api.RequestDialog.Builder", link:"com/vistarmedia/api/message/Api.RequestDialog.Builder.html", type:"class" },
-      { id:27, label:"com.vistarmedia.api.message.Api.RequestDialogOrBuilder", link:"com/vistarmedia/api/message/Api.RequestDialogOrBuilder.html", type:"class" },
-      { id:28, label:"com.vistarmedia.api.result", link:"com/vistarmedia/api/result/package-summary.html", type:"package" },
-      { id:29, label:"com.vistarmedia.api.result.AdResponseResult", link:"com/vistarmedia/api/result/AdResponseResult.html", type:"class" },
-      { id:30, label:"com.vistarmedia.api.result.ApiResult", link:"com/vistarmedia/api/result/ApiResult.html", type:"class" },
-      { id:31, label:"com.vistarmedia.api.result.ErrorResult", link:"com/vistarmedia/api/result/ErrorResult.html", type:"class" },
-      { id:32, label:"com.vistarmedia.api.result.ProofOfPlayResult", link:"com/vistarmedia/api/result/ProofOfPlayResult.html", type:"class" },
-      { id:33, label:"com.vistarmedia.api.transport", link:"com/vistarmedia/api/transport/package-summary.html", type:"package" },
-      { id:34, label:"com.vistarmedia.api.transport.AsyncHttpClientTransport", link:"com/vistarmedia/api/transport/AsyncHttpClientTransport.html", type:"class" },
-      { id:35, label:"com.vistarmedia.api.transport.Transport", link:"com/vistarmedia/api/transport/Transport.html", type:"class" },
-      { id:36, label:"com.vistarmedia.api.transport.TransportResponseHandler", link:"com/vistarmedia/api/transport/TransportResponseHandler.html", type:"class" }
+      { id:25, label:"com.vistarmedia.api.result", link:"com/vistarmedia/api/result/package-summary.html", type:"package" },
+      { id:26, label:"com.vistarmedia.api.result.AdResponseResult", link:"com/vistarmedia/api/result/AdResponseResult.html", type:"class" },
+      { id:27, label:"com.vistarmedia.api.result.ApiResult", link:"com/vistarmedia/api/result/ApiResult.html", type:"class" },
+      { id:28, label:"com.vistarmedia.api.result.ErrorResult", link:"com/vistarmedia/api/result/ErrorResult.html", type:"class" },
+      { id:29, label:"com.vistarmedia.api.result.ProofOfPlayResult", link:"com/vistarmedia/api/result/ProofOfPlayResult.html", type:"class" },
+      { id:30, label:"com.vistarmedia.api.transport", link:"com/vistarmedia/api/transport/package-summary.html", type:"package" },
+      { id:31, label:"com.vistarmedia.api.transport.AsyncHttpClientTransport", link:"com/vistarmedia/api/transport/AsyncHttpClientTransport.html", type:"class" },
+      { id:32, label:"com.vistarmedia.api.transport.Transport", link:"com/vistarmedia/api/transport/Transport.html", type:"class" },
+      { id:33, label:"com.vistarmedia.api.transport.TransportResponseHandler", link:"com/vistarmedia/api/transport/TransportResponseHandler.html", type:"class" }
 
     ];
