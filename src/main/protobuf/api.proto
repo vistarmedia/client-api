@@ -20,6 +20,8 @@ message DisplayArea {
 
   optional int32 offset_x = 6;
   optional int32 offset_Y = 7;
+
+  optional int32 cpm_floor_cents = 10;
 }
 
 
@@ -68,7 +70,15 @@ message AdRequest {
   // An enumeration of the number of display areas which need ads displayed for
   // this request. The specifics of each entry are specified above.
   repeated DisplayArea display_area = 8;
- 
+
+  optional float latitude   = 20;
+  optional float longitude  = 21;
+  optional string country   = 22;
+  optional string region    = 23;
+  optional string metro     = 24;
+  optional string dma       = 25;
+  optional string city      = 26;
+  optional string zip       = 27;
 }
 
 message Advertisement {
