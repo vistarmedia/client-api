@@ -11,7 +11,6 @@ import com.vistarmedia.api.future.ApiResultFuture;
 import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.message.Api.AdResponse;
 import com.vistarmedia.api.message.Api.Advertisement;
-import com.vistarmedia.api.message.Api.ProofOfPlay;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 import com.vistarmedia.api.result.ProofOfPlayResult;
@@ -222,9 +221,8 @@ public class ApiClient {
   private Transport           transport;
   private int                 syncTimeoutSeconds;
 
-  public static final String  VERSION            = "0.1";
-  private static final String GET_AD_PATH        = "/api/v1/get_ad/protobuf";
-  private static final String PROOF_OF_PLAY_PATH = "/api/v1/proof_of_play/protobuf";
+  public static final String  VERSION     = "0.3";
+  private static final String GET_AD_PATH = "/api/v1/get_ad/protobuf";
 
   public ApiClient(String host, int port, Transport transport,
       int syncTimeoutSeconds) {
@@ -275,12 +273,10 @@ public class ApiClient {
     final ApiResultFuture<AdResponseResult> result = new ApiResultFuture<AdResponseResult>();
     TransportResponseHandler handler = new TransportResponseHandler() {
 
-      @Override
       public void onThrowable(Throwable t) {
         onError(400, t.getLocalizedMessage());
       }
 
-      @Override
       public void onResponse(int code, String message, InputStream body) {
         if (code == 200) {
           try {
@@ -302,6 +298,53 @@ public class ApiClient {
     };
 
     sendRequest(GET_AD_PATH, request.toByteArray(), handler);
+    return result;
+  }
+
+  /**
+   * Asynchronously send the proof of play for an {@code Advertisement} over the
+   * configured transport to the Vistar Media API server. This will return a
+   * result future which will be filled at some point in the background. The
+   * {@link com.vistarmedia.api.result.ProofOfPlayResult} may contain either a
+   * Boolean indicating if the lease was valid or a
+   * {@link com.vistarmedia.api.result.ErrorResult} describing what went wrong
+   * during the operation.
+   * 
+   * @param ad
+   *          Advertisement which has successfully been shown
+   * @return A Future containing the eventual result of this operation, be it an
+   *         error or success.
+   */
+  public Future<ProofOfPlayResult> sendProofOfPlay(Advertisement ad) {
+    final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>();
+    TransportResponseHandler handler = new TransportResponseHandler() {
+
+      public void onThrowable(Throwable t) {
+        onError(400, t.getLocalizedMessage());
+      }
+
+      public void onResponse(int code, String message, InputStream body) {
+        if (code == 200 || code == 204 || code == 400) {
+          Boolean success = code != 400;
+          result.fulfill(new ProofOfPlayResult(success));
+        } else {
+          onError(code, message);
+        }
+      }
+
+      private void onError(int code, String message) {
+        ErrorResult error = new ErrorResult(code, message);
+        result.fulfill(new ProofOfPlayResult(error));
+      }
+    };
+
+    try {
+      URL url = new URL(ad.getProofOfPlayUrl());
+      transport.get(url, handler);
+    } catch (Throwable t) {
+      ErrorResult error = new ErrorResult(500, "Invalid URL");
+      result.fulfill(new ProofOfPlayResult(error));
+    }
     return result;
   }
 
@@ -341,24 +384,20 @@ public class ApiClient {
 
   /**
    * <p>
-   * Synchronously sends a proof of play to Vistar Media's API servers. Idential
-   * to {@code #getAdResponse(AdRequest)}, this will raise an
-   * {@code ApiRequestException} after a specified timeout.
-   * {@code ApiRequestException}s will also be raised for any response errors.
-   * See the table at the top for more information about the different response
-   * codes.
+   * Synchronously sends the Proof of Play for an {@code Advertisement}. This
+   * will respond within the default timeout (10 seconds) or throw an exception.
+   * If there is any problem with the request, an
+   * {@link com.vistarmedia.api.ApiRequestException} will be thrown with the
+   * HTTP code and a string describing the problem.
    * </p>
    * 
-   * @param request
-   *          Proof of play to register
-   * @return The same Proof of play echoed back from Vistar's servers
+   * @param ad
+   * @return An {@code Advertisement} which has been shown.
    * @throws ApiRequestException
-   *           thrown whenever this is either a timeout or some manner of
-   *           invalid request/response.
+   *           thrown when there was any problem with the request.
    */
-  public ProofOfPlay getProofOfPlay(ProofOfPlay request)
-      throws ApiRequestException {
-    Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(request);
+  public Boolean getProofOfPlay(Advertisement ad) throws ApiRequestException {
+    Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(ad);
     ProofOfPlayResult result;
     try {
       result = resultFuture.get(syncTimeoutSeconds, TimeUnit.SECONDS);
@@ -376,67 +415,6 @@ public class ApiClient {
       ErrorResult error = result.getError();
       throw new ApiRequestException(error.getCode(), error.getMessage());
     }
-  }
-
-  /**
-   * <p>
-   * Asynchronously send an {@link com.vistarmedia.api.message.Api.ProofOfPlay}
-   * over the configured transport to the Vistar Media API server. This will
-   * return a result future which will be filled at some point in the
-   * background. The {@link com.vistarmedia.api.result.ProofOfPlayResult} may
-   * contain either an {@link com.vistarmedia.api.message.Api.ProofOfPlay} or an
-   * {@link com.vistarmedia.api.result.ErrorResult} describing what went wrong
-   * during the operation.
-   * </p>
-   * 
-   * <p>
-   * This request should be sent after an asset has been shown for at least the
-   * time specified in the corresponding AdResonse's Advertisement.
-   * </p>
-   * 
-   * <p>
-   * The server will response back with an identical proof of play that has been
-   * sent. In the future, this may also attach pricing information for internal
-   * reporting.
-   * </p>
-   * 
-   * @param request
-   *          Proof of play describing when and for how long the advertisment
-   *          was shown on the player.
-   * @return A Future containing the eventual result of this operation, be it an
-   *         error or success.
-   */
-  public Future<ProofOfPlayResult> sendProofOfPlay(ProofOfPlay request) {
-    final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>();
-    TransportResponseHandler handler = new TransportResponseHandler() {
-      @Override
-      public void onThrowable(Throwable t) {
-        onError(400, t.getLocalizedMessage());
-      }
-
-      @Override
-      public void onResponse(int code, String message, InputStream body) {
-        if (code == 200) {
-          try {
-            ProofOfPlay response = ProofOfPlay.parseFrom(body);
-            result.fulfill(new ProofOfPlayResult(response));
-          } catch (IOException e) {
-            onError(500, e.getLocalizedMessage());
-          }
-
-        } else {
-          onError(code, message);
-        }
-      }
-
-      private void onError(int code, String message) {
-        ErrorResult error = new ErrorResult(code, message);
-        result.fulfill(new ProofOfPlayResult(error));
-      }
-    };
-
-    sendRequest(PROOF_OF_PLAY_PATH, request.toByteArray(), handler);
-    return result;
   }
 
   /**
@@ -494,4 +472,5 @@ public class ApiClient {
     String urlString = String.format("http://%s:%s%s", host, port, path);
     return new URL(urlString);
   }
+
 }

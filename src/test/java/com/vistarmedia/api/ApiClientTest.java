@@ -19,7 +19,7 @@ import org.junit.Test;
 
 import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.message.Api.AdResponse;
-import com.vistarmedia.api.message.Api.ProofOfPlay;
+import com.vistarmedia.api.message.Api.Advertisement;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 import com.vistarmedia.api.result.ProofOfPlayResult;
@@ -30,8 +30,7 @@ import com.vistarmedia.api.transport.Transport;
 
 public class ApiClientTest {
 
-  private AdRequest   sampleAdRequest;
-  private ProofOfPlay sampleProofOfPlay;
+  private AdRequest sampleAdRequest;
 
   @Before
   public void setUp() {
@@ -40,10 +39,6 @@ public class ApiClientTest {
         .setApiKey("api-key").setDeviceId("internal-device-id")
         .setNumberOfScreens(1).setDisplayTime(nowInSeconds)
         .setDirectConnection(true).build();
-
-    sampleProofOfPlay = ProofOfPlay.newBuilder().setDisplayDurationSeconds(10)
-        .setDisplayTime(nowInSeconds).setNumberOfScreens(1)
-        .setDirectConnection(true).setLeaseId("sample-lease-id").build();
   }
 
   @Test
@@ -65,17 +60,20 @@ public class ApiClientTest {
   @Test
   public void testSimpleProofOfPlay() throws InterruptedException,
       ExecutionException {
-    byte[] responseBody = sampleProofOfPlay.toByteArray();
-    Transport transport = new SuccessTransport(responseBody);
-    ApiClient client = new ApiClient("host", 80, transport);
+    Transport transport = new SuccessTransport(new byte[] {});
+    ApiClient client = new ApiClient("example.com", 80, transport);
 
-    Future<ProofOfPlayResult> resultFuture = client
-        .sendProofOfPlay(sampleProofOfPlay);
-    ProofOfPlayResult result = resultFuture.get();
+    Advertisement ad = Advertisement.newBuilder().setId("test-id")
+        .setProofOfPlayUrl("http://example.com?id=123").setLeaseExpiry(0)
+        .setDisplayAreaId("displayarea").setAssetId("asset-id")
+        .setAssetUrl("asset-url").setWidth(800).setHeight(600)
+        .setMimeType("text/plain").build();
+
+    Future<ProofOfPlayResult> popFuture = client.sendProofOfPlay(ad);
+    ProofOfPlayResult result = popFuture.get();
 
     assertTrue(result.isSuccess());
-    ProofOfPlay resp = result.getResult();
-    assertNotNull(resp);
+    assertTrue(result.getResult());
   }
 
   @Test

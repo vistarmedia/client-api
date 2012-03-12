@@ -82,25 +82,18 @@ message AdRequest {
 }
 
 message Advertisement {
-  required string lease_id          = 1;
-  required int64  lease_expiry      = 2;
-  required string display_area_id   = 3;
-  required string asset_id          = 4;
-  required string asset_url         = 5;
-  required int32  width             = 6;
-  required int32  height            = 7;
-  required string mime_type         = 8;
-  optional int32  length_in_seconds = 9;
+  required string id                = 1;
+  required string proof_of_play_url = 2;
+  required int64  lease_expiry      = 3;
+  required string display_area_id   = 4;
+  required string asset_id          = 5;
+  required string asset_url         = 6;
+  required int32  width             = 7;
+  required int32  height            = 8;
+  required string mime_type         = 9;
+  optional int32  length_in_seconds = 10;
 }
 
 message AdResponse {
   repeated Advertisement advertisement = 1;
-}
-
-message ProofOfPlay {
-  required string lease_id = 1;
-  required int64  display_time = 2;
-  required int32  display_duration_seconds = 3;
-  required int32  number_of_screens = 4 [default=1];
-  required bool   direct_connection = 5;
 }

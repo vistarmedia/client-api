@@ -12,9 +12,12 @@ public class SuccessTransport implements Transport {
     this.body = body;
   }
 
-  @Override
   public void post(URL url, byte[] body, TransportResponseHandler handler)
       throws IOException {
+    handler.onResponse(200, "OK", new ByteArrayInputStream(this.body));
+  }
+
+  public void get(URL url, TransportResponseHandler handler) throws IOException {
     handler.onResponse(200, "OK", new ByteArrayInputStream(this.body));
   }
 

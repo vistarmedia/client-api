@@ -15,4 +15,7 @@ import com.vistarmedia.api.ApiClient;
 public interface Transport {
   public void post(final URL url, final byte[] body,
       final TransportResponseHandler handler) throws IOException;
+
+  public void get(final URL url, final TransportResponseHandler handler)
+      throws IOException;
 }

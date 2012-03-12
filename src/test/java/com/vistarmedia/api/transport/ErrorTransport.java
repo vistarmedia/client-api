@@ -16,9 +16,12 @@ public class ErrorTransport implements Transport {
     this.message = message;
   }
 
-  @Override
   public void post(URL url, byte[] body, TransportResponseHandler handler)
       throws IOException {
+    handler.onResponse(code, message, EMPTY);
+  }
+
+  public void get(URL url, TransportResponseHandler handler) throws IOException {
     handler.onResponse(code, message, EMPTY);
   }
 

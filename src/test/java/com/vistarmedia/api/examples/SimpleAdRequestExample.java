@@ -13,7 +13,6 @@ import com.vistarmedia.api.message.Api.AdResponse;
 import com.vistarmedia.api.message.Api.Advertisement;
 import com.vistarmedia.api.message.Api.DeviceAttribute;
 import com.vistarmedia.api.message.Api.DisplayArea;
-import com.vistarmedia.api.message.Api.ProofOfPlay;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 import com.vistarmedia.api.result.ProofOfPlayResult;
@@ -84,8 +83,8 @@ public class SimpleAdRequestExample {
     for (Future<ProofOfPlayResult> popFuture : popFutures) {
       ProofOfPlayResult result = popFuture.get(1, TimeUnit.SECONDS);
       if (result != null && result.isSuccess()) {
-        ProofOfPlay pop = result.getResult();
-        System.out.println("Spent Lease: " + pop.getLeaseId());
+        Boolean valid = result.getResult();
+        System.out.println("Spent Lease: " + valid);
       }
     }
   }
@@ -94,11 +93,7 @@ public class SimpleAdRequestExample {
     List<Future<ProofOfPlayResult>> resultFutures = new ArrayList<Future<ProofOfPlayResult>>();
     for (Advertisement ad : response.getAdvertisementList()) {
       System.out.println("Pretending to show: " + ad.getAssetUrl());
-      ProofOfPlay proofOfPlay = ProofOfPlay.newBuilder()
-          .setDisplayDurationSeconds(ad.getLengthInSeconds())
-          .setNumberOfScreens(1).setLeaseId(ad.getLeaseId())
-          .setDisplayTime(ad.getLeaseExpiry()).build();
-      resultFutures.add(vistarApiClient.sendProofOfPlay(proofOfPlay));
+      resultFutures.add(vistarApiClient.sendProofOfPlay(ad));
     }
     return resultFutures;
   }

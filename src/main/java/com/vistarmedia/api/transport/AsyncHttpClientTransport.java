@@ -47,7 +47,6 @@ public class AsyncHttpClientTransport implements Transport {
     return new ApiClient(host, port, new AsyncHttpClientTransport());
   }
 
-  @Override
   public void post(final URL url, final byte[] body,
       final TransportResponseHandler handler) throws IOException {
 
@@ -59,6 +58,7 @@ public class AsyncHttpClientTransport implements Transport {
 
             @Override
             public void onThrowable(Throwable t) {
+              conLock.release();
               handler.onThrowable(t);
             }
 
@@ -76,4 +76,13 @@ public class AsyncHttpClientTransport implements Transport {
     }
   }
 
+  public void get(URL url, TransportResponseHandler handler) throws IOException {
+    try {
+      conLock.acquire();
+      client.prepareGet(url.toString()).execute();
+    } catch (InterruptedException e) {
+      handler.onThrowable(new RuntimeException(
+          "Interrupted acquiring connection lock"));
+    }
+  }
 }
