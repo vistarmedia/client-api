@@ -67,7 +67,8 @@ public class ApiClientTest {
         .setProofOfPlayUrl("http://example.com?id=123").setLeaseExpiry(0)
         .setDisplayAreaId("displayarea").setAssetId("asset-id")
         .setAssetUrl("asset-url").setWidth(800).setHeight(600)
-        .setMimeType("text/plain").build();
+        .setMimeType("text/plain").setExpirationUrl("http://expireme.org")
+        .setDisplayTime(123456789L).setCampaignId(987654321L).build();
 
     Future<ProofOfPlayResult> popFuture = client.sendProofOfPlay(ad);
     ProofOfPlayResult result = popFuture.get();

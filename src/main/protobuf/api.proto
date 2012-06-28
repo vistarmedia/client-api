@@ -22,6 +22,9 @@ message DisplayArea {
   optional int32 offset_Y = 7;
 
   optional int32 cpm_floor_cents = 10;
+
+  optional int32 min_duration = 100;
+  optional int32 max_duration = 101;
 }
 
 
@@ -73,17 +76,21 @@ message AdRequest {
 
   optional float latitude   = 20;
   optional float longitude  = 21;
-  optional string country   = 22;
-  optional string region    = 23;
   optional string metro     = 24;
-  optional string dma       = 25;
-  optional string city      = 26;
-  optional string zip       = 27;
+
+  optional string venue_id  = 31;
+
+  optional int32  duration   = 40;
+  optional int32  interval   = 41;
 }
 
 message Advertisement {
   required string id                = 1;
+
   required string proof_of_play_url = 2;
+  required string expiration_url    = 20;
+
+  required int64  display_time      = 11;
   required int64  lease_expiry      = 3;
   required string display_area_id   = 4;
   required string asset_id          = 5;
@@ -92,8 +99,11 @@ message Advertisement {
   required int32  height            = 8;
   required string mime_type         = 9;
   optional int32  length_in_seconds = 10;
+
+  required int64  campaign_id       = 30;
 }
 
 message AdResponse {
   repeated Advertisement advertisement = 1;
+  repeated string message = 2;
 }
