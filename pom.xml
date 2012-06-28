@@ -4,7 +4,7 @@
 
   <groupId>com.vistarmedia</groupId>
   <artifactId>client-api</artifactId>
-  <version>1.3-SNAPSHOT</version>
+  <version>1.4-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>VistarMediaClientApi</name>
@@ -34,16 +34,14 @@
     </dependency>
   </dependencies>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>filesystem</id>
-      <name>File System</name>
-      <url>file:///tmp/maven2</url>
-      <layout>legacy</layout>
-    </snapshotRepository>
-  </distributionManagement>
-
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.kuali.maven</groupId>
+        <artifactId>kuali-wagon-s3</artifactId>
+        <version>1.0.22</version>
+      </extension>
+    </extensions>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -52,29 +50,17 @@
           <target>1.5</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.8</version>
-        <configuration>
-          <!-- <excludePackageNames>com.vistarmedia.api.message</excludePackageNames> -->
-          <docletArtifact>
-            <groupId>com.google.doclava</groupId>
-            <artifactId>doclava</artifactId>
-            <version>1.0.3</version>
-          </docletArtifact>
-          <doclet>com.google.doclava.Doclava</doclet>
-          <bootclasspath>${sun.boot.class.path}</bootclasspath>
-          <additionalparam>
-            -federate JDK http://download.oracle.com/javase/6/docs/api/index.html?
-            -federationxml JDK http://doclava.googlecode.com/svn/static/api/openjdk-6.xml
-            -hdf project.name "${project.name}"
-            -d ${project.build.directory}/apidocs
-            -overview ${project.build.directory}/../src/main/javadoc/overview.html
-          </additionalparam>
-          <useStandardDocletOptions>false</useStandardDocletOptions>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>maven.vistarmedia.com</id>
+      <name>Vistar Snapshots</name>
+      <url>s3://maven.vistarmedia.com/maven/snapshots</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
+
 </project>
