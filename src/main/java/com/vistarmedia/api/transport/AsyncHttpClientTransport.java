@@ -17,14 +17,11 @@ import com.vistarmedia.api.ApiClient;
  */
 public class AsyncHttpClientTransport implements Transport {
 
-  private AsyncHttpClient        client;
-  private static final int       MAX_CONNECTIONS = 3;
-  private static final Semaphore conLock         = new Semaphore(
-                                                     MAX_CONNECTIONS);
-  private static final String    USER_AGENT      = String
-                                                     .format(
-                                                         "VistarClientAPI/%s.async",
-                                                         ApiClient.VERSION);
+  private AsyncHttpClient client;
+  private static final int MAX_CONNECTIONS = 3;
+  private static final Semaphore conLock = new Semaphore(MAX_CONNECTIONS);
+  private static final String USER_AGENT = String.format(
+      "VistarClientAPI/%s.async", ApiClient.VERSION);
 
   public AsyncHttpClientTransport() {
     AsyncHttpClientConfig config = new AsyncHttpClientConfig.Builder()
@@ -53,7 +50,9 @@ public class AsyncHttpClientTransport implements Transport {
     try {
       conLock.acquire();
 
-      client.preparePost(url.toString()).setBody(body)
+      client.preparePost(url.toString()) //
+          .setBody(body) //
+          .addHeader("Content-Type", "application/octet-stream") //
           .execute(new AsyncCompletionHandler<Void>() {
 
             @Override
