@@ -49,7 +49,7 @@ public class BulkScheduleExample {
 
     while (current.before(end)) {
       AdRequest request = AdRequest.newBuilder().setNetworkId(networkId)
-          .setApiKey(apiKey).setDeviceId("device-122").setNumberOfScreens(2)
+          .setApiKey(apiKey).setDeviceId("device-122")
           .addAllDeviceAttribute(deviceAttributes).addDisplayArea(displayArea)
           .setDisplayTime(current.getTimeInMillis() / 1000).build();
       adResponseHandler.handle(vistarApiClient.sendAdRequest(request));
