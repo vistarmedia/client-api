@@ -59,7 +59,7 @@ public class SimpleAdRequestExample {
 
     while (current.before(end)) {
       AdRequest request = AdRequest.newBuilder().setNetworkId(networkId)
-          .setApiKey(apiKey).setDeviceId("device-1235").setNumberOfScreens(2)
+          .setApiKey(apiKey).setDeviceId("device-1235")
           .addDisplayArea(displayArea)
           .setDisplayTime(current.getTimeInMillis() / 1000).build();
 

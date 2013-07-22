@@ -57,10 +57,6 @@ message AdRequest {
   // Estimated time the advertisements should show in epoch seconds, UTC.
   required int64 display_time = 4;
 
-  // Number of screens attached to the display which will show the advertisement
-  // at the display_time specified above
-  required int32 number_of_screens = 5 [default=1];
-
   // If the player is making a direct connection to the Vistar ad server, this
   // flag should be true, otherwise false.
   required bool direct_connection = 6;

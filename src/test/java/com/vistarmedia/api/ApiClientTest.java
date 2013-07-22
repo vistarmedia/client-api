@@ -37,8 +37,7 @@ public class ApiClientTest {
     long nowInSeconds = new Date().getTime() / 1000;
     sampleAdRequest = AdRequest.newBuilder().setNetworkId("network-id")
         .setApiKey("api-key").setDeviceId("internal-device-id")
-        .setNumberOfScreens(1).setDisplayTime(nowInSeconds)
-        .setDirectConnection(true).build();
+        .setDisplayTime(nowInSeconds).setDirectConnection(true).build();
   }
 
   @Test

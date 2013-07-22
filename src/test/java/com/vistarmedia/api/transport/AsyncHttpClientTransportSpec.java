@@ -29,7 +29,7 @@ public class AsyncHttpClientTransportSpec {
       ExecutionException, TimeoutException {
     AdRequest adRequest = AdRequest.newBuilder().setNetworkId("bad-network-id")
         .setApiKey("bad-api-key").setDeviceId("device-id")
-        .setDisplayTime(nowInSeconds).setNumberOfScreens(1).build();
+        .setDisplayTime(nowInSeconds).build();
 
     Future<AdResponseResult> resultFuture = client.sendAdRequest(adRequest);
 
