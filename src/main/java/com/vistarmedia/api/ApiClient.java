@@ -456,7 +456,7 @@ public class ApiClient {
    */
   public Boolean getProofOfPlay(Advertisement ad, int displayTime)
       throws ApiRequestException {
-    Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(ad);
+    Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(ad, displayTime);
     return processProofOfPlayFuture(resultFuture);
   }
   
