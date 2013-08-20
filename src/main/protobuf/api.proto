@@ -25,6 +25,9 @@ message DisplayArea {
 
   optional int32 min_duration = 100;
   optional int32 max_duration = 101;
+  optional int32 min_bitrate  = 102;
+  optional int32 max_bitrate  = 103;
+  optional int32 max_file_size_bytes = 104;
 }
 
 
@@ -97,9 +100,14 @@ message Advertisement {
   optional int32  length_in_seconds = 10;
 
   required int64  campaign_id       = 30;
+  required string creative_category = 33;
 }
 
 message AdResponse {
   repeated Advertisement advertisement = 1;
   repeated string message = 2;
+}
+
+message ProofOfPlay {
+  optional int32  display_time      = 1;
 }
