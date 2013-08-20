@@ -11,6 +11,7 @@ import com.vistarmedia.api.future.ApiResultFuture;
 import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.message.Api.AdResponse;
 import com.vistarmedia.api.message.Api.Advertisement;
+import com.vistarmedia.api.message.Api.ProofOfPlay;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 import com.vistarmedia.api.result.ProofOfPlayResult;
@@ -316,8 +317,54 @@ public class ApiClient {
    *         error or success.
    */
   public Future<ProofOfPlayResult> sendProofOfPlay(Advertisement ad) {
+    final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>(); 
+
+    try {
+      URL url = new URL(ad.getProofOfPlayUrl());
+      transport.get(url, getProofOfPlayResponseHandler(result));
+    } catch (Throwable t) {
+      ErrorResult error = new ErrorResult(500, "Invalid URL");
+      result.fulfill(new ProofOfPlayResult(error));
+    }
+    return result;
+  }
+
+
+  /**
+   * Asynchronously send the proof of play for an {@code Advertisement} over the
+   * configured transport to the Vistar Media API server, passing an actual display
+   * time. This will return a result future which will be filled at some point in
+   * the background. The {@link com.vistarmedia.api.result.ProofOfPlayResult} may
+   * contain either a Boolean indicating if the lease was valid or a
+   * {@link com.vistarmedia.api.result.ErrorResult} describing what went wrong
+   * during the operation.
+   * 
+   * @param ad
+   *          Advertisement which has successfully been shown
+   * @param displayTime
+   *          Epoch time of actual display time
+   * @return A Future containing the eventual result of this operation, be it an
+   *         error or success.
+   */
+  public Future<ProofOfPlayResult> sendProofOfPlay(Advertisement ad, int displayTime) {
     final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>();
-    TransportResponseHandler handler = new TransportResponseHandler() {
+    
+    try {
+      URL url = new URL(ad.getProofOfPlayUrl());
+      ProofOfPlay pop = ProofOfPlay.newBuilder()
+                                   .setDisplayTime(displayTime)
+                                   .build();
+      transport.post(url, pop.toByteArray(), getProofOfPlayResponseHandler(result));
+    } catch (Throwable t) {
+      ErrorResult error = new ErrorResult(500, "Invalid URL");
+      result.fulfill(new ProofOfPlayResult(error));
+    }    
+    return result;
+  }
+  
+  private TransportResponseHandler getProofOfPlayResponseHandler(
+      final ApiResultFuture<ProofOfPlayResult> result) {
+    return new TransportResponseHandler() {
 
       public void onThrowable(Throwable t) {
         onError(400, t.getLocalizedMessage());
@@ -337,15 +384,6 @@ public class ApiClient {
         result.fulfill(new ProofOfPlayResult(error));
       }
     };
-
-    try {
-      URL url = new URL(ad.getProofOfPlayUrl());
-      transport.get(url, handler);
-    } catch (Throwable t) {
-      ErrorResult error = new ErrorResult(500, "Invalid URL");
-      result.fulfill(new ProofOfPlayResult(error));
-    }
-    return result;
   }
 
   /**
@@ -398,6 +436,32 @@ public class ApiClient {
    */
   public Boolean getProofOfPlay(Advertisement ad) throws ApiRequestException {
     Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(ad);
+    return processProofOfPlayFuture(resultFuture);
+  }
+
+  /**
+   * <p>
+   * Synchronously sends the Proof of Play for an {@code Advertisement} with an
+   * overridden actual display time. This will respond within the default
+   * timeout (10 seconds) or throw an exception. If there is any problem with
+   * the request, an {@link com.vistarmedia.api.ApiRequestException} will be
+   * thrown with the HTTP code and a string describing the problem.
+   * </p>
+   * 
+   * @param ad
+   * @param displayTime
+   * @return An {@code Advertisement} which has been shown.
+   * @throws ApiRequestException
+   *           thrown when there was any problem with the request.
+   */
+  public Boolean getProofOfPlay(Advertisement ad, int displayTime)
+      throws ApiRequestException {
+    Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(ad);
+    return processProofOfPlayFuture(resultFuture);
+  }
+  
+  private Boolean processProofOfPlayFuture(
+      Future<ProofOfPlayResult> resultFuture) throws ApiRequestException { 
     ProofOfPlayResult result;
     try {
       result = resultFuture.get(syncTimeoutSeconds, TimeUnit.SECONDS);
