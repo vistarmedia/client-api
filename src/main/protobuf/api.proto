@@ -28,6 +28,10 @@ message DisplayArea {
   optional int32 min_bitrate  = 102;
   optional int32 max_bitrate  = 103;
   optional int32 max_file_size_bytes = 104;
+
+  // These fields are presently undocumented and used only by Captivate.
+  optional string order_id      = 200;
+  optional bool   audience_only = 201;
 }
 
 
@@ -60,6 +64,8 @@ message AdRequest {
   // Estimated time the advertisements should show in epoch seconds, UTC.
   required int64 display_time = 4;
 
+  optional int32 number_of_screens = 5 [default=1, deprecated=true];
+
   // If the player is making a direct connection to the Vistar ad server, this
   // flag should be true, otherwise false.
   required bool direct_connection = 6;
@@ -75,12 +81,17 @@ message AdRequest {
 
   optional float latitude   = 20;
   optional float longitude  = 21;
+  optional string country   = 22;
+  optional string region    = 23;
   optional string metro     = 24;
+  optional string dma       = 25;
+  optional string city      = 26;
+  optional string zip       = 27;
 
   optional string venue_id  = 31;
 
-  optional int32  duration   = 40;
-  optional int32  interval   = 41;
+  optional int32  duration  = 40;
+  optional int32  interval  = 41;
 }
 
 message Advertisement {
@@ -88,16 +99,20 @@ message Advertisement {
 
   required string proof_of_play_url = 2;
   required string expiration_url    = 20;
+  optional string order_id          = 31;
 
   required int64  display_time      = 11;
   required int64  lease_expiry      = 3;
   required string display_area_id   = 4;
+  required string creative_id       = 14;
   required string asset_id          = 5;
   required string asset_url         = 6;
   required int32  width             = 7;
   required int32  height            = 8;
   required string mime_type         = 9;
-  optional int32  length_in_seconds = 10;
+
+  required int32  length_in_seconds      = 10;
+  required int32  length_in_milliseconds = 13;
 
   required int64  campaign_id       = 30;
   required string creative_category = 33;
@@ -110,4 +125,13 @@ message AdResponse {
 
 message ProofOfPlay {
   optional int32  display_time      = 1;
+  optional int32  number_of_screens = 2;
+}
+
+message ProofOfPlayResponse {
+  required double impressions       = 1;
+  required int64  media_cost        = 2;
+  required int32  spots             = 3;
+  required int32  errors            = 4;
+  repeated string message           = 5;
 }
