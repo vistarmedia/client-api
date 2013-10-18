@@ -62,13 +62,25 @@ public class ApiClientTest {
     Transport transport = new SuccessTransport(new byte[] {});
     ApiClient client = new ApiClient("example.com", 80, transport);
 
-    Advertisement ad = Advertisement.newBuilder().setId("test-id")
-        .setProofOfPlayUrl("http://example.com?id=123").setLeaseExpiry(0)
-        .setDisplayAreaId("displayarea").setAssetId("asset-id")
-        .setAssetUrl("asset-url").setWidth(800).setHeight(600)
-        .setMimeType("text/plain").setExpirationUrl("http://expireme.org")
-        .setDisplayTime(123456789L).setCampaignId(987654321L)
-        .setCreativeCategory("a-category").build();
+    Advertisement ad = Advertisement
+      .newBuilder()
+      .setId("test-id")
+      .setProofOfPlayUrl("http://example.com?id=123")
+      .setLeaseExpiry(0)
+      .setDisplayAreaId("displayarea")
+      .setAssetId("asset-id")
+      .setAssetUrl("asset-url")
+      .setWidth(800)
+      .setHeight(600)
+      .setMimeType("text/plain")
+      .setExpirationUrl("http://expireme.org")
+      .setDisplayTime(123456789L)
+      .setCampaignId(987654321L)
+      .setLengthInSeconds(15)
+      .setLengthInMilliseconds(15000)
+      .setCreativeId("a0")
+      .setCreativeCategory("a-category")
+      .build();
 
     Future<ProofOfPlayResult> popFuture = client.sendProofOfPlay(ad);
     ProofOfPlayResult result = popFuture.get();
@@ -83,33 +95,55 @@ public class ApiClientTest {
     Transport transport = new SuccessTransport(new byte[] {});
     ApiClient client = new ApiClient("example.com", 80, transport);
 
-    Advertisement ad = Advertisement.newBuilder().setId("test-id")
-        .setProofOfPlayUrl("http://example.com?id=123").setLeaseExpiry(0)
-        .setDisplayAreaId("displayarea").setAssetId("asset-id")
-        .setAssetUrl("asset-url").setWidth(800).setHeight(600)
-        .setMimeType("text/plain").setExpirationUrl("http://expireme.org")
-        .setDisplayTime(123456789L).setCampaignId(987654321L)
-        .setCreativeCategory("a-category").build();
+    Advertisement ad = Advertisement.newBuilder()
+      .setId("test-id")
+      .setProofOfPlayUrl("http://example.com?id=123")
+      .setLeaseExpiry(0)
+      .setDisplayAreaId("displayarea")
+      .setAssetId("asset-id")
+      .setAssetUrl("asset-url")
+      .setWidth(800)
+      .setHeight(600)
+      .setMimeType("text/plain")
+      .setExpirationUrl("http://expireme.org")
+      .setDisplayTime(123456789L)
+      .setCampaignId(987654321L)
+      .setLengthInSeconds(15)
+      .setLengthInMilliseconds(15000)
+      .setCreativeId("a0")
+      .setCreativeCategory("a-category")
+      .build();
 
     Boolean result = client.getProofOfPlay(ad);
 
     assertTrue(result);
   }
-  
+
   @Test
   public void testProofOfPlayWithDisplayTime() throws InterruptedException,
     ExecutionException {
     Transport transport = new SuccessTransport(new byte[] {});
     ApiClient client = new ApiClient("example.com", 80, transport);
 
-    Advertisement ad = Advertisement.newBuilder().setId("test-id")
-        .setProofOfPlayUrl("http://example.com?id=123").setLeaseExpiry(0)
-        .setDisplayAreaId("displayarea").setAssetId("asset-id")
-        .setAssetUrl("asset-url").setWidth(800).setHeight(600)
-        .setMimeType("text/plain").setExpirationUrl("http://expireme.org")
-        .setDisplayTime(123456789L).setCampaignId(987654321L)
-        .setCreativeCategory("a-category").build();
-    
+    Advertisement ad = Advertisement.newBuilder()
+      .setId("test-id")
+      .setProofOfPlayUrl("http://example.com?id=123")
+      .setLeaseExpiry(0)
+      .setDisplayAreaId("displayarea")
+      .setAssetId("asset-id")
+      .setAssetUrl("asset-url")
+      .setWidth(800)
+      .setHeight(600)
+      .setMimeType("text/plain")
+      .setExpirationUrl("http://expireme.org")
+      .setDisplayTime(123456789L)
+      .setCampaignId(987654321L)
+      .setLengthInSeconds(15)
+      .setLengthInMilliseconds(15000)
+      .setCreativeId("a0")
+      .setCreativeCategory("a-category")
+      .build();
+
     int displayTime = 234567890;
 
     Future<ProofOfPlayResult> popFuture = client.sendProofOfPlay(ad, displayTime);
@@ -118,21 +152,32 @@ public class ApiClientTest {
     assertTrue(result.isSuccess());
     assertTrue(result.getResult());
   }
-  
+
   @Test
   public void testSyncProofOfPlayWithDisplayTime() throws InterruptedException,
     ExecutionException, ApiRequestException {
     Transport transport = new SuccessTransport(new byte[] {});
     ApiClient client = new ApiClient("example.com", 80, transport);
 
-    Advertisement ad = Advertisement.newBuilder().setId("test-id")
-        .setProofOfPlayUrl("http://example.com?id=123").setLeaseExpiry(0)
-        .setDisplayAreaId("displayarea").setAssetId("asset-id")
-        .setAssetUrl("asset-url").setWidth(800).setHeight(600)
-        .setMimeType("text/plain").setExpirationUrl("http://expireme.org")
-        .setDisplayTime(123456789L).setCampaignId(987654321L)
-        .setCreativeCategory("a-category").build();
-    
+    Advertisement ad = Advertisement.newBuilder()
+      .setId("test-id")
+      .setProofOfPlayUrl("http://example.com?id=123")
+      .setLeaseExpiry(0)
+      .setDisplayAreaId("displayarea")
+      .setAssetId("asset-id")
+      .setAssetUrl("asset-url")
+      .setWidth(800)
+      .setHeight(600)
+      .setMimeType("text/plain")
+      .setExpirationUrl("http://expireme.org")
+      .setDisplayTime(123456789L)
+      .setLengthInSeconds(30)
+      .setLengthInMilliseconds(30000)
+      .setCampaignId(987654321L)
+      .setCreativeId("a0")
+      .setCreativeCategory("a-category")
+      .build();
+
     int displayTime = 234567890;
 
     Boolean result = client.getProofOfPlay(ad, displayTime);
