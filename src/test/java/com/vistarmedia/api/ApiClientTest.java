@@ -8,7 +8,9 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.junit.matchers.JUnitMatchers.containsString;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +22,7 @@ import org.junit.Test;
 import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.message.Api.AdResponse;
 import com.vistarmedia.api.message.Api.Advertisement;
+import com.vistarmedia.api.message.Api.ProofOfPlayResponse;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 import com.vistarmedia.api.result.ProofOfPlayResult;
@@ -59,7 +62,13 @@ public class ApiClientTest {
   @Test
   public void testSimpleProofOfPlay() throws InterruptedException,
       ExecutionException {
-    Transport transport = new SuccessTransport(new byte[] {});
+    ProofOfPlayResponse pop = ProofOfPlayResponse.newBuilder()
+        .setImpressions(123)
+        .setMediaCost(456)
+        .setSpots(789)
+        .setErrors(0)
+        .build();
+    Transport transport = new SuccessTransport(pop.toByteArray());
     ApiClient client = new ApiClient("example.com", 80, transport);
 
     Advertisement ad = Advertisement
@@ -84,15 +93,15 @@ public class ApiClientTest {
 
     Future<ProofOfPlayResult> popFuture = client.sendProofOfPlay(ad);
     ProofOfPlayResult result = popFuture.get();
-
     assertTrue(result.isSuccess());
-    assertTrue(result.getResult());
+    ProofOfPlayResponse popResp = result.getResult();
+    assertEquals(456, popResp.getMediaCost());
   }
 
   @Test
   public void testSimpleSyncProofOfPlay() throws InterruptedException,
       ExecutionException, ApiRequestException {
-    Transport transport = new SuccessTransport(new byte[] {});
+    Transport transport = new SuccessTransport(getPopResponse().toByteArray());
     ApiClient client = new ApiClient("example.com", 80, transport);
 
     Advertisement ad = Advertisement.newBuilder()
@@ -114,15 +123,20 @@ public class ApiClientTest {
       .setCreativeCategory("a-category")
       .build();
 
-    Boolean result = client.getProofOfPlay(ad);
-
-    assertTrue(result);
+    ProofOfPlayResponse result = client.getProofOfPlay(ad);
+    assertEquals(0, result.getErrors());
   }
 
   @Test
   public void testProofOfPlayWithDisplayTime() throws InterruptedException,
     ExecutionException {
-    Transport transport = new SuccessTransport(new byte[] {});
+    ProofOfPlayResponse pop = ProofOfPlayResponse.newBuilder()
+        .setImpressions(123)
+        .setMediaCost(456)
+        .setSpots(789)
+        .setErrors(0)
+        .build();
+    Transport transport = new SuccessTransport(pop.toByteArray());
     ApiClient client = new ApiClient("example.com", 80, transport);
 
     Advertisement ad = Advertisement.newBuilder()
@@ -150,13 +164,12 @@ public class ApiClientTest {
     ProofOfPlayResult result = popFuture.get();
 
     assertTrue(result.isSuccess());
-    assertTrue(result.getResult());
   }
 
   @Test
   public void testSyncProofOfPlayWithDisplayTime() throws InterruptedException,
     ExecutionException, ApiRequestException {
-    Transport transport = new SuccessTransport(new byte[] {});
+    Transport transport = new SuccessTransport(getPopResponse().toByteArray());
     ApiClient client = new ApiClient("example.com", 80, transport);
 
     Advertisement ad = Advertisement.newBuilder()
@@ -180,9 +193,8 @@ public class ApiClientTest {
 
     int displayTime = 234567890;
 
-    Boolean result = client.getProofOfPlay(ad, displayTime);
-
-    assertTrue(result);
+    ProofOfPlayResponse result = client.getProofOfPlay(ad, displayTime);
+    assertEquals(456, result.getMediaCost());
   }
 
   @Test
@@ -265,5 +277,63 @@ public class ApiClientTest {
       return;
     }
     fail("Exception should have been thrown");
+  }
+  
+  @Test
+  public void testBulkProofOfPlay() throws InterruptedException, ExecutionException {
+    ProofOfPlayResponse resp = ProofOfPlayResponse.newBuilder()
+        .setSpots(1)
+        .setImpressions(100)
+        .setMediaCost(53423)
+        .setErrors(0)
+        .build();
+    SuccessTransport t = new SuccessTransport(resp.toByteArray());
+    ApiClient client = new ApiClient("host", 80, t);
+    
+    List<Advertisement> ads = new ArrayList<Advertisement>();
+    for(int i = 0; i < 10; i++) {
+      ads.add(getAdvertisement().build());
+    }
+    ProofOfPlayResult res = client.sendProofsOfPlay(ads).get();
+    
+    assertTrue(res.isSuccess());
+    ProofOfPlayResponse popResp = res.getResult();
+    assertEquals(1, popResp.getSpots());
+    assertEquals(53423, popResp.getMediaCost());
+    assertEquals(0, popResp.getErrors());
+
+    String post = new String(t.lastPostBody);
+    String []lines = post.split("\n");
+    assertEquals(10, lines.length);
+    assertEquals("http://host/spend", lines[0]);
+  }
+  
+  private Advertisement.Builder getAdvertisement() {
+    return Advertisement.newBuilder()
+        .setProofOfPlayUrl("http://host/spend")
+        .setExpirationUrl("http://host/expire")
+        .setDisplayTime(1234567890)
+        .setLeaseExpiry(1234567890)
+        .setDisplayAreaId("1")
+        .setCreativeId("2")
+        .setAssetId("3")
+        .setAssetUrl("http://assets/mov")
+        .setWidth(800)
+        .setHeight(600)
+        .setMimeType("text/plain")
+        .setLengthInSeconds(1)
+        .setLengthInMilliseconds(1000)
+        .setId("123")
+        .setCampaignId(12345)
+        .setCreativeCategory("ads");
+  }
+  
+  private ProofOfPlayResponse getPopResponse() {
+    return ProofOfPlayResponse.newBuilder()
+        .setImpressions(123)
+        .setMediaCost(456)
+        .setSpots(789)
+        .setErrors(0)
+        .build();
   }
 }

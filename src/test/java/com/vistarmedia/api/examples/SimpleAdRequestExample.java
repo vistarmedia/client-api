@@ -13,6 +13,7 @@ import com.vistarmedia.api.message.Api.AdResponse;
 import com.vistarmedia.api.message.Api.Advertisement;
 import com.vistarmedia.api.message.Api.DeviceAttribute;
 import com.vistarmedia.api.message.Api.DisplayArea;
+import com.vistarmedia.api.message.Api.ProofOfPlayResponse;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 import com.vistarmedia.api.result.ProofOfPlayResult;
@@ -61,6 +62,7 @@ public class SimpleAdRequestExample {
       AdRequest request = AdRequest.newBuilder().setNetworkId(networkId)
           .setApiKey(apiKey).setDeviceId("device-1235")
           .addDisplayArea(displayArea)
+          .setDirectConnection(true)
           .setDisplayTime(current.getTimeInMillis() / 1000).build();
 
       resultFutures.add(vistarApiClient.sendAdRequest(request));
@@ -83,8 +85,8 @@ public class SimpleAdRequestExample {
     for (Future<ProofOfPlayResult> popFuture : popFutures) {
       ProofOfPlayResult result = popFuture.get(1, TimeUnit.SECONDS);
       if (result != null && result.isSuccess()) {
-        Boolean valid = result.getResult();
-        System.out.println("Spent Lease: " + valid);
+        ProofOfPlayResponse resp = result.getResult();
+        System.out.println(String.format("%.2f Impressions", resp.getImpressions()));
       }
     }
   }
@@ -103,15 +105,15 @@ public class SimpleAdRequestExample {
   }
 
   public static void main(String[] args) throws Exception {
-    String networkId = "24ba0582-7648-48b2-a7f4-0af3783b55f0";
-    String apiKey = "eb7d6e26-5930-4fef-a3c7-aa023f31cefd";
+    String networkId = "3mP7EUg9QKKAwo6SeQOJeA";
+    String apiKey = "03bbe19b-d488-433d-a23d-77f801e7d2c0";
 
     SimpleAdRequestExample example = new SimpleAdRequestExample(networkId,
         apiKey, "dev.api.vistarmedia.com", 80);
 
     Calendar start = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     Calendar end = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    end.add(Calendar.DATE, 1000);
+    end.add(Calendar.DATE, 1);
 
     example.requestRange(start, end);
     System.out.println("Done!");

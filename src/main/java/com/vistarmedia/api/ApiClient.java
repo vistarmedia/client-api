@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collection;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +13,7 @@ import com.vistarmedia.api.message.Api.AdRequest;
 import com.vistarmedia.api.message.Api.AdResponse;
 import com.vistarmedia.api.message.Api.Advertisement;
 import com.vistarmedia.api.message.Api.ProofOfPlay;
+import com.vistarmedia.api.message.Api.ProofOfPlayResponse;
 import com.vistarmedia.api.result.AdResponseResult;
 import com.vistarmedia.api.result.ErrorResult;
 import com.vistarmedia.api.result.ProofOfPlayResult;
@@ -217,13 +219,14 @@ import com.vistarmedia.api.transport.TransportResponseHandler;
  */
 public class ApiClient {
 
-  private String              host;
-  private int                 port;
-  private Transport           transport;
-  private int                 syncTimeoutSeconds;
+  private String host;
+  private int port;
+  private Transport transport;
+  private int syncTimeoutSeconds;
 
-  public static final String  VERSION     = "1.4.1";
+  public static final String VERSION = "1.4.1";
   private static final String GET_AD_PATH = "/api/v1/get_ad/protobuf";
+  private static final String BULK_POP_PATH = "/api/v1/proof_of_play/batch/protobuf";
 
   public ApiClient(String host, int port, Transport transport,
       int syncTimeoutSeconds) {
@@ -317,7 +320,7 @@ public class ApiClient {
    *         error or success.
    */
   public Future<ProofOfPlayResult> sendProofOfPlay(Advertisement ad) {
-    final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>(); 
+    final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>();
 
     try {
       URL url = new URL(ad.getProofOfPlayUrl());
@@ -329,13 +332,54 @@ public class ApiClient {
     return result;
   }
 
+  public Future<ProofOfPlayResult> sendProofsOfPlay(
+      Collection<Advertisement> ads) {
+    final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>();
+    StringBuffer body = new StringBuffer();
+    for (Advertisement ad : ads) {
+      body.append(ad.getProofOfPlayUrl());
+      body.append("\n");
+    }
+
+    try {
+      URL url = createUrl(BULK_POP_PATH);
+      transport.post(url, body.toString().getBytes(),
+          getProofOfPlayResponseHandler(result));
+    } catch (Throwable t) {
+      ErrorResult error = new ErrorResult(500, "Invalid URL");
+      result.fulfill(new ProofOfPlayResult(error));
+    }
+    return result;
+  }
+
+  /**
+   * Asynchronously send the proof of play expiration for an
+   * {@link Advertisement}. The resulting {@link ProofOfPlay} will have a
+   * non-zero value in its <cc>expires</cc> field.
+   * 
+   * @param ad
+   * @return
+   */
+  public Future<ProofOfPlayResult> expire(Advertisement ad) {
+    final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>();
+
+    try {
+      URL url = new URL(ad.getExpirationUrl());
+      transport.get(url, getProofOfPlayResponseHandler(result));
+    } catch (Throwable t) {
+      ErrorResult error = new ErrorResult(500, "Invalid URL");
+      result.fulfill(new ProofOfPlayResult(error));
+    }
+    return result;
+  }
 
   /**
    * Asynchronously send the proof of play for an {@code Advertisement} over the
-   * configured transport to the Vistar Media API server, passing an actual display
-   * time. This will return a result future which will be filled at some point in
-   * the background. The {@link com.vistarmedia.api.result.ProofOfPlayResult} may
-   * contain either a Boolean indicating if the lease was valid or a
+   * configured transport to the Vistar Media API server, passing an actual
+   * display time. This will return a result future which will be filled at some
+   * point in the background. The
+   * {@link com.vistarmedia.api.result.ProofOfPlayResult} may contain either a
+   * Boolean indicating if the lease was valid or a
    * {@link com.vistarmedia.api.result.ErrorResult} describing what went wrong
    * during the operation.
    * 
@@ -346,22 +390,23 @@ public class ApiClient {
    * @return A Future containing the eventual result of this operation, be it an
    *         error or success.
    */
-  public Future<ProofOfPlayResult> sendProofOfPlay(Advertisement ad, int displayTime) {
+  public Future<ProofOfPlayResult> sendProofOfPlay(Advertisement ad,
+      int displayTime) {
     final ApiResultFuture<ProofOfPlayResult> result = new ApiResultFuture<ProofOfPlayResult>();
-    
+
     try {
       URL url = new URL(ad.getProofOfPlayUrl());
-      ProofOfPlay pop = ProofOfPlay.newBuilder()
-                                   .setDisplayTime(displayTime)
-                                   .build();
-      transport.post(url, pop.toByteArray(), getProofOfPlayResponseHandler(result));
+      ProofOfPlay pop = ProofOfPlay.newBuilder().setDisplayTime(displayTime)
+          .build();
+      transport.post(url, pop.toByteArray(),
+          getProofOfPlayResponseHandler(result));
     } catch (Throwable t) {
       ErrorResult error = new ErrorResult(500, "Invalid URL");
       result.fulfill(new ProofOfPlayResult(error));
-    }    
+    }
     return result;
   }
-  
+
   private TransportResponseHandler getProofOfPlayResponseHandler(
       final ApiResultFuture<ProofOfPlayResult> result) {
     return new TransportResponseHandler() {
@@ -372,8 +417,13 @@ public class ApiClient {
 
       public void onResponse(int code, String message, InputStream body) {
         if (code == 200 || code == 204 || code == 400) {
-          Boolean success = code != 400;
-          result.fulfill(new ProofOfPlayResult(success));
+          ProofOfPlayResponse resp;
+          try {
+            resp = ProofOfPlayResponse.parseFrom(body);
+            result.fulfill(new ProofOfPlayResult(resp));
+          } catch (IOException e) {
+            onError(500, e.toString());
+          }
         } else {
           onError(code, message);
         }
@@ -430,11 +480,11 @@ public class ApiClient {
    * </p>
    * 
    * @param ad
-   * @return An {@code Advertisement} which has been shown.
+   * @return A {@code ProofOfPlayResponse} summarizing the transaction
    * @throws ApiRequestException
    *           thrown when there was any problem with the request.
    */
-  public Boolean getProofOfPlay(Advertisement ad) throws ApiRequestException {
+  public ProofOfPlayResponse getProofOfPlay(Advertisement ad) throws ApiRequestException {
     Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(ad);
     return processProofOfPlayFuture(resultFuture);
   }
@@ -450,18 +500,18 @@ public class ApiClient {
    * 
    * @param ad
    * @param displayTime
-   * @return An {@code Advertisement} which has been shown.
+   * @return A {@code ProofOfPlayResponse} summarizing the transaction
    * @throws ApiRequestException
    *           thrown when there was any problem with the request.
    */
-  public Boolean getProofOfPlay(Advertisement ad, int displayTime)
+  public ProofOfPlayResponse getProofOfPlay(Advertisement ad, int displayTime)
       throws ApiRequestException {
     Future<ProofOfPlayResult> resultFuture = sendProofOfPlay(ad, displayTime);
     return processProofOfPlayFuture(resultFuture);
   }
-  
-  private Boolean processProofOfPlayFuture(
-      Future<ProofOfPlayResult> resultFuture) throws ApiRequestException { 
+
+  private ProofOfPlayResponse processProofOfPlayFuture(
+      Future<ProofOfPlayResult> resultFuture) throws ApiRequestException {
     ProofOfPlayResult result;
     try {
       result = resultFuture.get(syncTimeoutSeconds, TimeUnit.SECONDS);

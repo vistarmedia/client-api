@@ -132,6 +132,8 @@ message ProofOfPlayResponse {
   required double impressions       = 1;
   required int64  media_cost        = 2;
   required int32  spots             = 3;
+  optional int32  expires           = 6;
+
   required int32  errors            = 4;
   repeated string message           = 5;
 }

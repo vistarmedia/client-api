@@ -60,7 +60,7 @@ public abstract class ApiResult<T> {
     if (!success) {
       return error;
     } else {
-      throw new IllegalStateException("Ccalled getError on a valid ApiResult");
+      throw new IllegalStateException("Called getError on a valid ApiResult");
     }
   }
 }

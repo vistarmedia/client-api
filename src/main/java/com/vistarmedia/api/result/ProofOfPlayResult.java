@@ -1,12 +1,14 @@
 package com.vistarmedia.api.result;
 
-public class ProofOfPlayResult extends ApiResult<Boolean> {
+import com.vistarmedia.api.message.Api.ProofOfPlayResponse;
 
-  public ProofOfPlayResult(Boolean result) {
+public class ProofOfPlayResult extends ApiResult<ProofOfPlayResponse> {
+
+  public ProofOfPlayResult(ProofOfPlayResponse result) {
     super(result);
   }
 
   public ProofOfPlayResult(ErrorResult error) {
-    super(error);
+    super(error); 
   }
 }

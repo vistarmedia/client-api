@@ -7,6 +7,7 @@ import java.net.URL;
 public class SuccessTransport implements Transport {
 
   private byte[] body;
+  public byte[] lastPostBody;
 
   public SuccessTransport(byte[] body) {
     this.body = body;
@@ -14,6 +15,7 @@ public class SuccessTransport implements Transport {
 
   public void post(URL url, byte[] body, TransportResponseHandler handler)
       throws IOException {
+    lastPostBody = body;
     handler.onResponse(200, "OK", new ByteArrayInputStream(this.body));
   }
 
