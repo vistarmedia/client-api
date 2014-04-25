@@ -4,7 +4,7 @@
 
   <groupId>com.vistarmedia</groupId>
   <artifactId>client-api</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5.1</version>
   <packaging>jar</packaging>
 
   <name>VistarMediaClientApi</name>
