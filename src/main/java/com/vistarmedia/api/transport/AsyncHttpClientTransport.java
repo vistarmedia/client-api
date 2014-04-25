@@ -75,10 +75,25 @@ public class AsyncHttpClientTransport implements Transport {
     }
   }
 
-  public void get(URL url, TransportResponseHandler handler) throws IOException {
+  public void get(URL url, final TransportResponseHandler handler) throws IOException {
     try {
       conLock.acquire();
-      client.prepareGet(url.toString()).execute();
+      client.prepareGet(url.toString()).execute(new AsyncCompletionHandler<Void>() {
+
+          @Override
+          public void onThrowable(Throwable t) {
+              conLock.release();
+              handler.onThrowable(t);
+          }
+
+          @Override
+          public Void onCompleted(Response response) throws Exception {
+              conLock.release();
+              handler.onResponse(response.getStatusCode(),
+                      response.getStatusText(), response.getResponseBodyAsStream());
+              return null;
+          }
+      });
     } catch (InterruptedException e) {
       handler.onThrowable(new RuntimeException(
           "Interrupted acquiring connection lock"));
