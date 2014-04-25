@@ -45,43 +45,43 @@ public class AsyncHttpClientTransport implements Transport {
   }
 
   public void post(final URL url, final byte[] body,
-      final TransportResponseHandler handler) throws IOException {
+                   final TransportResponseHandler handler) throws IOException {
 
+    AsyncHttpClient.BoundRequestBuilder request = client.preparePost(url.toString()) //
+      .setBody(body) //
+      .addHeader("Content-Type", "application/octet-stream");
+
+    executeRequest(request, handler);
+  }
+
+  public void get(URL url, final TransportResponseHandler handler) throws IOException {
+    executeRequest(client.prepareGet(url.toString()), handler);
+  }
+
+  private void executeRequest(AsyncHttpClient.BoundRequestBuilder requestBuilder,
+                              final TransportResponseHandler handler) throws IOException {
     try {
       conLock.acquire();
+      requestBuilder.execute(new AsyncCompletionHandler<Void>() {
 
-      client.preparePost(url.toString()) //
-          .setBody(body) //
-          .addHeader("Content-Type", "application/octet-stream") //
-          .execute(new AsyncCompletionHandler<Void>() {
+        @Override
+        public void onThrowable(Throwable t) {
+          conLock.release();
+          handler.onThrowable(t);
+        }
 
-            @Override
-            public void onThrowable(Throwable t) {
-              conLock.release();
-              handler.onThrowable(t);
-            }
-
-            @Override
-            public Void onCompleted(Response response) throws Exception {
-              conLock.release();
-              handler.onResponse(response.getStatusCode(),
-                  response.getStatusText(), response.getResponseBodyAsStream());
-              return null;
-            }
-          });
+        @Override
+        public Void onCompleted(Response response) throws Exception {
+          conLock.release();
+          handler.onResponse(response.getStatusCode(),
+            response.getStatusText(), response.getResponseBodyAsStream());
+          return null;
+        }
+      });
     } catch (InterruptedException e) {
       handler.onThrowable(new RuntimeException(
-          "Interrupted acquiring connection lock"));
+        "Interrupted acquiring connection lock"));
     }
   }
 
-  public void get(URL url, TransportResponseHandler handler) throws IOException {
-    try {
-      conLock.acquire();
-      client.prepareGet(url.toString()).execute();
-    } catch (InterruptedException e) {
-      handler.onThrowable(new RuntimeException(
-          "Interrupted acquiring connection lock"));
-    }
-  }
 }

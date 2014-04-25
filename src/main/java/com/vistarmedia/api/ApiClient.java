@@ -224,7 +224,7 @@ public class ApiClient {
   private Transport transport;
   private int syncTimeoutSeconds;
 
-  public static final String VERSION = "1.4.1";
+  public static final String VERSION = "1.5.1";
   private static final String GET_AD_PATH = "/api/v1/get_ad/protobuf";
   private static final String BULK_POP_PATH = "/api/v1/proof_of_play/batch/protobuf";
 
