@@ -103,12 +103,12 @@ public final class Api {
     private int bitField0_;
     // required string id = 1;
     public static final int ID_FIELD_NUMBER = 1;
-    private Object id_;
+    private java.lang.Object id_;
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getId() {
-      Object ref = id_;
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -122,7 +122,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getIdBytes() {
-      Object ref = id_;
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -259,12 +259,12 @@ public final class Api {
     
     // optional string order_id = 200;
     public static final int ORDER_ID_FIELD_NUMBER = 200;
-    private Object orderId_;
+    private java.lang.Object orderId_;
     public boolean hasOrderId() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     public String getOrderId() {
-      Object ref = orderId_;
+      java.lang.Object ref = orderId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -278,7 +278,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getOrderIdBytes() {
-      Object ref = orderId_;
+      java.lang.Object ref = orderId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -468,8 +468,10 @@ public final class Api {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -912,12 +914,12 @@ public final class Api {
       private int bitField0_;
       
       // required string id = 1;
-      private Object id_ = "";
+      private java.lang.Object id_ = "";
       public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getId() {
-        Object ref = id_;
+        java.lang.Object ref = id_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           id_ = s;
@@ -1235,12 +1237,12 @@ public final class Api {
       }
       
       // optional string order_id = 200;
-      private Object orderId_ = "";
+      private java.lang.Object orderId_ = "";
       public boolean hasOrderId() {
         return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       public String getOrderId() {
-        Object ref = orderId_;
+        java.lang.Object ref = orderId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           orderId_ = s;
@@ -1344,12 +1346,12 @@ public final class Api {
     private int bitField0_;
     // required string name = 1;
     public static final int NAME_FIELD_NUMBER = 1;
-    private Object name_;
+    private java.lang.Object name_;
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getName() {
-      Object ref = name_;
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -1363,7 +1365,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getNameBytes() {
-      Object ref = name_;
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -1376,12 +1378,12 @@ public final class Api {
     
     // required string value = 2;
     public static final int VALUE_FIELD_NUMBER = 2;
-    private Object value_;
+    private java.lang.Object value_;
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getValue() {
-      Object ref = value_;
+      java.lang.Object ref = value_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -1395,7 +1397,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getValueBytes() {
-      Object ref = value_;
+      java.lang.Object ref = value_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -1458,8 +1460,10 @@ public final class Api {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -1703,12 +1707,12 @@ public final class Api {
       private int bitField0_;
       
       // required string name = 1;
-      private Object name_ = "";
+      private java.lang.Object name_ = "";
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getName() {
-        Object ref = name_;
+        java.lang.Object ref = name_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           name_ = s;
@@ -1739,12 +1743,12 @@ public final class Api {
       }
       
       // required string value = 2;
-      private Object value_ = "";
+      private java.lang.Object value_ = "";
       public boolean hasValue() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getValue() {
-        Object ref = value_;
+        java.lang.Object ref = value_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           value_ = s;
@@ -1832,14 +1836,6 @@ public final class Api {
     com.vistarmedia.api.message.Api.DisplayAreaOrBuilder getDisplayAreaOrBuilder(
         int index);
     
-    // optional float latitude = 20;
-    boolean hasLatitude();
-    float getLatitude();
-    
-    // optional float longitude = 21;
-    boolean hasLongitude();
-    float getLongitude();
-    
     // optional string country = 22;
     boolean hasCountry();
     String getCountry();
@@ -1875,6 +1871,14 @@ public final class Api {
     // optional int32 interval = 41;
     boolean hasInterval();
     int getInterval();
+    
+    // optional double longitude = 50;
+    boolean hasLongitude();
+    double getLongitude();
+    
+    // optional double latitude = 51;
+    boolean hasLatitude();
+    double getLatitude();
   }
   public static final class AdRequest extends
       com.google.protobuf.GeneratedMessage
@@ -1907,12 +1911,12 @@ public final class Api {
     private int bitField0_;
     // required string network_id = 1;
     public static final int NETWORK_ID_FIELD_NUMBER = 1;
-    private Object networkId_;
+    private java.lang.Object networkId_;
     public boolean hasNetworkId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getNetworkId() {
-      Object ref = networkId_;
+      java.lang.Object ref = networkId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -1926,7 +1930,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getNetworkIdBytes() {
-      Object ref = networkId_;
+      java.lang.Object ref = networkId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -1939,12 +1943,12 @@ public final class Api {
     
     // required string api_key = 2;
     public static final int API_KEY_FIELD_NUMBER = 2;
-    private Object apiKey_;
+    private java.lang.Object apiKey_;
     public boolean hasApiKey() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getApiKey() {
-      Object ref = apiKey_;
+      java.lang.Object ref = apiKey_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -1958,7 +1962,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getApiKeyBytes() {
-      Object ref = apiKey_;
+      java.lang.Object ref = apiKey_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -1971,12 +1975,12 @@ public final class Api {
     
     // required string device_id = 3;
     public static final int DEVICE_ID_FIELD_NUMBER = 3;
-    private Object deviceId_;
+    private java.lang.Object deviceId_;
     public boolean hasDeviceId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getDeviceId() {
-      Object ref = deviceId_;
+      java.lang.Object ref = deviceId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -1990,7 +1994,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getDeviceIdBytes() {
-      Object ref = deviceId_;
+      java.lang.Object ref = deviceId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2073,34 +2077,14 @@ public final class Api {
       return displayArea_.get(index);
     }
     
-    // optional float latitude = 20;
-    public static final int LATITUDE_FIELD_NUMBER = 20;
-    private float latitude_;
-    public boolean hasLatitude() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    public float getLatitude() {
-      return latitude_;
-    }
-    
-    // optional float longitude = 21;
-    public static final int LONGITUDE_FIELD_NUMBER = 21;
-    private float longitude_;
-    public boolean hasLongitude() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    public float getLongitude() {
-      return longitude_;
-    }
-    
     // optional string country = 22;
     public static final int COUNTRY_FIELD_NUMBER = 22;
-    private Object country_;
+    private java.lang.Object country_;
     public boolean hasCountry() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public String getCountry() {
-      Object ref = country_;
+      java.lang.Object ref = country_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -2114,7 +2098,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getCountryBytes() {
-      Object ref = country_;
+      java.lang.Object ref = country_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2127,12 +2111,12 @@ public final class Api {
     
     // optional string region = 23;
     public static final int REGION_FIELD_NUMBER = 23;
-    private Object region_;
+    private java.lang.Object region_;
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getRegion() {
-      Object ref = region_;
+      java.lang.Object ref = region_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -2146,7 +2130,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getRegionBytes() {
-      Object ref = region_;
+      java.lang.Object ref = region_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2159,12 +2143,12 @@ public final class Api {
     
     // optional string metro = 24;
     public static final int METRO_FIELD_NUMBER = 24;
-    private Object metro_;
+    private java.lang.Object metro_;
     public boolean hasMetro() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public String getMetro() {
-      Object ref = metro_;
+      java.lang.Object ref = metro_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -2178,7 +2162,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getMetroBytes() {
-      Object ref = metro_;
+      java.lang.Object ref = metro_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2191,12 +2175,12 @@ public final class Api {
     
     // optional string dma = 25;
     public static final int DMA_FIELD_NUMBER = 25;
-    private Object dma_;
+    private java.lang.Object dma_;
     public boolean hasDma() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     public String getDma() {
-      Object ref = dma_;
+      java.lang.Object ref = dma_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -2210,7 +2194,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getDmaBytes() {
-      Object ref = dma_;
+      java.lang.Object ref = dma_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2223,12 +2207,12 @@ public final class Api {
     
     // optional string city = 26;
     public static final int CITY_FIELD_NUMBER = 26;
-    private Object city_;
+    private java.lang.Object city_;
     public boolean hasCity() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     public String getCity() {
-      Object ref = city_;
+      java.lang.Object ref = city_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -2242,7 +2226,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getCityBytes() {
-      Object ref = city_;
+      java.lang.Object ref = city_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2255,12 +2239,12 @@ public final class Api {
     
     // optional string zip = 27;
     public static final int ZIP_FIELD_NUMBER = 27;
-    private Object zip_;
+    private java.lang.Object zip_;
     public boolean hasZip() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     public String getZip() {
-      Object ref = zip_;
+      java.lang.Object ref = zip_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -2274,7 +2258,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getZipBytes() {
-      Object ref = zip_;
+      java.lang.Object ref = zip_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2287,12 +2271,12 @@ public final class Api {
     
     // optional string venue_id = 31;
     public static final int VENUE_ID_FIELD_NUMBER = 31;
-    private Object venueId_;
+    private java.lang.Object venueId_;
     public boolean hasVenueId() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     public String getVenueId() {
-      Object ref = venueId_;
+      java.lang.Object ref = venueId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -2306,7 +2290,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getVenueIdBytes() {
-      Object ref = venueId_;
+      java.lang.Object ref = venueId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -2321,7 +2305,7 @@ public final class Api {
     public static final int DURATION_FIELD_NUMBER = 40;
     private int duration_;
     public boolean hasDuration() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     public int getDuration() {
       return duration_;
@@ -2331,10 +2315,30 @@ public final class Api {
     public static final int INTERVAL_FIELD_NUMBER = 41;
     private int interval_;
     public boolean hasInterval() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     public int getInterval() {
       return interval_;
+    }
+    
+    // optional double longitude = 50;
+    public static final int LONGITUDE_FIELD_NUMBER = 50;
+    private double longitude_;
+    public boolean hasLongitude() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    public double getLongitude() {
+      return longitude_;
+    }
+    
+    // optional double latitude = 51;
+    public static final int LATITUDE_FIELD_NUMBER = 51;
+    private double latitude_;
+    public boolean hasLatitude() {
+      return ((bitField0_ & 0x00010000) == 0x00010000);
+    }
+    public double getLatitude() {
+      return latitude_;
     }
     
     private void initFields() {
@@ -2346,8 +2350,6 @@ public final class Api {
       directConnection_ = false;
       deviceAttribute_ = java.util.Collections.emptyList();
       displayArea_ = java.util.Collections.emptyList();
-      latitude_ = 0F;
-      longitude_ = 0F;
       country_ = "";
       region_ = "";
       metro_ = "";
@@ -2357,6 +2359,8 @@ public final class Api {
       venueId_ = "";
       duration_ = 0;
       interval_ = 0;
+      longitude_ = 0D;
+      latitude_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2427,37 +2431,37 @@ public final class Api {
         output.writeMessage(8, displayArea_.get(i));
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeFloat(20, latitude_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeFloat(21, longitude_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBytes(22, getCountryBytes());
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeBytes(23, getRegionBytes());
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBytes(24, getMetroBytes());
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeBytes(25, getDmaBytes());
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeBytes(26, getCityBytes());
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeBytes(27, getZipBytes());
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeBytes(31, getVenueIdBytes());
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeInt32(40, duration_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeInt32(41, interval_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeDouble(50, longitude_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        output.writeDouble(51, latitude_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2502,55 +2506,57 @@ public final class Api {
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(20, latitude_);
+          .computeBytesSize(22, getCountryBytes());
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(21, longitude_);
+          .computeBytesSize(23, getRegionBytes());
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(22, getCountryBytes());
+          .computeBytesSize(24, getMetroBytes());
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(23, getRegionBytes());
+          .computeBytesSize(25, getDmaBytes());
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(24, getMetroBytes());
+          .computeBytesSize(26, getCityBytes());
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(25, getDmaBytes());
+          .computeBytesSize(27, getZipBytes());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(26, getCityBytes());
+          .computeBytesSize(31, getVenueIdBytes());
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(27, getZipBytes());
+          .computeInt32Size(40, duration_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(31, getVenueIdBytes());
+          .computeInt32Size(41, interval_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(40, duration_);
+          .computeDoubleSize(50, longitude_);
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(41, interval_);
+          .computeDoubleSize(51, latitude_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -2692,27 +2698,27 @@ public final class Api {
         } else {
           displayAreaBuilder_.clear();
         }
-        latitude_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000100);
-        longitude_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000200);
         country_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000100);
         region_ = "";
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000200);
         metro_ = "";
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         dma_ = "";
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         city_ = "";
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         zip_ = "";
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         venueId_ = "";
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         duration_ = 0;
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         interval_ = 0;
+        bitField0_ = (bitField0_ & ~0x00010000);
+        longitude_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00020000);
+        latitude_ = 0D;
         bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
@@ -2797,47 +2803,47 @@ public final class Api {
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.latitude_ = latitude_;
+        result.country_ = country_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.longitude_ = longitude_;
+        result.region_ = region_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.country_ = country_;
+        result.metro_ = metro_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.region_ = region_;
+        result.dma_ = dma_;
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.metro_ = metro_;
+        result.city_ = city_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.dma_ = dma_;
+        result.zip_ = zip_;
         if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00001000;
         }
-        result.city_ = city_;
+        result.venueId_ = venueId_;
         if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00002000;
         }
-        result.zip_ = zip_;
+        result.duration_ = duration_;
         if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00004000;
         }
-        result.venueId_ = venueId_;
+        result.interval_ = interval_;
         if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00008000;
         }
-        result.duration_ = duration_;
+        result.longitude_ = longitude_;
         if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
           to_bitField0_ |= 0x00010000;
         }
-        result.interval_ = interval_;
+        result.latitude_ = latitude_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2924,12 +2930,6 @@ public final class Api {
             }
           }
         }
-        if (other.hasLatitude()) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.hasLongitude()) {
-          setLongitude(other.getLongitude());
-        }
         if (other.hasCountry()) {
           setCountry(other.getCountry());
         }
@@ -2956,6 +2956,12 @@ public final class Api {
         }
         if (other.hasInterval()) {
           setInterval(other.getInterval());
+        }
+        if (other.hasLongitude()) {
+          setLongitude(other.getLongitude());
+        }
+        if (other.hasLatitude()) {
+          setLatitude(other.getLatitude());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -3062,59 +3068,59 @@ public final class Api {
               addDisplayArea(subBuilder.buildPartial());
               break;
             }
-            case 165: {
-              bitField0_ |= 0x00000100;
-              latitude_ = input.readFloat();
-              break;
-            }
-            case 173: {
-              bitField0_ |= 0x00000200;
-              longitude_ = input.readFloat();
-              break;
-            }
             case 178: {
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000100;
               country_ = input.readBytes();
               break;
             }
             case 186: {
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00000200;
               region_ = input.readBytes();
               break;
             }
             case 194: {
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00000400;
               metro_ = input.readBytes();
               break;
             }
             case 202: {
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00000800;
               dma_ = input.readBytes();
               break;
             }
             case 210: {
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00001000;
               city_ = input.readBytes();
               break;
             }
             case 218: {
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00002000;
               zip_ = input.readBytes();
               break;
             }
             case 250: {
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00004000;
               venueId_ = input.readBytes();
               break;
             }
             case 320: {
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00008000;
               duration_ = input.readInt32();
               break;
             }
             case 328: {
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00010000;
               interval_ = input.readInt32();
+              break;
+            }
+            case 401: {
+              bitField0_ |= 0x00020000;
+              longitude_ = input.readDouble();
+              break;
+            }
+            case 409: {
+              bitField0_ |= 0x00040000;
+              latitude_ = input.readDouble();
               break;
             }
           }
@@ -3124,12 +3130,12 @@ public final class Api {
       private int bitField0_;
       
       // required string network_id = 1;
-      private Object networkId_ = "";
+      private java.lang.Object networkId_ = "";
       public boolean hasNetworkId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getNetworkId() {
-        Object ref = networkId_;
+        java.lang.Object ref = networkId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           networkId_ = s;
@@ -3160,12 +3166,12 @@ public final class Api {
       }
       
       // required string api_key = 2;
-      private Object apiKey_ = "";
+      private java.lang.Object apiKey_ = "";
       public boolean hasApiKey() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getApiKey() {
-        Object ref = apiKey_;
+        java.lang.Object ref = apiKey_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           apiKey_ = s;
@@ -3196,12 +3202,12 @@ public final class Api {
       }
       
       // required string device_id = 3;
-      private Object deviceId_ = "";
+      private java.lang.Object deviceId_ = "";
       public boolean hasDeviceId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getDeviceId() {
-        Object ref = deviceId_;
+        java.lang.Object ref = deviceId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           deviceId_ = s;
@@ -3666,55 +3672,13 @@ public final class Api {
         return displayAreaBuilder_;
       }
       
-      // optional float latitude = 20;
-      private float latitude_ ;
-      public boolean hasLatitude() {
+      // optional string country = 22;
+      private java.lang.Object country_ = "";
+      public boolean hasCountry() {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
-      public float getLatitude() {
-        return latitude_;
-      }
-      public Builder setLatitude(float value) {
-        bitField0_ |= 0x00000100;
-        latitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearLatitude() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        latitude_ = 0F;
-        onChanged();
-        return this;
-      }
-      
-      // optional float longitude = 21;
-      private float longitude_ ;
-      public boolean hasLongitude() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      public float getLongitude() {
-        return longitude_;
-      }
-      public Builder setLongitude(float value) {
-        bitField0_ |= 0x00000200;
-        longitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearLongitude() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        longitude_ = 0F;
-        onChanged();
-        return this;
-      }
-      
-      // optional string country = 22;
-      private Object country_ = "";
-      public boolean hasCountry() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
-      }
       public String getCountry() {
-        Object ref = country_;
+        java.lang.Object ref = country_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           country_ = s;
@@ -3727,30 +3691,30 @@ public final class Api {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000100;
         country_ = value;
         onChanged();
         return this;
       }
       public Builder clearCountry() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000100);
         country_ = getDefaultInstance().getCountry();
         onChanged();
         return this;
       }
       void setCountry(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000100;
         country_ = value;
         onChanged();
       }
       
       // optional string region = 23;
-      private Object region_ = "";
+      private java.lang.Object region_ = "";
       public boolean hasRegion() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getRegion() {
-        Object ref = region_;
+        java.lang.Object ref = region_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           region_ = s;
@@ -3763,30 +3727,30 @@ public final class Api {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00000200;
         region_ = value;
         onChanged();
         return this;
       }
       public Builder clearRegion() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000200);
         region_ = getDefaultInstance().getRegion();
         onChanged();
         return this;
       }
       void setRegion(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000200;
         region_ = value;
         onChanged();
       }
       
       // optional string metro = 24;
-      private Object metro_ = "";
+      private java.lang.Object metro_ = "";
       public boolean hasMetro() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       public String getMetro() {
-        Object ref = metro_;
+        java.lang.Object ref = metro_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           metro_ = s;
@@ -3799,30 +3763,30 @@ public final class Api {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  bitField0_ |= 0x00000400;
         metro_ = value;
         onChanged();
         return this;
       }
       public Builder clearMetro() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         metro_ = getDefaultInstance().getMetro();
         onChanged();
         return this;
       }
       void setMetro(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         metro_ = value;
         onChanged();
       }
       
       // optional string dma = 25;
-      private Object dma_ = "";
+      private java.lang.Object dma_ = "";
       public boolean hasDma() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       public String getDma() {
-        Object ref = dma_;
+        java.lang.Object ref = dma_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           dma_ = s;
@@ -3835,30 +3799,30 @@ public final class Api {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  bitField0_ |= 0x00000800;
         dma_ = value;
         onChanged();
         return this;
       }
       public Builder clearDma() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         dma_ = getDefaultInstance().getDma();
         onChanged();
         return this;
       }
       void setDma(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000800;
         dma_ = value;
         onChanged();
       }
       
       // optional string city = 26;
-      private Object city_ = "";
+      private java.lang.Object city_ = "";
       public boolean hasCity() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       public String getCity() {
-        Object ref = city_;
+        java.lang.Object ref = city_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           city_ = s;
@@ -3871,30 +3835,30 @@ public final class Api {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
+  bitField0_ |= 0x00001000;
         city_ = value;
         onChanged();
         return this;
       }
       public Builder clearCity() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         city_ = getDefaultInstance().getCity();
         onChanged();
         return this;
       }
       void setCity(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00001000;
         city_ = value;
         onChanged();
       }
       
       // optional string zip = 27;
-      private Object zip_ = "";
+      private java.lang.Object zip_ = "";
       public boolean hasZip() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       public String getZip() {
-        Object ref = zip_;
+        java.lang.Object ref = zip_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           zip_ = s;
@@ -3907,30 +3871,30 @@ public final class Api {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00008000;
+  bitField0_ |= 0x00002000;
         zip_ = value;
         onChanged();
         return this;
       }
       public Builder clearZip() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         zip_ = getDefaultInstance().getZip();
         onChanged();
         return this;
       }
       void setZip(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00002000;
         zip_ = value;
         onChanged();
       }
       
       // optional string venue_id = 31;
-      private Object venueId_ = "";
+      private java.lang.Object venueId_ = "";
       public boolean hasVenueId() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       public String getVenueId() {
-        Object ref = venueId_;
+        java.lang.Object ref = venueId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           venueId_ = s;
@@ -3943,19 +3907,19 @@ public final class Api {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00010000;
+  bitField0_ |= 0x00004000;
         venueId_ = value;
         onChanged();
         return this;
       }
       public Builder clearVenueId() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         venueId_ = getDefaultInstance().getVenueId();
         onChanged();
         return this;
       }
       void setVenueId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00004000;
         venueId_ = value;
         onChanged();
       }
@@ -3963,19 +3927,19 @@ public final class Api {
       // optional int32 duration = 40;
       private int duration_ ;
       public boolean hasDuration() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       public int getDuration() {
         return duration_;
       }
       public Builder setDuration(int value) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00008000;
         duration_ = value;
         onChanged();
         return this;
       }
       public Builder clearDuration() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         duration_ = 0;
         onChanged();
         return this;
@@ -3984,20 +3948,62 @@ public final class Api {
       // optional int32 interval = 41;
       private int interval_ ;
       public boolean hasInterval() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       public int getInterval() {
         return interval_;
       }
       public Builder setInterval(int value) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00010000;
         interval_ = value;
         onChanged();
         return this;
       }
       public Builder clearInterval() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         interval_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional double longitude = 50;
+      private double longitude_ ;
+      public boolean hasLongitude() {
+        return ((bitField0_ & 0x00020000) == 0x00020000);
+      }
+      public double getLongitude() {
+        return longitude_;
+      }
+      public Builder setLongitude(double value) {
+        bitField0_ |= 0x00020000;
+        longitude_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearLongitude() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        longitude_ = 0D;
+        onChanged();
+        return this;
+      }
+      
+      // optional double latitude = 51;
+      private double latitude_ ;
+      public boolean hasLatitude() {
+        return ((bitField0_ & 0x00040000) == 0x00040000);
+      }
+      public double getLatitude() {
+        return latitude_;
+      }
+      public Builder setLatitude(double value) {
+        bitField0_ |= 0x00040000;
+        latitude_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearLatitude() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        latitude_ = 0D;
         onChanged();
         return this;
       }
@@ -4115,12 +4121,12 @@ public final class Api {
     private int bitField0_;
     // required string id = 1;
     public static final int ID_FIELD_NUMBER = 1;
-    private Object id_;
+    private java.lang.Object id_;
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getId() {
-      Object ref = id_;
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4134,7 +4140,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getIdBytes() {
-      Object ref = id_;
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4147,12 +4153,12 @@ public final class Api {
     
     // required string proof_of_play_url = 2;
     public static final int PROOF_OF_PLAY_URL_FIELD_NUMBER = 2;
-    private Object proofOfPlayUrl_;
+    private java.lang.Object proofOfPlayUrl_;
     public boolean hasProofOfPlayUrl() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getProofOfPlayUrl() {
-      Object ref = proofOfPlayUrl_;
+      java.lang.Object ref = proofOfPlayUrl_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4166,7 +4172,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getProofOfPlayUrlBytes() {
-      Object ref = proofOfPlayUrl_;
+      java.lang.Object ref = proofOfPlayUrl_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4179,12 +4185,12 @@ public final class Api {
     
     // required string expiration_url = 20;
     public static final int EXPIRATION_URL_FIELD_NUMBER = 20;
-    private Object expirationUrl_;
+    private java.lang.Object expirationUrl_;
     public boolean hasExpirationUrl() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getExpirationUrl() {
-      Object ref = expirationUrl_;
+      java.lang.Object ref = expirationUrl_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4198,7 +4204,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getExpirationUrlBytes() {
-      Object ref = expirationUrl_;
+      java.lang.Object ref = expirationUrl_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4211,12 +4217,12 @@ public final class Api {
     
     // optional string order_id = 31;
     public static final int ORDER_ID_FIELD_NUMBER = 31;
-    private Object orderId_;
+    private java.lang.Object orderId_;
     public boolean hasOrderId() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     public String getOrderId() {
-      Object ref = orderId_;
+      java.lang.Object ref = orderId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4230,7 +4236,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getOrderIdBytes() {
-      Object ref = orderId_;
+      java.lang.Object ref = orderId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4263,12 +4269,12 @@ public final class Api {
     
     // required string display_area_id = 4;
     public static final int DISPLAY_AREA_ID_FIELD_NUMBER = 4;
-    private Object displayAreaId_;
+    private java.lang.Object displayAreaId_;
     public boolean hasDisplayAreaId() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public String getDisplayAreaId() {
-      Object ref = displayAreaId_;
+      java.lang.Object ref = displayAreaId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4282,7 +4288,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getDisplayAreaIdBytes() {
-      Object ref = displayAreaId_;
+      java.lang.Object ref = displayAreaId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4295,12 +4301,12 @@ public final class Api {
     
     // required string creative_id = 14;
     public static final int CREATIVE_ID_FIELD_NUMBER = 14;
-    private Object creativeId_;
+    private java.lang.Object creativeId_;
     public boolean hasCreativeId() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getCreativeId() {
-      Object ref = creativeId_;
+      java.lang.Object ref = creativeId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4314,7 +4320,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getCreativeIdBytes() {
-      Object ref = creativeId_;
+      java.lang.Object ref = creativeId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4327,12 +4333,12 @@ public final class Api {
     
     // required string asset_id = 5;
     public static final int ASSET_ID_FIELD_NUMBER = 5;
-    private Object assetId_;
+    private java.lang.Object assetId_;
     public boolean hasAssetId() {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public String getAssetId() {
-      Object ref = assetId_;
+      java.lang.Object ref = assetId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4346,7 +4352,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getAssetIdBytes() {
-      Object ref = assetId_;
+      java.lang.Object ref = assetId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4359,12 +4365,12 @@ public final class Api {
     
     // required string asset_url = 6;
     public static final int ASSET_URL_FIELD_NUMBER = 6;
-    private Object assetUrl_;
+    private java.lang.Object assetUrl_;
     public boolean hasAssetUrl() {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     public String getAssetUrl() {
-      Object ref = assetUrl_;
+      java.lang.Object ref = assetUrl_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4378,7 +4384,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getAssetUrlBytes() {
-      Object ref = assetUrl_;
+      java.lang.Object ref = assetUrl_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4411,12 +4417,12 @@ public final class Api {
     
     // required string mime_type = 9;
     public static final int MIME_TYPE_FIELD_NUMBER = 9;
-    private Object mimeType_;
+    private java.lang.Object mimeType_;
     public boolean hasMimeType() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     public String getMimeType() {
-      Object ref = mimeType_;
+      java.lang.Object ref = mimeType_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4430,7 +4436,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getMimeTypeBytes() {
-      Object ref = mimeType_;
+      java.lang.Object ref = mimeType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4473,12 +4479,12 @@ public final class Api {
     
     // required string creative_category = 33;
     public static final int CREATIVE_CATEGORY_FIELD_NUMBER = 33;
-    private Object creativeCategory_;
+    private java.lang.Object creativeCategory_;
     public boolean hasCreativeCategory() {
       return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     public String getCreativeCategory() {
-      Object ref = creativeCategory_;
+      java.lang.Object ref = creativeCategory_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -4492,7 +4498,7 @@ public final class Api {
       }
     }
     private com.google.protobuf.ByteString getCreativeCategoryBytes() {
-      Object ref = creativeCategory_;
+      java.lang.Object ref = creativeCategory_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -4731,8 +4737,10 @@ public final class Api {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -5242,12 +5250,12 @@ public final class Api {
       private int bitField0_;
       
       // required string id = 1;
-      private Object id_ = "";
+      private java.lang.Object id_ = "";
       public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getId() {
-        Object ref = id_;
+        java.lang.Object ref = id_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           id_ = s;
@@ -5278,12 +5286,12 @@ public final class Api {
       }
       
       // required string proof_of_play_url = 2;
-      private Object proofOfPlayUrl_ = "";
+      private java.lang.Object proofOfPlayUrl_ = "";
       public boolean hasProofOfPlayUrl() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getProofOfPlayUrl() {
-        Object ref = proofOfPlayUrl_;
+        java.lang.Object ref = proofOfPlayUrl_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           proofOfPlayUrl_ = s;
@@ -5314,12 +5322,12 @@ public final class Api {
       }
       
       // required string expiration_url = 20;
-      private Object expirationUrl_ = "";
+      private java.lang.Object expirationUrl_ = "";
       public boolean hasExpirationUrl() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getExpirationUrl() {
-        Object ref = expirationUrl_;
+        java.lang.Object ref = expirationUrl_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           expirationUrl_ = s;
@@ -5350,12 +5358,12 @@ public final class Api {
       }
       
       // optional string order_id = 31;
-      private Object orderId_ = "";
+      private java.lang.Object orderId_ = "";
       public boolean hasOrderId() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       public String getOrderId() {
-        Object ref = orderId_;
+        java.lang.Object ref = orderId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           orderId_ = s;
@@ -5428,12 +5436,12 @@ public final class Api {
       }
       
       // required string display_area_id = 4;
-      private Object displayAreaId_ = "";
+      private java.lang.Object displayAreaId_ = "";
       public boolean hasDisplayAreaId() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public String getDisplayAreaId() {
-        Object ref = displayAreaId_;
+        java.lang.Object ref = displayAreaId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           displayAreaId_ = s;
@@ -5464,12 +5472,12 @@ public final class Api {
       }
       
       // required string creative_id = 14;
-      private Object creativeId_ = "";
+      private java.lang.Object creativeId_ = "";
       public boolean hasCreativeId() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       public String getCreativeId() {
-        Object ref = creativeId_;
+        java.lang.Object ref = creativeId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           creativeId_ = s;
@@ -5500,12 +5508,12 @@ public final class Api {
       }
       
       // required string asset_id = 5;
-      private Object assetId_ = "";
+      private java.lang.Object assetId_ = "";
       public boolean hasAssetId() {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public String getAssetId() {
-        Object ref = assetId_;
+        java.lang.Object ref = assetId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           assetId_ = s;
@@ -5536,12 +5544,12 @@ public final class Api {
       }
       
       // required string asset_url = 6;
-      private Object assetUrl_ = "";
+      private java.lang.Object assetUrl_ = "";
       public boolean hasAssetUrl() {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getAssetUrl() {
-        Object ref = assetUrl_;
+        java.lang.Object ref = assetUrl_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           assetUrl_ = s;
@@ -5614,12 +5622,12 @@ public final class Api {
       }
       
       // required string mime_type = 9;
-      private Object mimeType_ = "";
+      private java.lang.Object mimeType_ = "";
       public boolean hasMimeType() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       public String getMimeType() {
-        Object ref = mimeType_;
+        java.lang.Object ref = mimeType_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           mimeType_ = s;
@@ -5713,12 +5721,12 @@ public final class Api {
       }
       
       // required string creative_category = 33;
-      private Object creativeCategory_ = "";
+      private java.lang.Object creativeCategory_ = "";
       public boolean hasCreativeCategory() {
         return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       public String getCreativeCategory() {
-        Object ref = creativeCategory_;
+        java.lang.Object ref = creativeCategory_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           creativeCategory_ = s;
@@ -5895,8 +5903,10 @@ public final class Api {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -6535,8 +6545,10 @@ public final class Api {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -7042,8 +7054,10 @@ public final class Api {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -7592,12 +7606,12 @@ public final class Api {
       "nnection\030\006 \002(\010\022F\n\020device_attribute\030\007 \003(\013" +
       "2,.com.vistarmedia.api.message.DeviceAtt" +
       "ribute\022>\n\014display_area\030\010 \003(\0132(.com.vista" +
-      "rmedia.api.message.DisplayArea\022\020\n\010latitu" +
-      "de\030\024 \001(\002\022\021\n\tlongitude\030\025 \001(\002\022\017\n\007country\030\026" +
-      " \001(\t\022\016\n\006region\030\027 \001(\t\022\r\n\005metro\030\030 \001(\t\022\013\n\003d",
-      "ma\030\031 \001(\t\022\014\n\004city\030\032 \001(\t\022\013\n\003zip\030\033 \001(\t\022\020\n\010v" +
-      "enue_id\030\037 \001(\t\022\020\n\010duration\030( \001(\005\022\020\n\010inter" +
-      "val\030) \001(\005\"\374\002\n\rAdvertisement\022\n\n\002id\030\001 \002(\t\022" +
+      "rmedia.api.message.DisplayArea\022\017\n\007countr" +
+      "y\030\026 \001(\t\022\016\n\006region\030\027 \001(\t\022\r\n\005metro\030\030 \001(\t\022\013" +
+      "\n\003dma\030\031 \001(\t\022\014\n\004city\030\032 \001(\t\022\013\n\003zip\030\033 \001(\t\022\020",
+      "\n\010venue_id\030\037 \001(\t\022\020\n\010duration\030( \001(\005\022\020\n\010in" +
+      "terval\030) \001(\005\022\021\n\tlongitude\0302 \001(\001\022\020\n\010latit" +
+      "ude\0303 \001(\001\"\374\002\n\rAdvertisement\022\n\n\002id\030\001 \002(\t\022" +
       "\031\n\021proof_of_play_url\030\002 \002(\t\022\026\n\016expiration" +
       "_url\030\024 \002(\t\022\020\n\010order_id\030\037 \001(\t\022\024\n\014display_" +
       "time\030\013 \002(\003\022\024\n\014lease_expiry\030\003 \002(\003\022\027\n\017disp" +
@@ -7642,7 +7656,7 @@ public final class Api {
           internal_static_com_vistarmedia_api_message_AdRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_vistarmedia_api_message_AdRequest_descriptor,
-              new java.lang.String[] { "NetworkId", "ApiKey", "DeviceId", "DisplayTime", "NumberOfScreens", "DirectConnection", "DeviceAttribute", "DisplayArea", "Latitude", "Longitude", "Country", "Region", "Metro", "Dma", "City", "Zip", "VenueId", "Duration", "Interval", },
+              new java.lang.String[] { "NetworkId", "ApiKey", "DeviceId", "DisplayTime", "NumberOfScreens", "DirectConnection", "DeviceAttribute", "DisplayArea", "Country", "Region", "Metro", "Dma", "City", "Zip", "VenueId", "Duration", "Interval", "Longitude", "Latitude", },
               com.vistarmedia.api.message.Api.AdRequest.class,
               com.vistarmedia.api.message.Api.AdRequest.Builder.class);
           internal_static_com_vistarmedia_api_message_Advertisement_descriptor =

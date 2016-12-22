@@ -79,8 +79,6 @@ message AdRequest {
   // this request. The specifics of each entry are specified above.
   repeated DisplayArea display_area = 8;
 
-  optional float latitude   = 20;
-  optional float longitude  = 21;
   optional string country   = 22;
   optional string region    = 23;
   optional string metro     = 24;
@@ -92,6 +90,9 @@ message AdRequest {
 
   optional int32  duration  = 40;
   optional int32  interval  = 41;
+
+  optional double longitude = 50;
+  optional double latitude  = 51;
 }
 
 message Advertisement {
