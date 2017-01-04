@@ -2,11 +2,16 @@ package com.vistarmedia.api;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.IOUtils;
+import org.joda.time.DateTime;
+import org.joda.time.format.ISODateTimeFormat;
 
 import com.vistarmedia.api.future.ApiResultFuture;
 import com.vistarmedia.api.message.Api.AdRequest;
@@ -291,11 +296,24 @@ public class ApiClient {
           }
 
         } else {
-          onError(code, message);
+          try {
+            StringWriter writer = new StringWriter();
+            IOUtils.copy(body, writer);
+            String content = writer.toString();
+            onError(code, message, content);
+          } catch (IOException e) {
+            onError(500, e.getLocalizedMessage());
+          }
         }
       }
 
       private void onError(int code, String message) {
+        onError(code, message, "");
+      }
+
+      private void onError(int code, String message, String content) {
+        String timestamp = ISODateTimeFormat.dateTime().print(DateTime.now());
+        System.out.println(String.format("%s\t%d\t%s", timestamp, code, content));
         ErrorResult error = new ErrorResult(code, message);
         result.fulfill(new AdResponseResult(error));
       }
